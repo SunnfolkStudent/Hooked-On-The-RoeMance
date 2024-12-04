@@ -40,13 +40,13 @@ public class PlayerController : MonoBehaviour
     {
         if (_input.movement.x < 0)
         {
-            _spriteRenderer.flipX = true;
+            _spriteRenderer.flipX = false;
             //PlayerFlipX = true;   Might not be needed
         }
         
         if (_input.movement.x > 0)
         {
-            _spriteRenderer.flipX = false;
+            _spriteRenderer.flipX = true;
         }
     }
     
