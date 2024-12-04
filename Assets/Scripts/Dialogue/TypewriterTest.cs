@@ -39,8 +39,8 @@ public class TypewriterTest : MonoBehaviour
     private WaitForSeconds _textBoxFullEventDelay;
     [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
 
-    public static event Action CompleteTextRevealed;
-    public static event 
+    //public static event Action CompleteTextRevealed;
+    //public static event 
     
 
 
@@ -129,7 +129,7 @@ public class TypewriterTest : MonoBehaviour
             return;
         }
         
-        StopCoroutine(_typewriterCoroutine());
+        //StopCoroutine(_typewriterCoroutine());
         _textBox.maxVisibleCharacters = _textBox.textInfo.characterCount;
     }
 
