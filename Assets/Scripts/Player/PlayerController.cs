@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Timeline;
 
@@ -6,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [Header("Components")] 
     private InputActions _input;
     private Rigidbody2D _rigidbody2D;
+    private Animator _animator;
     private SpriteRenderer _spriteRenderer;
 
     [Header("Movement")] 
@@ -15,13 +17,18 @@ public class PlayerController : MonoBehaviour
     {
         _input = GetComponent<InputActions>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
     
     private void Update()
     {
         AdjustPlayerFacingDirection();
+
+        _animator.SetFloat("moveY", _input.movement.y);
+        _animator.SetFloat("moveX", _input.movement.x);
         
+
         /*
         if (!PauseMenu._menuActive)
         {
