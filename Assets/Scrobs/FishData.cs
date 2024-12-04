@@ -11,11 +11,13 @@ public class FishData : ScriptableObject
     public string fishName;
     public Habitat habitat;
     public List<Dialogues> dialogue;
+    
     public enum Habitat
     {
-        Sea,
-        Shore,
-        Depths,
+        Tropical,
+        Deepsea,
+        Coldwater,
+        Ocean,
     }
 
     [Serializable]
