@@ -1,142 +1,142 @@
 using System.Collections;
 using TMPro;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 
-[RequireComponent(typeof(TMP_Text))]
+
+    
 public class TypewriterTest : MonoBehaviour
 {
-    private TMP_Text _textBox;
     
+    // Just for testing
+    public TMP_Text textBox;
     
     // Prototyping
-    [Header("Typewriter Test")] [SerializeField]
-    private string testText;
-    
-    
-    // basic functionality 
+    [Header("Test String")] 
+    [SerializeField] private string testText;
+
+    // Basic Typewriter Functionality
     private int _currentVisibleCharacterIndex;
     private Coroutine _typewriterCoroutine;
-    
+    private bool _readyForNewText = true;
+
     private WaitForSeconds _simpleDelay;
     private WaitForSeconds _interpunctuationDelay;
-    
-    [Header("Typewriter Settings")]
+
+    [Header("Typewriter Settings")] 
     [SerializeField] private float charactersPerSecond = 48;
     [SerializeField] private float interpunctuationDelay = 0.5f;
-    
-    // Skipping functionality
-    public bool currentlySkipping {get; private set;}
-    private WaitForSeconds _skipDelay;
-    
-    [Header("Skip Options")]
-    [SerializeField] private bool quickSkip;
 
+
+    // Skipping Functionality
+    public bool CurrentlySkipping { get; private set; }
+    private WaitForSeconds _skipDelay;
+
+    [Header("Skip options")] 
+    [SerializeField] private bool quickSkip;
+    // How much skipping speeds up dialogue
     [SerializeField] [Min(1)] private int skipSpeedup = 5;
-    
-    // Event functionality
-    private WaitForSeconds _textBoxFullEventDelay;
+
+
+    // Event Functionality
+    private WaitForSeconds textBoxFullEventDelay;
     [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
 
-    //public static event Action CompleteTextRevealed;
-    //public static event 
+    // Event for when the text is done
     
 
 
     private void Awake()
     {
-        _textBox = GetComponent<TMP_Text>();
         
+        // Delay for normal characters
         _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
+        // Delay for interpunctuations
         _interpunctuationDelay = new WaitForSeconds(interpunctuationDelay);
         
+        // Delay for the skipping
         _skipDelay = new WaitForSeconds(1 / (charactersPerSecond * skipSpeedup));
+        
+        textBoxFullEventDelay = new WaitForSeconds(sendDoneDelay);
+        
+        
     }
+
+    public void RizzMode()
+    {
+        Debug.Log("RizzMode");
+    }
+
+
 
     private void Start()
     {
+        // Calls SetText() function with test text as parameter
         SetText(testText);
-    }
-
-    private void Update()
-    {
-        // Nothing for now :D
-    }
-
-    private void OnAttack()
-    {
-        if (_textBox.maxVisibleCharacters != _textBox.textInfo.characterCount - 1)
-            Skip(); 
-    }
-
-    public void SetText(string text)
-    {
-        if (_typewriterCoroutine != null)
-            StopCoroutine(_typewriterCoroutine);
+        Debug.Log("Start func " + testText);
         
+    }
+
+
+    private void SetText(string text)
+    {
+        // Sets variable to imported text from Start
+        textBox.text = text;
         
-        _textBox.text = text;
-        _textBox.maxVisibleCharacters = 0;
+        // Resets the current visible characters and index to 0 to be ready for new text
+        textBox.maxVisibleCharacters = 0;
         _currentVisibleCharacterIndex = 0;
-
-        _typewriterCoroutine = StartCoroutine(Typewriter());
-    }
-
-
-    private IEnumerator Typewriter()
-    {
-        TMP_TextInfo textInfo = _textBox.textInfo;
         
-        while (_currentVisibleCharacterIndex < textInfo.characterCount +1)
+        // Starts THE HOLY GRAIL coroutine for making the effect
+        _typewriterCoroutine = StartCoroutine(TypeWriter());
+    }
+    
+    
+
+    private IEnumerator TypeWriter()
+    {
+        // Uses TMP textinfo parameters to check characters and length
+        TMP_TextInfo textInfo = textBox.textInfo;
+
+        // Runs only when there are less characters displayed than the total the box has
+        while (_currentVisibleCharacterIndex < textInfo.characterCount + 1)
         {
+            var lastCharacterIndex = textInfo.characterCount - 1;
+
+            if (_currentVisibleCharacterIndex == lastCharacterIndex)
+            {
+                textBox.maxVisibleCharacters++;
+                yield return textBoxFullEventDelay;
+                
+                // GOTTA LEARN but should invoke the event?
+                Debug.Log("2nd try at text done");
+                yield break;
+            }
             
             
-            
-            
-            
-            
+            // Sets current iteration's character as parsed character
             char character = textInfo.characterInfo[_currentVisibleCharacterIndex].character;
             
-            _textBox.maxVisibleCharacters++;
+            // Adds 1 to the visible characters
+            textBox.maxVisibleCharacters++;
 
-            if (!currentlySkipping && 
-                character is '?' or '.' or ',' or ':' or ';' or '!' or '-')
+            
+            // Checks for "special" signs or if it's currentlyskipping
+            if (character is '?' or '.' or ',' or ':' or ';' or '!' or '-')
             {
-                yield return interpunctuationDelay;
+                // Returns with a bigger delay for these signs
+                yield return _interpunctuationDelay;
             }
             else
             {
-                yield return currentlySkipping ? _skipDelay : _simpleDelay;
+                // Else normal letter delay
+                yield return CurrentlySkipping ? _skipDelay : _simpleDelay;
             }
             
-            
-            
+            // Adds 1 to the characters being parsed
             _currentVisibleCharacterIndex++;
-            
         }
-    }
-
-    void Skip()
-    {
-        if (currentlySkipping)
-            return;
-        currentlySkipping = true;
-
-        if (!quickSkip)
-        {
-            StartCoroutine(SkipSpeedupReset());
-            return;
-        }
-        
-        //StopCoroutine(_typewriterCoroutine());
-        _textBox.maxVisibleCharacters = _textBox.textInfo.characterCount;
-    }
-
-
-    private IEnumerator SkipSpeedupReset()
-    {
-        yield return new WaitUntil(() => _textBox.maxVisibleCharacters == _textBox.textInfo.characterCount -1);
-        currentlySkipping = false;
     }
 }
+
+    
