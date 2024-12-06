@@ -1,11 +1,11 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 
-
-    
-public class TypewriterTest : MonoBehaviour
+public class InkTest : MonoBehaviour
 {
     
     // Just for testing
@@ -27,6 +27,9 @@ public class TypewriterTest : MonoBehaviour
     [SerializeField] private float charactersPerSecond = 48;
     [SerializeField] private float interpunctuationDelay = 0.5f;
 
+    private Button _button1, _button2, _button3, _button4;
+    private TMP_Text _button1Text, _button2Text, _button3Text, _button4Text;
+
 
     // Skipping Functionality
     public bool CurrentlySkipping { get; private set; }
@@ -46,27 +49,13 @@ public class TypewriterTest : MonoBehaviour
     
 
 
-    public void RizzMode()
-    {
-        Debug.Log("RizzMode");
-        //TODO Make dialogue windows popup
-        //TODO Replace texts in main text and set revealed letters to zero
-    }
-
-
-
-    private void Start()
-    {
-        // Calls SetText() function with test text as parameter
-        SetText(testText);
-        Debug.Log("Start func " + testText);
-        
-        //
-        
-    }
     private void Awake()
     {
-        //TODO add all dialogue buttons
+        // Gets all 4 buttons
+        _button1 = GameObject.Find("Button1").GetComponent<Button>();
+        _button2 = GameObject.Find("Button2").GetComponent<Button>();
+        _button3 = GameObject.Find("Button3").GetComponent<Button>();
+        _button4 = GameObject.Find("Button4").GetComponent<Button>();
         
         // Delay for normal characters
         _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
@@ -77,7 +66,31 @@ public class TypewriterTest : MonoBehaviour
         _skipDelay = new WaitForSeconds(1 / (charactersPerSecond * skipSpeedup));
         
         textBoxFullEventDelay = new WaitForSeconds(sendDoneDelay);
+        
+        
     }
+
+    public void RizzMode()
+    {
+        Debug.Log("RizzMode");
+    }
+
+
+
+    private void Start()
+    {
+        // Gets all 4 button' texts
+        _button1Text = _button1.GetComponentInChildren<TMP_Text>();
+        _button2Text = _button2.GetComponentInChildren<TMP_Text>();
+        _button3Text = _button3.GetComponentInChildren<TMP_Text>();
+        _button4Text = _button4.GetComponentInChildren<TMP_Text>();
+        
+        // Calls SetText() function with test text as parameter
+        SetText(testText);
+        Debug.Log("Start func " + testText);
+        
+    }
+
 
     private void SetText(string text)
     {
@@ -91,7 +104,6 @@ public class TypewriterTest : MonoBehaviour
         // Starts THE HOLY GRAIL coroutine for making the effect
         _typewriterCoroutine = StartCoroutine(TypeWriter());
     }
-    
     
     
 
@@ -110,7 +122,9 @@ public class TypewriterTest : MonoBehaviour
                 textBox.maxVisibleCharacters++;
                 yield return textBoxFullEventDelay;
                 
-                // GOTTA LEARN but should invoke the event?
+                // THIS IS WHERE THE TEXT IS DONE
+                // THIS IS WHERE THE TEXT IS DONE
+                // THIS IS WHERE THE TEXT IS DONE
                 Debug.Log("2nd try at text done");
                 yield break;
             }
