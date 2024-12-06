@@ -8,6 +8,8 @@ TagManager:
   - Deepsea
   - Tropical
   - Coldwater
+  - DialogueButton
+  - DialogueOption
   layers:
   - Default
   - TransparentFX

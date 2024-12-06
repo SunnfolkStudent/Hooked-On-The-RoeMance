@@ -8,6 +8,16 @@ using UnityEngine.UI;
 public class InkTest : MonoBehaviour
 {
     
+    // From Don't Get Stabbed, gonna use for dialogue arrays probably
+    [TextArea(5,7)]
+    public string[] dialogue;
+    [TextArea(5,7)]
+    public string[] butt1;
+    [TextArea(5,7)]
+    public string[] butt2;
+    [TextArea(5,7)]
+    public string[] butt3;
+    
     // Just for testing
     public TMP_Text textBox;
     
@@ -26,10 +36,7 @@ public class InkTest : MonoBehaviour
     [Header("Typewriter Settings")] 
     [SerializeField] private float charactersPerSecond = 48;
     [SerializeField] private float interpunctuationDelay = 0.5f;
-
-    private Button _button1, _button2, _button3, _button4;
-    private TMP_Text _button1Text, _button2Text, _button3Text, _button4Text;
-
+    
 
     // Skipping Functionality
     public bool CurrentlySkipping { get; private set; }
@@ -51,11 +58,6 @@ public class InkTest : MonoBehaviour
 
     private void Awake()
     {
-        // Gets all 4 buttons
-        _button1 = GameObject.Find("Button1").GetComponent<Button>();
-        _button2 = GameObject.Find("Button2").GetComponent<Button>();
-        _button3 = GameObject.Find("Button3").GetComponent<Button>();
-        _button4 = GameObject.Find("Button4").GetComponent<Button>();
         
         // Delay for normal characters
         _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
@@ -68,26 +70,30 @@ public class InkTest : MonoBehaviour
         textBoxFullEventDelay = new WaitForSeconds(sendDoneDelay);
         
         
+        
+        
     }
 
     public void RizzMode()
     {
         Debug.Log("RizzMode");
+        //TODO enable entire canvas
+        //TODO replace dialogue with relevant one
+        //TODO set dialogue progress to 0 (REMEMBER BOTH VARIABLES)
     }
+
+    
 
 
 
     private void Start()
     {
-        // Gets all 4 button' texts
-        _button1Text = _button1.GetComponentInChildren<TMP_Text>();
-        _button2Text = _button2.GetComponentInChildren<TMP_Text>();
-        _button3Text = _button3.GetComponentInChildren<TMP_Text>();
-        _button4Text = _button4.GetComponentInChildren<TMP_Text>();
+        
+        
         
         // Calls SetText() function with test text as parameter
         SetText(testText);
-        Debug.Log("Start func " + testText);
+        print("Start func " + testText);
         
     }
 
