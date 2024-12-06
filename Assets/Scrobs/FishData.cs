@@ -12,6 +12,8 @@ public class FishData : ScriptableObject
     public Habitat habitat;
     public List<Dialogues> dialogue;
     
+    
+    
     public enum Habitat
     {
         Tropical,
@@ -24,6 +26,13 @@ public class FishData : ScriptableObject
     public class Dialogues
     {
         public string name;
+        [SerializeField]
         public List<string> Dialogue;
+        public List<string> Option1;
+        public List<string> Option2;
+        public List<string> Option3;
+        public List<string> Option4;
+        
     }
+    
 }
