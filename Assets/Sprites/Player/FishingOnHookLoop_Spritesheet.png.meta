@@ -1,0 +1,470 @@
+fileFormatVersion: 2
+guid: ee36f6404551e8c4bb7f32df8d5f61b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4943987998253687977
+    second: FishingOnHookLoop_Spritesheet_0
+  - first:
+      213: -3671315323491171679
+    second: FishingOnHookLoop_Spritesheet_1
+  - first:
+      213: -1284199898606065612
+    second: FishingOnHookLoop_Spritesheet_2
+  - first:
+      213: -5253894588586013747
+    second: FishingOnHookLoop_Spritesheet_3
+  - first:
+      213: 7295229897187315841
+    second: FishingOnHookLoop_Spritesheet_4
+  - first:
+      213: -1991747298279968148
+    second: FishingOnHookLoop_Spritesheet_5
+  - first:
+      213: 418894700121315510
+    second: FishingOnHookLoop_Spritesheet_6
+  - first:
+      213: -1838752336629634081
+    second: FishingOnHookLoop_Spritesheet_7
+  - first:
+      213: 7774089690618209621
+    second: FishingOnHookLoop_Spritesheet_8
+  - first:
+      213: -6223855076346801317
+    second: FishingOnHookLoop_Spritesheet_9
+  - first:
+      213: -8503439685041782111
+    second: FishingOnHookLoop_Spritesheet_10
+  - first:
+      213: -1610613727251967402
+    second: FishingOnHookLoop_Spritesheet_11
+  - first:
+      213: 5379185371025315504
+    second: FishingOnHookLoop_Spritesheet_12
+  - first:
+      213: -5999557005993949289
+    second: FishingOnHookLoop_Spritesheet_13
+  - first:
+      213: -640255426395779264
+    second: FishingOnHookLoop_Spritesheet_14
+  - first:
+      213: -8592413039723369671
+    second: FishingOnHookLoop_Spritesheet_15
+  - first:
+      213: 3099770168459183347
+    second: FishingOnHookLoop_Spritesheet_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Win64
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.35714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b5b462c1d636bb0800000000000000
+      internalID: -4943987998253687977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 84
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.35714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a24cdc2a2edc0dc0800000000000000
+      internalID: -3671315323491171679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 84
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.35714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4382ef60ffa9d2ee0800000000000000
+      internalID: -1284199898606065612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 84
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.35714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcbcbff35ba6617b0800000000000000
+      internalID: -5253894588586013747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.35714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180d8a090fcdd3560800000000000000
+      internalID: 7295229897187315841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 42
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.35714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62bdab8264eb54e0800000000000000
+      internalID: -1991747298279968148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 42
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.35714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b85607a28630d500800000000000000
+      internalID: 418894700121315510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 42
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb6541fd707b76e0800000000000000
+      internalID: -1838752336629634081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 555235d726d13eb60800000000000000
+      internalID: 7774089690618209621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5356d098cc60a9a0800000000000000
+      internalID: -6223855076346801317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a2002cd8a6bdf980800000000000000
+      internalID: -8503439685041782111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingOnHookLoop_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65257c43953f5a9e0800000000000000
+      internalID: -1610613727251967402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5b88ac496a7d020428bbf80ccae4aad1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FishingOnHookLoop_Spritesheet_0: -4943987998253687977
+      FishingOnHookLoop_Spritesheet_1: -3671315323491171679
+      FishingOnHookLoop_Spritesheet_10: -8503439685041782111
+      FishingOnHookLoop_Spritesheet_11: -1610613727251967402
+      FishingOnHookLoop_Spritesheet_2: -1284199898606065612
+      FishingOnHookLoop_Spritesheet_3: -5253894588586013747
+      FishingOnHookLoop_Spritesheet_4: 7295229897187315841
+      FishingOnHookLoop_Spritesheet_5: -1991747298279968148
+      FishingOnHookLoop_Spritesheet_6: 418894700121315510
+      FishingOnHookLoop_Spritesheet_7: -1838752336629634081
+      FishingOnHookLoop_Spritesheet_8: 7774089690618209621
+      FishingOnHookLoop_Spritesheet_9: -6223855076346801317
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
