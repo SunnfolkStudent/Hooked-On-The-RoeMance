@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private bool _fishingIdle;
     private bool _fishingThrow;
     private bool _fishingReelIn;
+
+    private bool _playerStatic;
     
     private void Start()
     {
@@ -35,7 +37,11 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        AdjustPlayerFacingDirection();
+        if (!_playerStatic)
+        {
+            AdjustPlayerFacingDirection();
+        }
+        
 
         if (_input.interact && Time.time > _fishingCooldownTimer)
         {
@@ -110,7 +116,8 @@ public class PlayerController : MonoBehaviour
         if (_isInOcean)
         {
             // TODO: Make player unable to move when both fishing and dialogue is on screen
-            //_rigidbody2D.bodyType = RigidbodyType2D.Kinematic; // maybe static
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             Invoke("FishingIdle", 1);
@@ -144,6 +151,9 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingReelIn", true);
         // Might want to use a coroutine to wait for animation to finish before running pseudo-code
         _animator.SetBool("fishingReelIn", false);
+        _playerStatic = false;
+        _animator.SetBool("playerStatic", false);
+        _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         /*
          Pseudo-code:
          Randomly get one of the scriptable object items belonging to one of the specific biomes

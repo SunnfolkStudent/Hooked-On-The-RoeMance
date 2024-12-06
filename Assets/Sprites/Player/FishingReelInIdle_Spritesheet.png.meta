@@ -1,43 +1,61 @@
 fileFormatVersion: 2
-guid: be211d26bc74eb54c844dc1ac36a25c9
+guid: 0168ef14804f55c4bbbd411bd3786263
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3080002554198234356
-    second: FishingThrow_Spritesheet_0
+      213: 1664475932461413841
+    second: FishingReelInIdle_Spritesheet_0
   - first:
-      213: 1044963214457415049
-    second: FishingThrow_Spritesheet_1
+      213: 8558917323198892405
+    second: FishingReelInIdle_Spritesheet_1
   - first:
-      213: 5313762571438626668
-    second: FishingThrow_Spritesheet_2
+      213: 8801930050704720849
+    second: FishingReelInIdle_Spritesheet_2
   - first:
-      213: 7432470659271073027
-    second: FishingThrow_Spritesheet_3
+      213: 7689124796511297072
+    second: FishingReelInIdle_Spritesheet_3
   - first:
-      213: 658110551002634746
-    second: FishingThrow_Spritesheet_4
+      213: 7694699876053895269
+    second: FishingReelInIdle_Spritesheet_4
   - first:
-      213: 5972344687131809263
-    second: FishingThrow_Spritesheet_5
+      213: -3278200591010173957
+    second: FishingReelInIdle_Spritesheet_5
   - first:
-      213: 3619457443141536107
-    second: FishingThrow_Spritesheet_6
+      213: 2875827039091375812
+    second: FishingReelInIdle_Spritesheet_6
   - first:
-      213: -1850118485508347995
-    second: FishingThrow_Spritesheet_7
+      213: 4016215224814025502
+    second: FishingReelInIdle_Spritesheet_7
   - first:
-      213: 4546705905755719584
-    second: FishingThrow_Spritesheet_8
+      213: 7335367641394303962
+    second: FishingReelInIdle_Spritesheet_8
   - first:
-      213: 4793754523544649833
-    second: FishingThrow_Spritesheet_9
+      213: 786925998160199996
+    second: FishingReelInIdle_Spritesheet_9
   - first:
-      213: -714540830563256804
-    second: FishingThrow_Spritesheet_10
+      213: -9086860313836425919
+    second: FishingReelInIdle_Spritesheet_10
   - first:
-      213: 3481835177653379639
-    second: FishingThrow_Spritesheet_11
+      213: 2499822402293650075
+    second: FishingReelInIdle_Spritesheet_11
+  - first:
+      213: 4491827594855695082
+    second: FishingReelInIdle_Spritesheet_12
+  - first:
+      213: 4508095896066954872
+    second: FishingReelInIdle_Spritesheet_13
+  - first:
+      213: 636595951881488712
+    second: FishingReelInIdle_Spritesheet_14
+  - first:
+      213: -3088029611881624778
+    second: FishingReelInIdle_Spritesheet_15
+  - first:
+      213: -3388657745164631428
+    second: FishingReelInIdle_Spritesheet_16
+  - first:
+      213: -7799245293348580346
+    second: FishingReelInIdle_Spritesheet_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -159,265 +177,265 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FishingThrow_Spritesheet_0
+      name: FishingReelInIdle_Spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 98
-        width: 87
-        height: 49
+        y: 84
+        width: 94
+        height: 42
       alignment: 9
-      pivot: {x: 0.3218391, y: 0.30612245}
+      pivot: {x: 0.29787233, y: 0.35714287}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0be7b9def1a145d0800000000000000
-      internalID: -3080002554198234356
+      spriteID: 1d5bc83ba08691710800000000000000
+      internalID: 1664475932461413841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishingThrow_Spritesheet_1
+      name: FishingReelInIdle_Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 98
-        width: 87
-        height: 49
+        x: 94
+        y: 84
+        width: 94
+        height: 42
       alignment: 9
-      pivot: {x: 0.3218391, y: 0.30612245}
+      pivot: {x: 0.29787233, y: 0.35714287}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 985a511d184708e00800000000000000
-      internalID: 1044963214457415049
+      spriteID: 579053755f167c670800000000000000
+      internalID: 8558917323198892405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishingThrow_Spritesheet_2
+      name: FishingReelInIdle_Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 174
-        y: 98
-        width: 87
-        height: 49
+        x: 188
+        y: 84
+        width: 94
+        height: 42
       alignment: 9
-      pivot: {x: 0.3218391, y: 0.30612245}
+      pivot: {x: 0.29787233, y: 0.35714287}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c679d5bb7e64eb940800000000000000
-      internalID: 5313762571438626668
+      spriteID: 1d3471a1fbcb62a70800000000000000
+      internalID: 8801930050704720849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishingThrow_Spritesheet_3
+      name: FishingReelInIdle_Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 261
-        y: 98
-        width: 87
-        height: 49
+        x: 282
+        y: 84
+        width: 94
+        height: 42
       alignment: 9
-      pivot: {x: 0.3218391, y: 0.30612245}
+      pivot: {x: 0.29787233, y: 0.35714287}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30d9d598fa0752760800000000000000
-      internalID: 7432470659271073027
+      spriteID: 03e14b1834245ba60800000000000000
+      internalID: 7689124796511297072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishingThrow_Spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 49
-        width: 87
-        height: 49
-      alignment: 9
-      pivot: {x: 0.3218391, y: 0.30612245}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af9d27f2f04122900800000000000000
-      internalID: 658110551002634746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FishingThrow_Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 87
-        y: 49
-        width: 87
-        height: 49
-      alignment: 9
-      pivot: {x: 0.3218391, y: 0.30612245}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe5dea0a9d702e250800000000000000
-      internalID: 5972344687131809263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FishingThrow_Spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 49
-        width: 87
-        height: 49
-      alignment: 9
-      pivot: {x: 0.3218391, y: 0.30612245}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b69481a2e55ea3230800000000000000
-      internalID: 3619457443141536107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FishingThrow_Spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 261
-        y: 49
-        width: 87
-        height: 49
-      alignment: 9
-      pivot: {x: 0.3218391, y: 0.28571427}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a724ee2a0f0356e0800000000000000
-      internalID: -1850118485508347995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FishingThrow_Spritesheet_8
+      name: FishingReelInIdle_Spritesheet_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 87
-        height: 49
+        y: 42
+        width: 94
+        height: 42
       alignment: 9
-      pivot: {x: 0.3218391, y: 0.28571427}
+      pivot: {x: 0.29787233, y: 0.35714287}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a78dba8ee4291f30800000000000000
-      internalID: 4546705905755719584
+      spriteID: 5684f6dd4c019ca60800000000000000
+      internalID: 7694699876053895269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishingThrow_Spritesheet_9
+      name: FishingReelInIdle_Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 87
-        y: 0
-        width: 87
-        height: 49
+        x: 94
+        y: 42
+        width: 94
+        height: 42
       alignment: 9
-      pivot: {x: 0.3218391, y: 0.28571427}
+      pivot: {x: 0.29787233, y: 0.35714287}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9600d4c3756d68240800000000000000
-      internalID: 4793754523544649833
+      spriteID: bfbec5e5eed7182d0800000000000000
+      internalID: -3278200591010173957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishingThrow_Spritesheet_10
+      name: FishingReelInIdle_Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 174
-        y: 0
-        width: 87
-        height: 49
+        x: 188
+        y: 42
+        width: 94
+        height: 42
       alignment: 9
-      pivot: {x: 0.3218391, y: 0.28571427}
+      pivot: {x: 0.29787233, y: 0.35714287}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c16b3c086e07516f0800000000000000
-      internalID: -714540830563256804
+      spriteID: 4ce318c847df8e720800000000000000
+      internalID: 2875827039091375812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishingThrow_Spritesheet_11
+      name: FishingReelInIdle_Spritesheet_7
       rect:
         serializedVersion: 2
-        x: 261
-        y: 0
-        width: 87
-        height: 49
+        x: 282
+        y: 42
+        width: 94
+        height: 42
       alignment: 9
-      pivot: {x: 0.3218391, y: 0.28571427}
+      pivot: {x: 0.29787233, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7322d7285a6f15030800000000000000
-      internalID: 3481835177653379639
+      spriteID: e1b3e88d7767cb730800000000000000
+      internalID: 4016215224814025502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelInIdle_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3d33261067cc560800000000000000
+      internalID: 7335367641394303962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelInIdle_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31cbd8a609bbea00800000000000000
+      internalID: 786925998160199996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelInIdle_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d6f2650bcf4e180800000000000000
+      internalID: -9086860313836425919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelInIdle_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 94
+        height: 42
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b92d642fa3721b220800000000000000
+      internalID: 2499822402293650075
       vertices: []
       indices: 
       edges: []
@@ -426,7 +444,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1ca0df90ce6d0bd4cbadb059032dfd0d
+    spriteID: bff2ef6528d3a6849bc5f65c21503da4
     internalID: 0
     vertices: []
     indices: 
@@ -436,18 +454,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FishingThrow_Spritesheet_0: -3080002554198234356
-      FishingThrow_Spritesheet_1: 1044963214457415049
-      FishingThrow_Spritesheet_10: -714540830563256804
-      FishingThrow_Spritesheet_11: 3481835177653379639
-      FishingThrow_Spritesheet_2: 5313762571438626668
-      FishingThrow_Spritesheet_3: 7432470659271073027
-      FishingThrow_Spritesheet_4: 658110551002634746
-      FishingThrow_Spritesheet_5: 5972344687131809263
-      FishingThrow_Spritesheet_6: 3619457443141536107
-      FishingThrow_Spritesheet_7: -1850118485508347995
-      FishingThrow_Spritesheet_8: 4546705905755719584
-      FishingThrow_Spritesheet_9: 4793754523544649833
+      FishingReelInIdle_Spritesheet_0: 1664475932461413841
+      FishingReelInIdle_Spritesheet_1: 8558917323198892405
+      FishingReelInIdle_Spritesheet_10: -9086860313836425919
+      FishingReelInIdle_Spritesheet_11: 2499822402293650075
+      FishingReelInIdle_Spritesheet_2: 8801930050704720849
+      FishingReelInIdle_Spritesheet_3: 7689124796511297072
+      FishingReelInIdle_Spritesheet_4: 7694699876053895269
+      FishingReelInIdle_Spritesheet_5: -3278200591010173957
+      FishingReelInIdle_Spritesheet_6: 2875827039091375812
+      FishingReelInIdle_Spritesheet_7: 4016215224814025502
+      FishingReelInIdle_Spritesheet_8: 7335367641394303962
+      FishingReelInIdle_Spritesheet_9: 786925998160199996
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
