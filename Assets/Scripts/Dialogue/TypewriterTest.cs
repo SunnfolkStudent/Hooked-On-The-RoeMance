@@ -46,25 +46,11 @@ public class TypewriterTest : MonoBehaviour
     
 
 
-    private void Awake()
-    {
-        
-        // Delay for normal characters
-        _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
-        // Delay for interpunctuations
-        _interpunctuationDelay = new WaitForSeconds(interpunctuationDelay);
-        
-        // Delay for the skipping
-        _skipDelay = new WaitForSeconds(1 / (charactersPerSecond * skipSpeedup));
-        
-        textBoxFullEventDelay = new WaitForSeconds(sendDoneDelay);
-        
-        
-    }
-
     public void RizzMode()
     {
         Debug.Log("RizzMode");
+        //TODO Make dialogue windows popup
+        //TODO Replace texts in main text and set revealed letters to zero
     }
 
 
@@ -75,8 +61,23 @@ public class TypewriterTest : MonoBehaviour
         SetText(testText);
         Debug.Log("Start func " + testText);
         
+        //
+        
     }
-
+    private void Awake()
+    {
+        //TODO add all dialogue buttons
+        
+        // Delay for normal characters
+        _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
+        // Delay for interpunctuations
+        _interpunctuationDelay = new WaitForSeconds(interpunctuationDelay);
+        
+        // Delay for the skipping
+        _skipDelay = new WaitForSeconds(1 / (charactersPerSecond * skipSpeedup));
+        
+        textBoxFullEventDelay = new WaitForSeconds(sendDoneDelay);
+    }
 
     private void SetText(string text)
     {
@@ -90,6 +91,7 @@ public class TypewriterTest : MonoBehaviour
         // Starts THE HOLY GRAIL coroutine for making the effect
         _typewriterCoroutine = StartCoroutine(TypeWriter());
     }
+    
     
     
 
