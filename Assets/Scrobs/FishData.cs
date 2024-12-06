@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Fish", menuName = "ScriptableObjects/FishVariant", order = 1)]
 public class FishData : ScriptableObject
 {
-    public int randomNumber;
+    public int randomNumber;    // Likely to be intended for the weight (score) of the fish
     public Sprite sprite;
     public Animator animation;
     public string fishName;

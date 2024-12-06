@@ -6,6 +6,7 @@ public class InputActions : MonoBehaviour
 
     public Vector2 movement;
     public bool interact;
+    
     private void Update()
     {
         movement = _inputSystem.Player.Move.ReadValue<Vector2>();

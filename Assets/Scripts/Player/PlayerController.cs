@@ -1,6 +1,5 @@
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Timeline;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +14,16 @@ public class PlayerController : MonoBehaviour
     
     [Header("Biomes")]
     private bool _isInOcean, _isInDeepsea, _isInTropical, _isInColdwater;
+
+    [Header("Fishing Arrays")] 
+    public List<ScriptableObject> fishingInTropical;
+
+    [Header("Fishing")] 
+    private float _fishingCooldown = 1f;
+    private float _fishingCooldownTimer;
+    private bool _fishingIdle;
+    private bool _fishingThrow;
+    private bool _fishingReel;
     
     private void Start()
     {
@@ -27,8 +36,13 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         AdjustPlayerFacingDirection();
-        
-        FishingMechanic();
+
+        if (_input.interact && Time.time > _fishingCooldownTimer)
+        {
+            _fishingCooldownTimer = Time.time + _fishingCooldown;
+            FishingMechanic();
+        }
+            
         
         _animator.SetFloat("moveY", _input.movement.y);
         _animator.SetFloat("moveX", _input.movement.x);
@@ -93,27 +107,37 @@ public class PlayerController : MonoBehaviour
     
     private void FishingMechanic()
     {
-        if (_isInOcean && _input.interact)
+        if (_isInOcean)
         {
+            _animator.SetBool("fishingThrow", true);
+            Invoke("FishingIdle", 1);
+            //_rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
             print("FishingOcean");
         }
-        if (_isInDeepsea && _input.interact)
+        if (_isInDeepsea)
         {
             print("FishingDeepsea");
         }
-        if (_isInColdwater && _input.interact)
+        if (_isInColdwater)
         {
             print("FishingColdwater");
         }
-        if (_isInTropical && _input.interact)
+        if (_isInTropical)
         {
             print("FishingTropical");
         }
         
         /*
          Pseudo-code:
-         Randomly get one of the scriptable object fishes and trash item from one of the specific biomes
+         Randomly get one of the scriptable object items belonging to one of the specific biomes
+         then Kasper's script will make use of the Scrob that is chosen
          */
         
+    }
+
+    private void FishingIdle()
+    {
+        _animator.SetBool("fishingThrow", false);
+        _animator.SetBool("fishingIdle", true);
     }
 }

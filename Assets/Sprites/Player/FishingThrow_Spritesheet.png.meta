@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: be211d26bc74eb54c844dc1ac36a25c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3080002554198234356
+    second: FishingThrow_Spritesheet_0
+  - first:
+      213: 1044963214457415049
+    second: FishingThrow_Spritesheet_1
+  - first:
+      213: 5313762571438626668
+    second: FishingThrow_Spritesheet_2
+  - first:
+      213: 7432470659271073027
+    second: FishingThrow_Spritesheet_3
+  - first:
+      213: 658110551002634746
+    second: FishingThrow_Spritesheet_4
+  - first:
+      213: 5972344687131809263
+    second: FishingThrow_Spritesheet_5
+  - first:
+      213: 3619457443141536107
+    second: FishingThrow_Spritesheet_6
+  - first:
+      213: -1850118485508347995
+    second: FishingThrow_Spritesheet_7
+  - first:
+      213: 4546705905755719584
+    second: FishingThrow_Spritesheet_8
+  - first:
+      213: 4793754523544649833
+    second: FishingThrow_Spritesheet_9
+  - first:
+      213: -714540830563256804
+    second: FishingThrow_Spritesheet_10
+  - first:
+      213: 3481835177653379639
+    second: FishingThrow_Spritesheet_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Win64
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 98
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0be7b9def1a145d0800000000000000
+      internalID: -3080002554198234356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 98
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 985a511d184708e00800000000000000
+      internalID: 1044963214457415049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 98
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c679d5bb7e64eb940800000000000000
+      internalID: 5313762571438626668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 98
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d9d598fa0752760800000000000000
+      internalID: 7432470659271073027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af9d27f2f04122900800000000000000
+      internalID: 658110551002634746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 49
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe5dea0a9d702e250800000000000000
+      internalID: 5972344687131809263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 49
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b69481a2e55ea3230800000000000000
+      internalID: 3619457443141536107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 49
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a724ee2a0f0356e0800000000000000
+      internalID: -1850118485508347995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a78dba8ee4291f30800000000000000
+      internalID: 4546705905755719584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9600d4c3756d68240800000000000000
+      internalID: 4793754523544649833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 0
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16b3c086e07516f0800000000000000
+      internalID: -714540830563256804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingThrow_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 0
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7322d7285a6f15030800000000000000
+      internalID: 3481835177653379639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1ca0df90ce6d0bd4cbadb059032dfd0d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FishingThrow_Spritesheet_0: -3080002554198234356
+      FishingThrow_Spritesheet_1: 1044963214457415049
+      FishingThrow_Spritesheet_10: -714540830563256804
+      FishingThrow_Spritesheet_11: 3481835177653379639
+      FishingThrow_Spritesheet_2: 5313762571438626668
+      FishingThrow_Spritesheet_3: 7432470659271073027
+      FishingThrow_Spritesheet_4: 658110551002634746
+      FishingThrow_Spritesheet_5: 5972344687131809263
+      FishingThrow_Spritesheet_6: 3619457443141536107
+      FishingThrow_Spritesheet_7: -1850118485508347995
+      FishingThrow_Spritesheet_8: 4546705905755719584
+      FishingThrow_Spritesheet_9: 4793754523544649833
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
