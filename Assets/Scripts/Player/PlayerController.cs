@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Biomes")]
     private bool _isInOcean, _isInDeepsea, _isInTropical, _isInColdwater;
 
-    [Header("Fishing Arrays")] 
+    [Header("Fishing Lists/Arrays")] 
     public List<ScriptableObject> fishingInTropical;
 
     [Header("Fishing")] 
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private float _fishingCooldownTimer;
     private bool _fishingIdle;
     private bool _fishingThrow;
-    private bool _fishingReel;
+    private bool _fishingReelIn;
     
     private void Start()
     {
@@ -109,9 +109,11 @@ public class PlayerController : MonoBehaviour
     {
         if (_isInOcean)
         {
+            // TODO: Make player unable to move when both fishing and dialogue is on screen
+            //_rigidbody2D.bodyType = RigidbodyType2D.Kinematic; // maybe static
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             Invoke("FishingIdle", 1);
-            //_rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
             print("FishingOcean");
         }
         if (_isInDeepsea)
@@ -126,18 +128,26 @@ public class PlayerController : MonoBehaviour
         {
             print("FishingTropical");
         }
-        
-        /*
-         Pseudo-code:
-         Randomly get one of the scriptable object items belonging to one of the specific biomes
-         then Kasper's script will make use of the Scrob that is chosen
-         */
-        
     }
 
     private void FishingIdle()
     {
         _animator.SetBool("fishingThrow", false);
         _animator.SetBool("fishingIdle", true);
+        // TODO: Random time interval for ! pop-up when fishing, 3-7 seconds maybe
+        Invoke("FishingReelIn", 1);
+    }
+
+    private void FishingReelIn()
+    {
+        _animator.SetBool("fishingIdle", false);
+        _animator.SetBool("fishingReelIn", true);
+        // Might want to use a coroutine to wait for animation to finish before running pseudo-code
+        _animator.SetBool("fishingReelIn", false);
+        /*
+         Pseudo-code:
+         Randomly get one of the scriptable object items belonging to one of the specific biomes
+         then Kasper's script will make use of the Scrob that is chosen
+         */
     }
 }
