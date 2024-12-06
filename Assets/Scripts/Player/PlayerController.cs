@@ -115,6 +115,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_isInOcean)
         {
+            // TODO: Make a button saying to press E pop up
             // TODO: Make player unable to move when both fishing and dialogue is on screen
             _playerStatic = true;
             _animator.SetBool("playerStatic", true);
@@ -142,22 +143,48 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingThrow", false);
         _animator.SetBool("fishingIdle", true);
         // TODO: Random time interval for ! pop-up when fishing, 3-7 seconds maybe
-        Invoke("FishingReelIn", 1);
+        Invoke("FishingOnHook", 1);
     }
 
-    private void FishingReelIn()
+    private void FishingOnHook()
     {
         _animator.SetBool("fishingIdle", false);
+        _animator.SetBool("fishingOnHook", true);
+        Invoke("FishingOnHookLoop", 1);
+    }
+
+    // One of these two might get dropped, the idea is for an exclamation mark to pop up when a fish bites
+    // and for the player to press E to catch the fish (quick time event)
+    
+    private void FishingOnHookLoop()
+    {
+        _animator.SetBool("fishingOnHook", false);
+        _animator.SetBool("fishingOnHookLoop", true);
+        Invoke("FishingReelIn", 1);
+    }
+    
+    // Might have to use a coroutine rather than Invoke on the functions before FishingReelIn
+    // has to do with taking player input (E) to reel in the catch
+    
+    private void FishingReelIn()
+    {
+        _animator.SetBool("fishingOnHookLoop", false);
         _animator.SetBool("fishingReelIn", true);
         // Might want to use a coroutine to wait for animation to finish before running pseudo-code
-        _animator.SetBool("fishingReelIn", false);
-        _playerStatic = false;
-        _animator.SetBool("playerStatic", false);
-        _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        Invoke("FishingAfterReelInForTesting", 1);
         /*
          Pseudo-code:
          Randomly get one of the scriptable object items belonging to one of the specific biomes
          then Kasper's script will make use of the Scrob that is chosen
          */
+    }
+
+    private void FishingAfterReelInForTesting()
+    {
+        _animator.SetBool("fishingReelIn", false);
+        _playerStatic = false;
+        _animator.SetBool("playerStatic", false);
+        _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        print("Success");
     }
 }

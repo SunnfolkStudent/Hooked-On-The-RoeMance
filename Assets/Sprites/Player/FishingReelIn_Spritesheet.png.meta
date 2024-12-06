@@ -1,0 +1,470 @@
+fileFormatVersion: 2
+guid: 507524e3ce75cb6458e74dad8822b5ba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1438735670348069729
+    second: FishingReelIn_Spritesheet_0
+  - first:
+      213: 1535236248618118286
+    second: FishingReelIn_Spritesheet_1
+  - first:
+      213: 2425236524273724541
+    second: FishingReelIn_Spritesheet_2
+  - first:
+      213: -968282740974336190
+    second: FishingReelIn_Spritesheet_3
+  - first:
+      213: 4974399261761553592
+    second: FishingReelIn_Spritesheet_4
+  - first:
+      213: -6589251225488571402
+    second: FishingReelIn_Spritesheet_5
+  - first:
+      213: -7502687984967249571
+    second: FishingReelIn_Spritesheet_6
+  - first:
+      213: 1458305396755655766
+    second: FishingReelIn_Spritesheet_7
+  - first:
+      213: 8725107040858075113
+    second: FishingReelIn_Spritesheet_8
+  - first:
+      213: 4424362347374381552
+    second: FishingReelIn_Spritesheet_9
+  - first:
+      213: -5697452317677954988
+    second: FishingReelIn_Spritesheet_10
+  - first:
+      213: 1466175569744749326
+    second: FishingReelIn_Spritesheet_11
+  - first:
+      213: -2676027837156443489
+    second: FishingReelIn_Spritesheet_12
+  - first:
+      213: -8714742106403835175
+    second: FishingReelIn_Spritesheet_13
+  - first:
+      213: 667359661597313155
+    second: FishingReelIn_Spritesheet_14
+  - first:
+      213: 4799087416608559707
+    second: FishingReelIn_Spritesheet_15
+  - first:
+      213: 5660736276543221650
+    second: FishingReelIn_Spritesheet_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Win64
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.2777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16bb7cc287a67f310800000000000000
+      internalID: 1438735670348069729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 108
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.2777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8caf2deb314e4510800000000000000
+      internalID: 1535236248618118286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 108
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.2777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c63a5f4cb28a120800000000000000
+      internalID: 2425236524273724541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 108
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.2777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 247451e2af7ff82f0800000000000000
+      internalID: -968282740974336190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.2777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b44348e5cd980540800000000000000
+      internalID: 4974399261761553592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 54
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.2777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f342f8fbe64e84a0800000000000000
+      internalID: -6589251225488571402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 54
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.2777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d519f63570911e790800000000000000
+      internalID: -7502687984967249571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 54
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.25925925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ce7ab2801fc3410800000000000000
+      internalID: 1458305396755655766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.25925925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9efea9540aec51970800000000000000
+      internalID: 8725107040858075113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.25925925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f90dd81d1e766d30800000000000000
+      internalID: 4424362347374381552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.25925925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4585410bd459ee0b0800000000000000
+      internalID: -5697452317677954988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingReelIn_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 94
+        height: 54
+      alignment: 9
+      pivot: {x: 0.29787233, y: 0.25925925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e03edfc99e6e85410800000000000000
+      internalID: 1466175569744749326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 88f229265e42f7e44afee680b7398fbe
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FishingReelIn_Spritesheet_0: 1438735670348069729
+      FishingReelIn_Spritesheet_1: 1535236248618118286
+      FishingReelIn_Spritesheet_10: -5697452317677954988
+      FishingReelIn_Spritesheet_11: 1466175569744749326
+      FishingReelIn_Spritesheet_2: 2425236524273724541
+      FishingReelIn_Spritesheet_3: -968282740974336190
+      FishingReelIn_Spritesheet_4: 4974399261761553592
+      FishingReelIn_Spritesheet_5: -6589251225488571402
+      FishingReelIn_Spritesheet_6: -7502687984967249571
+      FishingReelIn_Spritesheet_7: 1458305396755655766
+      FishingReelIn_Spritesheet_8: 8725107040858075113
+      FishingReelIn_Spritesheet_9: 4424362347374381552
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
