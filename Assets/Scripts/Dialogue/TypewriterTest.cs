@@ -154,6 +154,7 @@ public class TypewriterTest : MonoBehaviour
         // Calls SetText() function with test text as parameter
         SetText(testText);
         Debug.Log("Start func " + testText);
+        Debug.Log("Fuck you!");
         
     }
     private void Awake()
