@@ -17,4 +17,18 @@ MonoBehaviour:
   animation: {fileID: 0}
   fishName: Jark
   habitat: 0
-  dialogue: []
+  Dialogue:
+  - "Yo, am I having d\xE9j\xE0 vu, <b>bro</b>? Didn\u2019t we just talk, <b>dude</b>?"
+  - Right? I knew we had a connection, <b>bro<b/! How about you and I go for a ride?
+  Option1:
+  - "Yeah\u2026 we did!"
+  - Sure, take a perch in my boat
+  Option2:
+  - "You\u2019re delusional"
+  - "I\u2019m not your bro"
+  Option3:
+  - I have an inkling too
+  - I guess?
+  Option4:
+  - "You <b>do</b> give me the creeps\u2026"
+  - Sure, bro!

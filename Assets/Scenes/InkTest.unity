@@ -1813,6 +1813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2f8ed90327ee64783425ca8420c9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestJarkDialogue: {fileID: 11400000, guid: 0b4171f87f8a2a549923b1da845a30d1, type: 2}
   currentFish: 0
   textBox: {fileID: 343472190}
   testText: "Yo, am I having d\xE9j\xE0 vu, bro? Didn\u2019t we just talk, dude?"

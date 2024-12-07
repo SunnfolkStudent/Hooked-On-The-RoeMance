@@ -35,6 +35,8 @@ public class TypewriterTest : MonoBehaviour
     private TMP_Text _button4ObjectText;
 
     public Fish currentFish;
+    
+    
     public enum Fish
     {
         Shark,
@@ -97,7 +99,10 @@ public class TypewriterTest : MonoBehaviour
     private WaitForSeconds _textBoxFullEventDelay;
     [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
     
-
+    public void DecideFish()
+    {
+        Debug.Log("Fish is getting decided");
+    }
 
     public void RizzMode()
     {
