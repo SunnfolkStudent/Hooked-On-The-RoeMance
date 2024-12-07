@@ -17,9 +17,9 @@ public class TypewriterTest : MonoBehaviour
 
     
     // CHANGE HERE
-    public JarkData testJarkDialogue;
-    
-    
+    public JarkData TestJarkDialogue;
+
+    private int _currentDialogue = 0;
 
     
     // All Buttons (for listeners)
@@ -110,7 +110,7 @@ public class TypewriterTest : MonoBehaviour
         
         // TODO: get dialogue and options from PlayerController script
         
-        
+       
         
 
         
@@ -202,6 +202,8 @@ public class TypewriterTest : MonoBehaviour
         _button3ObjectText = _button3Object.GetComponentInChildren<TMP_Text>();
         _button4ObjectText = _button4Object.GetComponentInChildren<TMP_Text>();
         #endregion
+
+        _scrobDialogue = TestJarkDialogue.Dialogue[_currentDialogue];
         
         
         _button1.onClick.AddListener(ShitWorks);

@@ -12,11 +12,11 @@ public class JarkData : ScriptableObject
     public string fishName;
     public Habitat habitat;
     
-    [TextArea(5, 12)] public string Dialogue;
-    [TextArea(5, 12)] public string Option1;
-    [TextArea(5, 12)] public string Option2;
-    [TextArea(5, 12)] public string Option3;
-    [TextArea(5, 12)] public string Option4;
+    [TextArea(5, 12)] public string[] Dialogue;
+    [TextArea(5, 12)] public string[] Option1;
+    [TextArea(5, 12)] public string[] Option2;
+    [TextArea(5, 12)] public string[] Option3;
+    [TextArea(5, 12)] public string[] Option4;
     
     
     
