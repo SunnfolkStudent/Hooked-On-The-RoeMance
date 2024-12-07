@@ -15,8 +15,9 @@ public class TypewriterTest : MonoBehaviour
     private GameObject _button3Object;
     private GameObject _button4Object;
 
-    // private ScriptableObject hey;
-    // hey = gameobject.find("").getcomponent("
+    public JarkData.Dialogues testJarkDialogue;
+    
+    
 
     
     // All Buttons (for listeners)
@@ -45,11 +46,11 @@ public class TypewriterTest : MonoBehaviour
     }
 
     // The 5 fields
-    private TMP_Text _scrobDialogue;
-    private TMP_Text _scrobOption1;
-    private TMP_Text _scrobOption2;
-    private TMP_Text _scrobOption3;
-    private TMP_Text _scrobOption4;
+    private string _scrobDialogue;
+    private string _scrobOption1;
+    private string _scrobOption2;
+    private string _scrobOption3;
+    private string _scrobOption4;
     
 
 
@@ -106,6 +107,10 @@ public class TypewriterTest : MonoBehaviour
         // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
         
         // TODO: get dialogue and options from PlayerController script
+
+        _scrobDialogue = testJarkDialogue.Dialogue[0];
+        
+        print(_scrobDialogue);
 
         
         // Removing all previous listeners to prepare for new dialogue
