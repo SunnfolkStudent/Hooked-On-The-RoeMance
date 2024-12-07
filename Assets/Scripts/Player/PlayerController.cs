@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,8 +17,11 @@ public class PlayerController : MonoBehaviour
     private bool _isInOcean, _isInDeepsea, _isInTropical, _isInColdwater;
 
     [Header("Fishing Lists/Arrays")] 
+    public List<ScriptableObject> fishingInOcean;
+    public List<ScriptableObject> fishingInDeepsea;
     public List<ScriptableObject> fishingInTropical;
-
+    public List<ScriptableObject> fishingInColdwater;
+    
     [Header("Fishing")] 
     private float _fishingCooldown = 1f;
     private float _fishingCooldownTimer;
@@ -33,6 +37,11 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        for (int i = 0; i < fishingInTropical.Count; i++)
+        {
+            Debug.Log(fishingInTropical[i].name);
+        }
     }
     
     private void Update()
@@ -121,6 +130,8 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
+            // Tropical is placeholder for testing, should be ocean
+            var chosenOceanArrayEntry = fishingInTropical[Random.Range(0, fishingInTropical.Count)];
             Invoke("FishingIdle", 1);
             print("FishingOcean");
         }
@@ -186,5 +197,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("playerStatic", false);
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         print("Success");
+        // Run Kasper's dialogue mechanic after this, Rigidbody and _playerStatic should be set after his mechanic is done
+        // Kasper's script will need the randomly chosen item from the respective fish biome array
     }
 }

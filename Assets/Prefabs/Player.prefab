@@ -106,11 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  FishingInTropical:
-  - {fileID: 11400000, guid: 8ed310b99d2cd1248a71fa0cd733ddef, type: 2}
-  - {fileID: 11400000, guid: f2ef00b762d12c94181821b8af9e2498, type: 2}
-  - {fileID: 11400000, guid: e3f1f73a820148144a22965e206c9615, type: 2}
-  - {fileID: 11400000, guid: e5f1336fb290e2648a86fc93518544e9, type: 2}
+  fishingInTropical: []
 --- !u!114 &8766615132982431685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +244,7 @@ BoxCollider2D:
   m_Offset: {x: -0.03, y: 0.08}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.54901963, y: 0.44117647}
     oldSize: {x: 3.1875, y: 2.125}
     newSize: {x: 3.1875, y: 2.125}
     adaptiveTilingThreshold: 0.5
