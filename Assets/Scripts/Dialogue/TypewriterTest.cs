@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,12 +9,13 @@ using UnityEngine.UI;
     
 public class TypewriterTest : MonoBehaviour
 {
-    
     // All Button GameObjects
     private GameObject _button1Object;
     private GameObject _button2Object;
     private GameObject _button3Object;
     private GameObject _button4Object;
+
+    
 
     
     // All Buttons (for listeners)
@@ -40,9 +42,16 @@ public class TypewriterTest : MonoBehaviour
         Halibut,
         Clam
     }
+
+    // The 5 fields
+    private TMP_Text _scrobDialogue;
+    private TMP_Text _scrobOption1;
+    private TMP_Text _scrobOption2;
+    private TMP_Text _scrobOption3;
+    private TMP_Text _scrobOption4;
     
-    
-    
+
+
     // Just for testing
     public TMP_Text textBox;
     
@@ -56,6 +65,11 @@ public class TypewriterTest : MonoBehaviour
     private int _currentVisibleCharacterIndex;
     private Coroutine _typewriterCoroutine;
     private bool _readyForNewText = true;
+
+    
+    // Used to set what dialogue options are correct
+    private bool _firstDialogue;
+    private bool _secondDialogue;
 
     private WaitForSeconds _simpleDelay;
     private WaitForSeconds _interpunctuationDelay;
@@ -76,10 +90,8 @@ public class TypewriterTest : MonoBehaviour
 
 
     // Event Functionality
-    private WaitForSeconds textBoxFullEventDelay;
+    private WaitForSeconds _textBoxFullEventDelay;
     [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
-
-    // Event for when the text is done
     
 
 
@@ -91,6 +103,8 @@ public class TypewriterTest : MonoBehaviour
         
         // TODO: have a switch case that contains enums for every fish
         // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
+        
+        // TODO: get dialogue and options from PlayerController script
 
         
         // Removing all previous listeners to prepare for new dialogue
@@ -98,7 +112,8 @@ public class TypewriterTest : MonoBehaviour
         _button2.onClick.RemoveAllListeners();
         _button3.onClick.RemoveAllListeners();
         _button4.onClick.RemoveAllListeners();
-        
+
+        #region Huge Switch Case
         switch (currentFish)
         {
             case Fish.Shark:
@@ -134,11 +149,12 @@ public class TypewriterTest : MonoBehaviour
                 Debug.Log("Clam");
                 break;
         }
+        #endregion
     }
 
     public void NoRizz()
     {
-        // TODO Hide entire canvas? Don't think there's much mure
+        // TODO Hide entire canvas? Don't think there's much more
     }
 
     public void ShitWorks()
@@ -159,24 +175,24 @@ public class TypewriterTest : MonoBehaviour
     }
     private void Awake()
     {
+        #region Getting Objects and stuff
         // Gets all 4 button GameObjects
         _button1Object = GameObject.Find("Dialogue1");
         _button2Object = GameObject.Find("Dialogue2");
         _button3Object = GameObject.Find("Dialogue3");
         _button4Object = GameObject.Find("Dialogue4");
-        
-        
         // gets all 4 buttons
         _button1 = GameObject.Find("Dialogue1").GetComponent<Button>();
         _button2 = GameObject.Find("Dialogue2").GetComponent<Button>();
         _button3 = GameObject.Find("Dialogue3").GetComponent<Button>();
         _button4 = GameObject.Find("Dialogue4").GetComponent<Button>();
-        
         // Gets all 4 button' texts
         _button1ObjectText = _button1Object.GetComponentInChildren<TMP_Text>();
         _button2ObjectText = _button2Object.GetComponentInChildren<TMP_Text>();
         _button3ObjectText = _button3Object.GetComponentInChildren<TMP_Text>();
         _button4ObjectText = _button4Object.GetComponentInChildren<TMP_Text>();
+        #endregion
+        
         
         _button1.onClick.AddListener(ShitWorks);
         
@@ -188,7 +204,7 @@ public class TypewriterTest : MonoBehaviour
         // Delay for the skipping
         _skipDelay = new WaitForSeconds(1 / (charactersPerSecond * skipSpeedup));
         
-        textBoxFullEventDelay = new WaitForSeconds(sendDoneDelay);
+        _textBoxFullEventDelay = new WaitForSeconds(sendDoneDelay);
         
         DisableOptions();
     }
@@ -244,7 +260,7 @@ public class TypewriterTest : MonoBehaviour
             if (_currentVisibleCharacterIndex == lastCharacterIndex)
             {
                 textBox.maxVisibleCharacters++;
-                yield return textBoxFullEventDelay;
+                yield return _textBoxFullEventDelay;
                 
                 // GOTTA LEARN but should invoke the event?
                 Debug.Log("2nd try at text done");

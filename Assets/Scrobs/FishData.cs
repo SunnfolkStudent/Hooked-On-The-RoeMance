@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Fish", menuName = "ScriptableObjects/FishVariant", order = 1)]
@@ -27,11 +28,11 @@ public class FishData : ScriptableObject
     {
         public string name;
         [SerializeField]
-        public List<string> Dialogue;
-        public List<string> Option1;
-        public List<string> Option2;
-        public List<string> Option3;
-        public List<string> Option4;
+        [TextArea(5, 12)] public List<TMP_Text> Dialogue;
+        [TextArea(5, 12)] public List<TMP_Text> Option1;
+        [TextArea(5, 12)] public List<TMP_Text> Option2;
+        [TextArea(5, 12)] public List<TMP_Text> Option3;
+        [TextArea(5, 12)] public List<TMP_Text> Option4;
         
     }
     
