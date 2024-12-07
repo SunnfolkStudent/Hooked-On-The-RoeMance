@@ -11,7 +11,12 @@ public class JarkData : ScriptableObject
     public Animator animation;
     public string fishName;
     public Habitat habitat;
-    public List<Dialogues> dialogue;
+    
+    [TextArea(5, 12)] public string Dialogue;
+    [TextArea(5, 12)] public string Option1;
+    [TextArea(5, 12)] public string Option2;
+    [TextArea(5, 12)] public string Option3;
+    [TextArea(5, 12)] public string Option4;
     
     
     
@@ -21,19 +26,6 @@ public class JarkData : ScriptableObject
         Deepsea,
         Coldwater,
         Ocean,
-    }
-
-    [Serializable]
-    public class Dialogues
-    {
-        public string name;
-        [SerializeField]
-        [TextArea(5, 12)] public List<string> Dialogue;
-        [TextArea(5, 12)] public List<string> Option1;
-        [TextArea(5, 12)] public List<string> Option2;
-        [TextArea(5, 12)] public List<string> Option3;
-        [TextArea(5, 12)] public List<string> Option4;
-        
     }
     
 }

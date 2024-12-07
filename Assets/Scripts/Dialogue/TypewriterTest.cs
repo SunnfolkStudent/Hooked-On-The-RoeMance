@@ -15,7 +15,9 @@ public class TypewriterTest : MonoBehaviour
     private GameObject _button3Object;
     private GameObject _button4Object;
 
-    public JarkData.Dialogues testJarkDialogue;
+    
+    // CHANGE HERE
+    public JarkData testJarkDialogue;
     
     
 
@@ -107,10 +109,9 @@ public class TypewriterTest : MonoBehaviour
         // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
         
         // TODO: get dialogue and options from PlayerController script
-
-        _scrobDialogue = testJarkDialogue.Dialogue[0];
         
-        print(_scrobDialogue);
+        
+        
 
         
         // Removing all previous listeners to prepare for new dialogue
@@ -161,6 +162,9 @@ public class TypewriterTest : MonoBehaviour
     public void NoRizz()
     {
         // TODO Hide entire canvas? Don't think there's much more
+
+        PlayerController._playerStatic = false;
+        PlayerController._rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
     }
 
     public void ShitWorks()

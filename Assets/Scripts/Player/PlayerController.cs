@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Components")] 
     private InputActions _input;
-    private Rigidbody2D _rigidbody2D;
+    public static Rigidbody2D _rigidbody2D;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private bool _fishingThrow;
     private bool _fishingReelIn;
 
-    private bool _playerStatic;
+    public static bool _playerStatic;
     
     private void Start()
     {
