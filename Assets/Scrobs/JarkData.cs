@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Fish", menuName = "ScriptableObjects/FishVariant", order = 1)]
-public class FishData : ScriptableObject
+[CreateAssetMenu(fileName = "Fish", menuName = "ScriptableObjects/FishVariants/JarkTheShark", order = 1)]
+public class JarkData : ScriptableObject
 {
     public int randomNumber;    // Likely to be intended for the weight (score) of the fish
     public Sprite sprite;

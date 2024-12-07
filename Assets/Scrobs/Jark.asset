@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c96fc9275c8654ca2dc544fe6d76b7, type: 3}
   m_Name: Jark
   m_EditorClassIdentifier: 
-  randomNumber: 2
+  randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: Jark
+  fishName: 
   habitat: 0
   dialogue: []

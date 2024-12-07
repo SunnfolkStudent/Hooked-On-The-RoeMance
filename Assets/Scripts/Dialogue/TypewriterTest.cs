@@ -15,7 +15,8 @@ public class TypewriterTest : MonoBehaviour
     private GameObject _button3Object;
     private GameObject _button4Object;
 
-    
+    // private ScriptableObject hey;
+    // hey = gameobject.find("").getcomponent("
 
     
     // All Buttons (for listeners)

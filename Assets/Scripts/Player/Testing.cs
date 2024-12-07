@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Testing : MonoBehaviour
 {
-    [SerializeField] private FishData fishData;
+    [SerializeField] private JarkData fishData;
 
     private void Start()
     {
