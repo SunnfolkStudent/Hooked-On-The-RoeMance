@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Android;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,13 +8,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
-
+    
     [Header("Movement")] 
     [SerializeField] private float moveSpeed = 5f;
     
     [Header("Biomes")]
     private bool _isInOcean, _isInDeepsea, _isInTropical, _isInColdwater;
-
+    
     [Header("Fishing Lists/Arrays")] 
     public List<ScriptableObject> fishingInOcean;
     public List<ScriptableObject> fishingInDeepsea;
@@ -134,6 +133,7 @@ public class PlayerController : MonoBehaviour
             var chosenOceanArrayEntry = fishingInTropical[Random.Range(0, fishingInTropical.Count)];
             Invoke("FishingIdle", 1);
             print("FishingOcean");
+            
         }
         if (_isInDeepsea)
         {

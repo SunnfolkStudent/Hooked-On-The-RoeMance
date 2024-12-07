@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cf6447f3db98d428195a37dc47bd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishData: {fileID: 11400000, guid: e3f1f73a820148144a22965e206c9615, type: 2}
+  fishData: {fileID: 11400000, guid: 0b4171f87f8a2a549923b1da845a30d1, type: 2}
 --- !u!4 &1711153248
 Transform:
   m_ObjectHideFlags: 0
@@ -534,12 +534,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6777406517355208303, guid: 686e475612b0c8543b29e39192beac83, type: 3}
       propertyPath: fishingInTropical.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6777406517355208303, guid: 686e475612b0c8543b29e39192beac83, type: 3}
       propertyPath: 'fishingInTropical.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 8ed310b99d2cd1248a71fa0cd733ddef, type: 2}
+      objectReference: {fileID: 11400000, guid: 0b4171f87f8a2a549923b1da845a30d1, type: 2}
     - target: {fileID: 6777406517355208303, guid: 686e475612b0c8543b29e39192beac83, type: 3}
       propertyPath: 'fishingInTropical.Array.data[1]'
       value: 
