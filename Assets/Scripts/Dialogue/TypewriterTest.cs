@@ -1,12 +1,10 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 
 
-
-    
 public class TypewriterTest : MonoBehaviour
 {
     #region README about order of scrobs
@@ -19,11 +17,15 @@ public class TypewriterTest : MonoBehaviour
      * 6. Clam Samurai
      * 7. Influencer Angler
      * 8. Hopeless Romance Octopus
+     * 9. Shy Jellyfish
+     * 10. Melancholic Blobfish
      */
     #endregion
     
     // CHANGE HERE
+    public JarkData[] allTheFish;
     public JarkData TestJarkDialogue;
+    //private int _testFish;
     
     // Used for the two stages
     private int _currentDialogue = 0;
@@ -53,9 +55,13 @@ public class TypewriterTest : MonoBehaviour
     private string _scrobOption2;
     private string _scrobOption3;
     private string _scrobOption4;
+
+    private PlayerController _yeah;
+    
+    
     
     // The actual fish dialogue
-    private TMP_Text _fishDialogue;
+    private TMP_Text _textBox;
     
     // The actual canvas
     private GameObject _dialogueCanvas;
@@ -74,7 +80,6 @@ public class TypewriterTest : MonoBehaviour
         Halibut,
         Clam
     }
-
     
     // Prototyping
     [Header("Test String"), TextArea(5, 12)] 
@@ -85,7 +90,6 @@ public class TypewriterTest : MonoBehaviour
     // Basic Typewriter Functionality
     private int _currentVisibleCharacterIndex;
     private Coroutine _typewriterCoroutine;
-    private bool _readyForNewText = true;
 
     
     // Used to set what dialogue options are correct
@@ -114,30 +118,39 @@ public class TypewriterTest : MonoBehaviour
     private WaitForSeconds _textBoxFullEventDelay;
     [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
     
+    
+    /*private void Start()
+    {
+        DecideFish();
+        
+        print(allTheFish[PlayerController.OceanEntryNumber].Option1[_currentDialogue]);
+    }*/
+    
     public void DecideFish()
     {
         // This is where all logic is calculated before calling for RizzMode()
-        DecideDialogue();
+        //DecideDialogue();
         
-        Debug.Log("Fish is getting decided");
         RizzMode();
     }
 
     public void RizzMode()
     {
-        Debug.Log("RizzMode");
         // Enabling the different stuff
-        //RemoveListeners();
-        _dialogueCanvas.SetActive(true);
-        SetText(_scrobDialogue);
-        // TODO: add enabling the fish here
+        // RemoveListeners();
+        // _dialogueCanvas.SetActive(true);
+        // SetText(TestJarkDialogue.Dialogue[_currentDialogue]);
+
+        Debug.Log(allTheFish[PlayerController.OceanEntryNumber].Option1[_currentDialogue]);
         
+        // TODO: add enabling the fish here
+
         // TODO: Make dialogue windows popup
         // TODO: Replace texts in main text and set revealed letters to zero
-        
+
         // TODO: have a switch case that contains enums for every fish
         // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
-        
+
         // TODO: get dialogue and options from PlayerController script
     }
 
@@ -147,44 +160,106 @@ public class TypewriterTest : MonoBehaviour
         switch (currentFish)
         {
             case Fish.Shark:
-                
                 if (_currentDialogue >= 0)
                 {
-                    // Append dialogue options (_currentDialogue) - 1 here
+                    _currentDialogue++;
+                    NextDialogue();
                 }
-
                 if (_currentDialogue == 1)
                 {
-                    
+                    FinishDialogue();
                 }
                 // Add listeners to buttons according to the correct choices
                 Debug.Log("Shark");
                 break;
             case Fish.Koi:
+                if (_currentDialogue >= 0)
+                {
+                    
+                }
+
+                if (_currentDialogue == 1)
+                {
+                    FinishDialogue();
+                }
                 // Add listeners to buttons according to the correct choices
                 Debug.Log("Koi");
                 break;
             case Fish.Macarel:
+                if (_currentDialogue >= 0)
+                {
+                    
+                }
+
+                if (_currentDialogue == 1)
+                {
+                    FinishDialogue();
+                }
                 // Add listeners to buttons according to the correct choices
                 Debug.Log("Macarel");
                 break;
             case Fish.Angler:
+                if (_currentDialogue >= 0)
+                {
+                    
+                }
+
+                if (_currentDialogue == 1)
+                {
+                    FinishDialogue();
+                }
                 // Add listeners to buttons according to the correct choices
                 Debug.Log("Angler");
                 break;
             case Fish.Octopus:
+                if (_currentDialogue >= 0)
+                {
+                    
+                }
+
+                if (_currentDialogue == 1)
+                {
+                    FinishDialogue();
+                }
                 // Add listeners to buttons according to the correct choices
                 Debug.Log("Octopus");
                 break;
             case Fish.Clown:
+                if (_currentDialogue >= 0)
+                {
+                    
+                }
+
+                if (_currentDialogue == 1)
+                {
+                    FinishDialogue();
+                }
                 // Add listeners to buttons according to the correct choices
                 Debug.Log("Clown");
                 break;
             case Fish.Halibut:
+                if (_currentDialogue >= 0)
+                {
+                    
+                }
+
+                if (_currentDialogue == 1)
+                {
+                    FinishDialogue();
+                }
                 // Add listeners to buttons according to the correct choices
                 Debug.Log("Halibut");
                 break;
             case Fish.Clam:
+                if (_currentDialogue >= 0)
+                {
+                    
+                }
+
+                if (_currentDialogue == 1)
+                {
+                    FinishDialogue();
+                }
                 // Add listeners to buttons according to the correct choices
                 Debug.Log("Clam");
                 break;
@@ -192,11 +267,15 @@ public class TypewriterTest : MonoBehaviour
         #endregion
     }
 
+    public void FinishDialogue()
+    {
+        Debug.Log("Should exit dialogue here");
+    }
+
     public void NoRizz()
     {
         // TODO Hide entire canvas? Don't think there's much more
         
-        Debug.Log("NoRizz");
         
         DisableOptions();
         _dialogueCanvas.SetActive(false);
@@ -206,22 +285,18 @@ public class TypewriterTest : MonoBehaviour
         PlayerController._rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
     }
 
-    public void ShitWorks()
+    public void NextDialogue()
     {
-        Debug.Log("IT FUCKING WORKS");
+        Debug.Log("Going to the next dialogue");
         DisableOptions();
-        SetText(TestJarkDialogue.Dialogue[_currentDialogue]);
+        
+        //TODO: Make all 4 buttons correspond with correct options
+        
+        //SetText(TestJarkDialogue.Dialogue[_currentDialogue]);
     }
 
-
-    private void Start()
-    {
-        DecideFish();
-        // Calls SetText() function with test text as parameter
-        //SetText(testText);
-        
-        
-    }
+    
+    
     private void Awake()
     {
         #region Getting Objects and stuff
@@ -245,27 +320,25 @@ public class TypewriterTest : MonoBehaviour
         _dialogueCanvas = GameObject.Find("Canvas");
         
         // Getting the main fish dialogue
-        _fishDialogue = GameObject.Find("FishText").GetComponent<TMP_Text>();
+        _textBox = GameObject.Find("FishText").GetComponent<TMP_Text>();
         
         
         #endregion
-
+        
         
         RemoveListeners();
         
         // Still prototyping
         currentFish = Fish.Shark;
-        _scrobDialogue = TestJarkDialogue.Dialogue[_currentDialogue - 1];
-        DecideFish();
+        _scrobDialogue = TestJarkDialogue.Dialogue[_currentDialogue];
         
         
-        _button1.onClick.AddListener(ShitWorks);
-        _button2.onClick.AddListener(ShitWorks);
-        _button3.onClick.AddListener(ShitWorks);
-        _button4.onClick.AddListener(ShitWorks);
         
-        
-        Debug.Log("Added Listener");
+        _button1.onClick.AddListener(NextDialogue);
+        _button2.onClick.AddListener(NextDialogue);
+        _button3.onClick.AddListener(NextDialogue);
+        _button4.onClick.AddListener(NextDialogue);
+
         
         // Delay for normal characters
         _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
@@ -307,24 +380,25 @@ public class TypewriterTest : MonoBehaviour
 
     private void SetText(string text)
     {
+        if (_typewriterCoroutine != null)
+            StopCoroutine(_typewriterCoroutine);
+        
+        Debug.Log("Text is now text");
         // Sets variable to imported text from Start
-        _fishDialogue.text = text;
+        _textBox.text = text;
         
         // Resets the current visible characters and index to 0 to be ready for new text
-        _fishDialogue.maxVisibleCharacters = 0;
+        _textBox.maxVisibleCharacters = 0;
         _currentVisibleCharacterIndex = 0;
         
         // Starts THE HOLY GRAIL coroutine for making the effect
         _typewriterCoroutine = StartCoroutine(TypeWriter());
     }
-    
-    
-    
-
     private IEnumerator TypeWriter()
     {
+        Debug.Log("TypeWriter holy grail called");
         // Uses TMP textinfo parameters to check characters and length
-        TMP_TextInfo textInfo = _fishDialogue.textInfo;
+        TMP_TextInfo textInfo = _textBox.textInfo;
 
         // Runs only when there are less characters displayed than the total the box has
         while (_currentVisibleCharacterIndex < textInfo.characterCount + 1)
@@ -333,7 +407,7 @@ public class TypewriterTest : MonoBehaviour
 
             if (_currentVisibleCharacterIndex == lastCharacterIndex)
             {
-                _fishDialogue.maxVisibleCharacters++;
+                _textBox.maxVisibleCharacters++;
                 yield return _textBoxFullEventDelay;
                 
                 // GOTTA LEARN but should invoke the event?
@@ -347,7 +421,9 @@ public class TypewriterTest : MonoBehaviour
             char character = textInfo.characterInfo[_currentVisibleCharacterIndex].character;
             
             // Adds 1 to the visible characters
-            _fishDialogue.maxVisibleCharacters++;
+            
+            _textBox.maxVisibleCharacters ++;
+            Debug.Log(_textBox.maxVisibleCharacters);
 
             
             // Checks for "special" signs or if it's currentlyskipping
@@ -359,11 +435,12 @@ public class TypewriterTest : MonoBehaviour
             else
             {
                 // Else normal letter delay
-                yield return CurrentlySkipping ? _skipDelay : _simpleDelay;
+                yield return _simpleDelay;
             }
             
             // Adds 1 to the characters being parsed
-            _currentVisibleCharacterIndex++;
+            _currentVisibleCharacterIndex ++;
+            Debug.Log(_currentVisibleCharacterIndex);
         }
     }
 }

@@ -20,6 +20,8 @@ public class JarkData : ScriptableObject
     
     
     
+    
+    
     public enum Habitat
     {
         Tropical,

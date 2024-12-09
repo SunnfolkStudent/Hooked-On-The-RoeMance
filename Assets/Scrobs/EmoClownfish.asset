@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c96fc9275c8654ca2dc544fe6d76b7, type: 3}
-  m_Name: Jark
+  m_Name: EmoClownfish
   m_EditorClassIdentifier: 
   randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: Jark
+  fishName: 
   habitat: 0
   Dialogue:
-  - "Yo, am I having d\xE9j\xE0 vu, <b>bro</b>? Didn\u2019t we just talk, <b>dude</b>?"
-  - Right? I knew we had a connection, <b>bro</b>! How about you and I go for a ride?
+  - <b>Uh</b>, out of all the fish you could reel in, you chose <b>me</b>?
+  - "Really? No one\u2019s ever said that about me..."
   Option1:
-  - "Yeah\u2026 we did!"
-  - Sure, take a perch in my boat
+  - Yeah, could you go back?
+  - "I lied, you\u2019re basic"
   Option2:
-  - "You\u2019re delusional"
-  - "I\u2019m not your bro"
+  - "Don\u2019t beat yourself up"
+  - "That\u2019s sad"
   Option3:
-  - I have an inkling too
-  - I guess?
+  - "You\u2019re one in a krillion <3"
+  - "That\u2019s right, you\u2019re <b>very</b> special"
   Option4:
-  - "You <b>do</b> give me the creeps\u2026"
-  - Sure, bro!
+  - Ew...
+  - WIP Keep your head up, king crab
