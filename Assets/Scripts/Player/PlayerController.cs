@@ -15,11 +15,8 @@ public class PlayerController : MonoBehaviour
     [Header("Biomes")]
     private bool _isInOcean, _isInDeepsea, _isInTropical, _isInColdwater;
     
-    [Header("Fishing Lists/Arrays")] 
-    public List<ScriptableObject> fishingInOcean;
-    public List<ScriptableObject> fishingInDeepsea;
-    public List<ScriptableObject> fishingInTropical;
-    public List<ScriptableObject> fishingInColdwater;
+    [Header("Biome entry numbers")] 
+    public static int OceanEntryNumber, DeepseaEntryNumber, TropicalEntryNumber, ColdwaterEntryNumber;
     
     [Header("Fishing")] 
     private float _fishingCooldown = 1f;
@@ -35,7 +32,7 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] 
     private SpriteRenderer uiESpriteRenderer;
-
+    
     private float _uiCooldown = 15f;
     private float _uiCooldownTimer;
     private bool isDone = false;
@@ -46,11 +43,6 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-
-        for (int i = 0; i < fishingInTropical.Count; i++)
-        {
-            Debug.Log(fishingInTropical[i].name);
-        }
     }
     
     private void Update()
@@ -60,7 +52,7 @@ public class PlayerController : MonoBehaviour
             AdjustPlayerFacingDirection();
         }
         
-
+        
         if (_input.interact && Time.time > _fishingCooldownTimer)
         {
             _fishingCooldownTimer = Time.time + _fishingCooldown;
@@ -101,6 +93,7 @@ public class PlayerController : MonoBehaviour
                 _isInTropical = false;
                 if (!isDone)
                 {
+                    // Can add time to the function invoke to fine tune when the UI element appears
                     Invoke("UIPressE", 0);
                     isDone = true;
                 }
@@ -121,16 +114,26 @@ public class PlayerController : MonoBehaviour
                 _isInColdwater = false;
                 _isInDeepsea = false;
                 _isInTropical = true;
+                if (!isDone)
+                {
+                    Invoke("UIPressE", 0);
+                    isDone = true;
+                }
                 break;
             case "Coldwater":
                 _isInOcean = false;
                 _isInColdwater = true;
                 _isInDeepsea = false;
                 _isInTropical = false;
+                if (!isDone)
+                {
+                    Invoke("UIPressE", 0);
+                    isDone = true;
+                }
                 break;
         }
     }
-
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         _isInOcean = false;
@@ -149,31 +152,48 @@ public class PlayerController : MonoBehaviour
     {
         if (_isInOcean)
         {
-            // TODO: Make a button saying to press E pop up
-            // TODO: Make player unable to move when both fishing and dialogue is on screen
-            //Invoke("UIPressE", 0);
             _playerStatic = true;
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             // Tropical is placeholder for testing, should be ocean
             //var chosenOceanArrayEntry = fishingInTropical[Random.Range(0, fishingInTropical.Count)];
-            chosenOceanArrayEntry = fishingInTropical[Random.Range(0, fishingInTropical.Count)];
-            Debug.Log(chosenOceanArrayEntry.name);
+            //chosenOceanArrayEntry = fishingInTropical[Random.Range(0, fishingInTropical.Count)];
+            //Debug.Log(chosenOceanArrayEntry.name);
+            OceanEntryNumber = Random.Range(0, 5);
+            print(OceanEntryNumber);
             Invoke("FishingIdle", 1);
             print("FishingOcean");
         }
         if (_isInDeepsea)
         {
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _animator.SetBool("fishingThrow", true);
+            // TODO: Get random number here for example from [3, 6]
+            Invoke("FishingIdle", 1);
             print("FishingDeepsea");
-        }
-        if (_isInColdwater)
-        {
-            print("FishingColdwater");
         }
         if (_isInTropical)
         {
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _animator.SetBool("fishingThrow", true);
+            // TODO: Get random number here for example from [3, 6]
+            Invoke("FishingIdle", 1);
             print("FishingTropical");
+        }
+        if (_isInColdwater)
+        {
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _animator.SetBool("fishingThrow", true);
+            // TODO: Get random number here for example from [3, 6]
+            Invoke("FishingIdle", 1);
+            print("FishingColdwater");
         }
     }
 
@@ -198,7 +218,7 @@ public class PlayerController : MonoBehaviour
     {
         _animator.SetBool("fishingOnHook", false);
         _animator.SetBool("fishingOnHookLoop", true);
-        // TODO: Random time interval for ! pop-up when fishing, 3-7 seconds maybe
+        // TODO: Quick time event, random time interval for ! pop-up when fishing, 3-7 seconds maybe
         Invoke("FishingReelIn", 1);
     }
     
@@ -228,7 +248,7 @@ public class PlayerController : MonoBehaviour
         // Run Kasper's dialogue mechanic after this, Rigidbody and _playerStatic should be set after his mechanic is done
         // Kasper's script will need the randomly chosen item from the respective biome array
     }
-
+    
     private void UIPressE()
     {
         uiESpriteRenderer.enabled = true;
