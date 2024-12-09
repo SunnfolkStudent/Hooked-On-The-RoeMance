@@ -1,7 +1,4 @@
 using System.Collections.Generic;
-using Mono.Cecil.Cil;
-using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -30,13 +27,18 @@ public class PlayerController : MonoBehaviour
     private bool _fishingIdle;
     private bool _fishingThrow;
     private bool _fishingReelIn;
-
+    
     public static bool _playerStatic;
-
+    
+    // Could maybe be a string instead of ScriptableObject, need to test what happens when the second entry gets generated
     public static ScriptableObject chosenOceanArrayEntry;
     
     [SerializeField] 
     private SpriteRenderer uiESpriteRenderer;
+
+    private float _uiCooldown = 15f;
+    private float _uiCooldownTimer;
+    private bool isDone = false;
     
     private void Start()
     {
@@ -97,12 +99,22 @@ public class PlayerController : MonoBehaviour
                 _isInColdwater = false;
                 _isInDeepsea = false;
                 _isInTropical = false;
+                if (!isDone)
+                {
+                    Invoke("UIPressE", 0);
+                    isDone = true;
+                }
                 break;
             case "Deepsea":
                 _isInOcean = false;
                 _isInColdwater = false;
                 _isInDeepsea = true;
                 _isInTropical = false;
+                if (!isDone)
+                {
+                    Invoke("UIPressE", 0);
+                    isDone = true;
+                }
                 break;
             case "Tropical":
                 _isInOcean = false;
@@ -125,6 +137,12 @@ public class PlayerController : MonoBehaviour
         _isInColdwater = false;
         _isInDeepsea = false;
         _isInTropical = false;
+        // This if statement fixes a bug in unity where TriggerEnter and TriggerExit is run when an object
+        // changes rigidbody type
+        if (_rigidbody2D.bodyType == RigidbodyType2D.Dynamic)
+        {
+            isDone = false;
+        }
     }
     
     private void FishingMechanic()
@@ -133,6 +151,7 @@ public class PlayerController : MonoBehaviour
         {
             // TODO: Make a button saying to press E pop up
             // TODO: Make player unable to move when both fishing and dialogue is on screen
+            //Invoke("UIPressE", 0);
             _playerStatic = true;
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
@@ -207,17 +226,17 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         print("Success");
         // Run Kasper's dialogue mechanic after this, Rigidbody and _playerStatic should be set after his mechanic is done
-        // Kasper's script will need the randomly chosen item from the respective fish biome array
+        // Kasper's script will need the randomly chosen item from the respective biome array
     }
 
     private void UIPressE()
     {
         uiESpriteRenderer.enabled = true;
-        
+        Invoke("UIEndE", 2);
     }
-
+    
     private void UIEndE()
     {
-        
+        uiESpriteRenderer.enabled = false;
     }
 }
