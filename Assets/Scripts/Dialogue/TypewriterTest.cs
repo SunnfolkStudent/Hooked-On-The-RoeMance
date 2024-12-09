@@ -25,7 +25,9 @@ public class TypewriterTest : MonoBehaviour
     // CHANGE HERE
     public JarkData[] allTheFish;
     public JarkData TestJarkDialogue;
-    //private int _testFish;
+    private int _testFishSelected;
+    private JarkData currentSCROB;
+    
     
     // Used for the two stages
     private int _currentDialogue = 0;
@@ -78,7 +80,9 @@ public class TypewriterTest : MonoBehaviour
         Octopus,
         Clown,
         Halibut,
-        Clam
+        Clam,
+        Blobfish,
+        Jellyfish
     }
     
     // Prototyping
@@ -119,38 +123,37 @@ public class TypewriterTest : MonoBehaviour
     [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
     
     
-    /*private void Start()
+    private void Start()
     {
-        DecideFish();
+        RizzMode();
         
-        print(allTheFish[PlayerController.OceanEntryNumber].Option1[_currentDialogue]);
-    }*/
+        // Prototyping
+        currentSCROB = allTheFish[_testFishSelected];
+        currentFish = Fish.Shark;
+
+    }
+    
     
     public void DecideFish()
     {
         // This is where all logic is calculated before calling for RizzMode()
-        //DecideDialogue();
-        
+        RemoveListeners();
+        DecideDialogue();
         RizzMode();
     }
 
     public void RizzMode()
     {
         // Enabling the different stuff
-        // RemoveListeners();
-        // _dialogueCanvas.SetActive(true);
-        // SetText(TestJarkDialogue.Dialogue[_currentDialogue]);
-
-        Debug.Log(allTheFish[PlayerController.OceanEntryNumber].Option1[_currentDialogue]);
+         _dialogueCanvas.SetActive(true);
+         SetText(TestJarkDialogue.Dialogue[_currentDialogue]);
+        
         
         // TODO: add enabling the fish here
-
         // TODO: Make dialogue windows popup
         // TODO: Replace texts in main text and set revealed letters to zero
-
         // TODO: have a switch case that contains enums for every fish
         // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
-
         // TODO: get dialogue and options from PlayerController script
     }
 
@@ -162,120 +165,237 @@ public class TypewriterTest : MonoBehaviour
             case Fish.Shark:
                 if (_currentDialogue >= 0)
                 {
-                    _currentDialogue++;
-                    NextDialogue();
+                    _button1.onClick.AddListener(CorrectDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(CorrectDialogue);
+                    _button4.onClick.AddListener(CorrectDialogue);
+                    ChangeTextBoxes();
+                    
                 }
                 if (_currentDialogue == 1)
                 {
-                    FinishDialogue();
+                    RemoveListeners();
+                    _button1.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(FinishDialogue);
+                    _button4.onClick.AddListener(FinishDialogue);
+                    ChangeTextBoxes();
                 }
-                // Add listeners to buttons according to the correct choices
-                Debug.Log("Shark");
                 break;
             case Fish.Koi:
                 if (_currentDialogue >= 0)
                 {
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(CorrectDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
+                    ChangeTextBoxes();
                     
                 }
-
                 if (_currentDialogue == 1)
                 {
-                    FinishDialogue();
+                    RemoveListeners();
+                    _button1.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
+                    ChangeTextBoxes();
                 }
-                // Add listeners to buttons according to the correct choices
-                Debug.Log("Koi");
                 break;
-            case Fish.Macarel:
+            case Fish.Macarel: // TO BE COMPLETED
                 if (_currentDialogue >= 0)
                 {
+                    _button1.onClick.AddListener(CorrectDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(CorrectDialogue);
+                    _button4.onClick.AddListener(CorrectDialogue);
+                    ChangeTextBoxes();
                     
                 }
-
                 if (_currentDialogue == 1)
                 {
-                    FinishDialogue();
+                    RemoveListeners();
+                    _button1.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(FinishDialogue);
+                    _button4.onClick.AddListener(FinishDialogue);
+                    ChangeTextBoxes();
                 }
-                // Add listeners to buttons according to the correct choices
-                Debug.Log("Macarel");
                 break;
-            case Fish.Angler:
+            case Fish.Angler: // TO BE COMPLETED
                 if (_currentDialogue >= 0)
                 {
+                    _button1.onClick.AddListener(CorrectDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(CorrectDialogue);
+                    _button4.onClick.AddListener(CorrectDialogue);
+                    ChangeTextBoxes();
                     
                 }
-
                 if (_currentDialogue == 1)
                 {
-                    FinishDialogue();
+                    RemoveListeners();
+                    _button1.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(FinishDialogue);
+                    _button4.onClick.AddListener(FinishDialogue);
+                    ChangeTextBoxes();
                 }
-                // Add listeners to buttons according to the correct choices
-                Debug.Log("Angler");
                 break;
-            case Fish.Octopus:
+            case Fish.Octopus: // TO BE COMPLETED
                 if (_currentDialogue >= 0)
                 {
+                    _button1.onClick.AddListener(CorrectDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(CorrectDialogue);
+                    _button4.onClick.AddListener(CorrectDialogue);
+                    ChangeTextBoxes();
                     
                 }
-
                 if (_currentDialogue == 1)
                 {
-                    FinishDialogue();
+                    RemoveListeners();
+                    _button1.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(FinishDialogue);
+                    _button4.onClick.AddListener(FinishDialogue);
+                    ChangeTextBoxes();
                 }
-                // Add listeners to buttons according to the correct choices
-                Debug.Log("Octopus");
                 break;
-            case Fish.Clown:
+            case Fish.Clown: 
                 if (_currentDialogue >= 0)
                 {
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(CorrectDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
+                    ChangeTextBoxes();
                     
                 }
-
                 if (_currentDialogue == 1)
                 {
-                    FinishDialogue();
+                    RemoveListeners();
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
+                    _button4.onClick.AddListener(FinishDialogue);
+                    ChangeTextBoxes();
                 }
-                // Add listeners to buttons according to the correct choices
-                Debug.Log("Clown");
                 break;
             case Fish.Halibut:
                 if (_currentDialogue >= 0)
                 {
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(CorrectDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
+                    ChangeTextBoxes();
                     
                 }
-
                 if (_currentDialogue == 1)
                 {
-                    FinishDialogue();
+                    RemoveListeners();
+                    _button1.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
+                    ChangeTextBoxes();
                 }
-                // Add listeners to buttons according to the correct choices
-                Debug.Log("Halibut");
                 break;
             case Fish.Clam:
                 if (_currentDialogue >= 0)
                 {
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
+                    _button4.onClick.AddListener(CorrectDialogue);
+                    ChangeTextBoxes();
                     
                 }
-
                 if (_currentDialogue == 1)
                 {
-                    FinishDialogue();
+                    RemoveListeners();
+                    _button1.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
+                    ChangeTextBoxes();
                 }
-                // Add listeners to buttons according to the correct choices
-                Debug.Log("Clam");
+                break;
+            case Fish.Blobfish:
+                if (_currentDialogue >= 0)
+                {
+                    _button1.onClick.AddListener(CorrectDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(CorrectDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
+                    ChangeTextBoxes();
+                    
+                }
+                if (_currentDialogue == 1)
+                {
+                    RemoveListeners();
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(FinishDialogue);
+                    _button3.onClick.AddListener(FinishDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
+                    ChangeTextBoxes();
+                }
+                break;
+            case Fish.Jellyfish:
+                if (_currentDialogue >= 0)
+                {
+                    _button1.onClick.AddListener(CorrectDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
+                    _button4.onClick.AddListener(CorrectDialogue);
+                    ChangeTextBoxes();
+                    
+                }
+                if (_currentDialogue == 1)
+                {
+                    RemoveListeners();
+                    _button1.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(WrongDialogue);
+                    _button3.onClick.AddListener(FinishDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
+                    ChangeTextBoxes();
+                }
                 break;
         }
         #endregion
     }
 
+    public void CorrectDialogue()
+    {
+        _currentDialogue++;
+        print("Uhm?");
+        NextDialogue();
+    }
+
+    public void WrongDialogue()
+    {
+        Debug.Log("You dumbass bitch");
+    }
+
+    public void ChangeTextBoxes()
+    {
+        _scrobDialogue = allTheFish[_testFishSelected].Dialogue[_currentDialogue];
+        _scrobOption1 = allTheFish[_testFishSelected].Option1[_currentDialogue];
+        _scrobOption2 = allTheFish[_testFishSelected].Option2[_currentDialogue];
+        _scrobOption3 = allTheFish[_testFishSelected].Option3[_currentDialogue];
+        _scrobOption4 = allTheFish[_testFishSelected].Option4[_currentDialogue];
+    }
+
     public void FinishDialogue()
     {
         Debug.Log("Should exit dialogue here");
+        NoRizz();
     }
 
     public void NoRizz()
     {
         // TODO Hide entire canvas? Don't think there's much more
-        
         
         DisableOptions();
         _dialogueCanvas.SetActive(false);
@@ -287,12 +407,9 @@ public class TypewriterTest : MonoBehaviour
 
     public void NextDialogue()
     {
-        Debug.Log("Going to the next dialogue");
         DisableOptions();
-        
-        //TODO: Make all 4 buttons correspond with correct options
-        
-        //SetText(TestJarkDialogue.Dialogue[_currentDialogue]);
+
+        SetText(allTheFish[_testFishSelected].Dialogue[_currentDialogue]);
     }
 
     
@@ -326,7 +443,7 @@ public class TypewriterTest : MonoBehaviour
         #endregion
         
         
-        RemoveListeners();
+        //RemoveListeners();
         
         // Still prototyping
         currentFish = Fish.Shark;
@@ -334,10 +451,10 @@ public class TypewriterTest : MonoBehaviour
         
         
         
-        _button1.onClick.AddListener(NextDialogue);
-        _button2.onClick.AddListener(NextDialogue);
-        _button3.onClick.AddListener(NextDialogue);
-        _button4.onClick.AddListener(NextDialogue);
+        // _button1.onClick.AddListener(NextDialogue);
+        // _button2.onClick.AddListener(NextDialogue);
+        // _button3.onClick.AddListener(NextDialogue);
+        // _button4.onClick.AddListener(NextDialogue);
 
         
         // Delay for normal characters
@@ -382,8 +499,6 @@ public class TypewriterTest : MonoBehaviour
     {
         if (_typewriterCoroutine != null)
             StopCoroutine(_typewriterCoroutine);
-        
-        Debug.Log("Text is now text");
         // Sets variable to imported text from Start
         _textBox.text = text;
         
@@ -396,7 +511,6 @@ public class TypewriterTest : MonoBehaviour
     }
     private IEnumerator TypeWriter()
     {
-        Debug.Log("TypeWriter holy grail called");
         // Uses TMP textinfo parameters to check characters and length
         TMP_TextInfo textInfo = _textBox.textInfo;
 
@@ -410,9 +524,12 @@ public class TypewriterTest : MonoBehaviour
                 _textBox.maxVisibleCharacters++;
                 yield return _textBoxFullEventDelay;
                 
-                // GOTTA LEARN but should invoke the event?
+                // THIS IS WHERE THE TEXT IS DONE!!!
+                // THIS IS WHERE THE TEXT IS DONE!!!
+                // THIS IS WHERE THE TEXT IS DONE!!!
                 Debug.Log("2nd try at text done");
                 EnableOptions();
+                DecideDialogue();
                 yield break;
             }
             
@@ -423,7 +540,6 @@ public class TypewriterTest : MonoBehaviour
             // Adds 1 to the visible characters
             
             _textBox.maxVisibleCharacters ++;
-            Debug.Log(_textBox.maxVisibleCharacters);
 
             
             // Checks for "special" signs or if it's currentlyskipping
@@ -440,7 +556,6 @@ public class TypewriterTest : MonoBehaviour
             
             // Adds 1 to the characters being parsed
             _currentVisibleCharacterIndex ++;
-            Debug.Log(_currentVisibleCharacterIndex);
         }
     }
 }
