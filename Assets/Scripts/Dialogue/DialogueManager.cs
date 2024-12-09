@@ -4,9 +4,8 @@ using Ink.Runtime;
 
 public class DialogueManager : MonoBehaviour
 {
-    [Header("Dialogue UI")] 
-    [SerializeField] private GameObject dialogueUI;
-    [SerializeField] private TMP_Text dialogueText;
+    public GameObject dialogueUI;
+    public TMP_Text dialogueText;
     
     private Story currentStory;
     
