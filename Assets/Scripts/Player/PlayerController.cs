@@ -29,10 +29,13 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] 
     private SpriteRenderer uiESpriteRenderer;
+    [SerializeField]
+    private SpriteRenderer uiExclamationmarkSpriteRenderer;
     
     private float _uiCooldown = 15f;
     private float _uiCooldownTimer;
     private bool isDone = false;
+    private bool isDone2 = false;
     
     private void Start()
     {
@@ -53,6 +56,17 @@ public class PlayerController : MonoBehaviour
         {
             _fishingCooldownTimer = Time.time + _fishingCooldown;
             FishingMechanic();
+        }
+        
+        // TODO: May want to add something to prevent the player from spamming E to pass the quick time event
+        // add a bool that's true while fishing
+        // if (_input.interact && new bool true && isDone2 == false)
+        // { Invoke fishingFailed }
+        
+        if (_input.interact && isDone2 == true)
+        {
+            Invoke("QuickTimeEvent3", 0);
+            print("Invoking QuickTimeEvent3");
         }
         
         _animator.SetFloat("moveY", _input.movement.y);
@@ -195,6 +209,7 @@ public class PlayerController : MonoBehaviour
 
     private void FishingIdle()
     {
+        _animator.SetBool("fishingFailed", false);
         _animator.SetBool("fishingThrow", false);
         _animator.SetBool("fishingIdle", true);
         Invoke("FishingOnHook", 1);
@@ -206,20 +221,13 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingOnHook", true);
         Invoke("FishingOnHookLoop", 1);
     }
-
-    // One of these two might get dropped, the idea is for an exclamation mark to pop up when a fish bites
-    // and for the player to press E to catch the fish (quick time event)
     
     private void FishingOnHookLoop()
     {
+        Invoke("QuickTimeEvent", 0);
         _animator.SetBool("fishingOnHook", false);
         _animator.SetBool("fishingOnHookLoop", true);
-        // TODO: Quick time event, random time interval for ! pop-up when fishing, 3-7 seconds maybe
-        Invoke("FishingReelIn", 8);
     }
-    
-    // Might have to use a coroutine rather than Invoke on the function before FishingReelIn
-    // has to do with taking player input (E) to reel in the catch (Quick time event)
     
     private void FishingReelIn()
     {
@@ -235,11 +243,6 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("playerStatic", false);
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         print("Success");
-        // Run Kasper's dialogue mechanic after this, Rigidbody and _playerStatic should be set after his mechanic is done
-        // Kasper's script will need the randomly chosen item from the respective biome array
-        
-        // Could have a public static bool here that is set to true when this function runs and then false in Kasper's script,
-        // that 
     }
     
     private void Activate_E_UI_Element()
@@ -251,5 +254,39 @@ public class PlayerController : MonoBehaviour
     private void Deactivate_E_UI_Element()
     {
         uiESpriteRenderer.enabled = false;
+    }
+    
+    private void QuickTimeEvent()
+    {
+        var randomQuickTimeEventTimer = Random.Range(2, 6);
+        Debug.Log(randomQuickTimeEventTimer);
+        Invoke("QuickTimeEvent2", randomQuickTimeEventTimer);
+    }
+
+    private void QuickTimeEvent2()
+    {
+        uiExclamationmarkSpriteRenderer.enabled = true;
+        isDone2 = true;
+        Invoke("FishingFailed", 2);
+    }
+
+    private void QuickTimeEvent3()
+    {
+        CancelInvoke("FishingFailed");
+        uiExclamationmarkSpriteRenderer.enabled = false;
+        isDone2 = false;
+        Invoke("FishingReelIn", 0);
+    }
+
+    private void FishingFailed()
+    {
+        isDone2 = false;
+        uiExclamationmarkSpriteRenderer.enabled = false;
+        _playerStatic = false;
+        _animator.SetBool("playerStatic", false);
+        _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        _animator.SetBool("fishingOnHookLoop", false);
+        _animator.SetBool("fishingFailed", true);
+        Debug.Log("FishingFailed, we'll get em' next time");
     }
 }
