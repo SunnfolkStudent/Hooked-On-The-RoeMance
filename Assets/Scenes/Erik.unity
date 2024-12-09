@@ -279,116 +279,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1053796972
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1053796975}
-  - component: {fileID: 1053796974}
-  - component: {fileID: 1053796973}
-  m_Layer: 0
-  m_Name: UIE
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &1053796973
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053796972}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a449c8609d16ec745a533a68b2514aaf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!212 &1053796974
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053796972}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -1744122234, guid: 6eef30ff1b1f0bd479e92ca9c013708e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.25, y: 2.25}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1053796975
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053796972}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 35491809}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1108529763
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,36 +532,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6777406517355208303, guid: 686e475612b0c8543b29e39192beac83, type: 3}
-      propertyPath: uiESpriteRenderer
-      value: 
-      objectReference: {fileID: 1053796974}
-    - target: {fileID: 6777406517355208303, guid: 686e475612b0c8543b29e39192beac83, type: 3}
-      propertyPath: fishingInTropical.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6777406517355208303, guid: 686e475612b0c8543b29e39192beac83, type: 3}
-      propertyPath: 'fishingInTropical.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 0b4171f87f8a2a549923b1da845a30d1, type: 2}
-    - target: {fileID: 6777406517355208303, guid: 686e475612b0c8543b29e39192beac83, type: 3}
-      propertyPath: 'fishingInTropical.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: f2ef00b762d12c94181821b8af9e2498, type: 2}
-    - target: {fileID: 6777406517355208303, guid: 686e475612b0c8543b29e39192beac83, type: 3}
-      propertyPath: 'fishingInTropical.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: e3f1f73a820148144a22965e206c9615, type: 2}
-    - target: {fileID: 6777406517355208303, guid: 686e475612b0c8543b29e39192beac83, type: 3}
-      propertyPath: 'fishingInTropical.Array.data[3]'
-      value: 
-      objectReference: {fileID: 11400000, guid: e5f1336fb290e2648a86fc93518544e9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 670435767863472311, guid: 686e475612b0c8543b29e39192beac83, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1053796975}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 686e475612b0c8543b29e39192beac83, type: 3}
 --- !u!1001 &6415715195916451159
@@ -682,10 +545,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1861314416020377494, guid: 184e15d17313f2a4abadb70d20e75b92, type: 3}
-      propertyPath: orthographic size
-      value: 8.4375
-      objectReference: {fileID: 0}
     - target: {fileID: 2706330354255382205, guid: 184e15d17313f2a4abadb70d20e75b92, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
