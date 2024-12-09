@@ -106,7 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  fishingInOcean: []
+  fishingInDeepsea: []
   fishingInTropical: []
+  fishingInColdwater: []
 --- !u!114 &8766615132982431685
 MonoBehaviour:
   m_ObjectHideFlags: 0

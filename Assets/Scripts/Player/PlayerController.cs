@@ -1,4 +1,7 @@
 using System.Collections.Generic;
+using Mono.Cecil.Cil;
+using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -29,6 +32,11 @@ public class PlayerController : MonoBehaviour
     private bool _fishingReelIn;
 
     public static bool _playerStatic;
+
+    public static ScriptableObject chosenOceanArrayEntry;
+    
+    [SerializeField] 
+    private SpriteRenderer uiESpriteRenderer;
     
     private void Start()
     {
@@ -130,10 +138,11 @@ public class PlayerController : MonoBehaviour
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             // Tropical is placeholder for testing, should be ocean
-            var chosenOceanArrayEntry = fishingInTropical[Random.Range(0, fishingInTropical.Count)];
+            //var chosenOceanArrayEntry = fishingInTropical[Random.Range(0, fishingInTropical.Count)];
+            chosenOceanArrayEntry = fishingInTropical[Random.Range(0, fishingInTropical.Count)];
+            Debug.Log(chosenOceanArrayEntry.name);
             Invoke("FishingIdle", 1);
             print("FishingOcean");
-            
         }
         if (_isInDeepsea)
         {
@@ -153,7 +162,6 @@ public class PlayerController : MonoBehaviour
     {
         _animator.SetBool("fishingThrow", false);
         _animator.SetBool("fishingIdle", true);
-        // TODO: Random time interval for ! pop-up when fishing, 3-7 seconds maybe
         Invoke("FishingOnHook", 1);
     }
 
@@ -171,6 +179,7 @@ public class PlayerController : MonoBehaviour
     {
         _animator.SetBool("fishingOnHook", false);
         _animator.SetBool("fishingOnHookLoop", true);
+        // TODO: Random time interval for ! pop-up when fishing, 3-7 seconds maybe
         Invoke("FishingReelIn", 1);
     }
     
@@ -189,7 +198,7 @@ public class PlayerController : MonoBehaviour
          then Kasper's script will make use of the Scrob that is chosen
          */
     }
-
+    
     private void FishingAfterReelInForTesting()
     {
         _animator.SetBool("fishingReelIn", false);
@@ -199,5 +208,16 @@ public class PlayerController : MonoBehaviour
         print("Success");
         // Run Kasper's dialogue mechanic after this, Rigidbody and _playerStatic should be set after his mechanic is done
         // Kasper's script will need the randomly chosen item from the respective fish biome array
+    }
+
+    private void UIPressE()
+    {
+        uiESpriteRenderer.enabled = true;
+        
+    }
+
+    private void UIEndE()
+    {
+        
     }
 }
