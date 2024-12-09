@@ -9,4 +9,9 @@ public class Testing : MonoBehaviour
         Debug.Log(fishData.habitat);
         Debug.Log(fishData.fishName);
     }
+
+    private void Update()
+    {
+        print(PlayerController.OceanEntryNumber);
+    }
 }

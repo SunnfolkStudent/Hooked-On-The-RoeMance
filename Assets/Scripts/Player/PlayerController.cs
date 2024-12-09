@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,9 +27,6 @@ public class PlayerController : MonoBehaviour
     
     public static bool _playerStatic;
     
-    // Could maybe be a string instead of ScriptableObject, need to test what happens when the second entry gets generated
-    public static ScriptableObject chosenOceanArrayEntry;
-    
     [SerializeField] 
     private SpriteRenderer uiESpriteRenderer;
     
@@ -52,16 +49,19 @@ public class PlayerController : MonoBehaviour
             AdjustPlayerFacingDirection();
         }
         
-        
         if (_input.interact && Time.time > _fishingCooldownTimer)
         {
             _fishingCooldownTimer = Time.time + _fishingCooldown;
             FishingMechanic();
         }
-            
         
         _animator.SetFloat("moveY", _input.movement.y);
         _animator.SetFloat("moveX", _input.movement.x);
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
     
     private void FixedUpdate()
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
                 if (!isDone)
                 {
                     // Can add time to the function invoke to fine tune when the UI element appears
-                    Invoke("UIPressE", 0);
+                    Invoke("Activate_E_UI_Element", 0);
                     isDone = true;
                 }
                 break;
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
                 _isInTropical = false;
                 if (!isDone)
                 {
-                    Invoke("UIPressE", 0);
+                    Invoke("Activate_E_UI_Element", 0);
                     isDone = true;
                 }
                 break;
@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
                 _isInTropical = true;
                 if (!isDone)
                 {
-                    Invoke("UIPressE", 0);
+                    Invoke("Activate_E_UI_Element", 0);
                     isDone = true;
                 }
                 break;
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
                 _isInTropical = false;
                 if (!isDone)
                 {
-                    Invoke("UIPressE", 0);
+                    Invoke("Activate_E_UI_Element", 0);
                     isDone = true;
                 }
                 break;
@@ -150,18 +150,14 @@ public class PlayerController : MonoBehaviour
     
     private void FishingMechanic()
     {
+        // Robin fiske musikk
         if (_isInOcean)
         {
             _playerStatic = true;
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
-            // Tropical is placeholder for testing, should be ocean
-            //var chosenOceanArrayEntry = fishingInTropical[Random.Range(0, fishingInTropical.Count)];
-            //chosenOceanArrayEntry = fishingInTropical[Random.Range(0, fishingInTropical.Count)];
-            //Debug.Log(chosenOceanArrayEntry.name);
-            OceanEntryNumber = Random.Range(0, 5);
-            print(OceanEntryNumber);
+            OceanEntryNumber = Random.Range(1, 5);
             Invoke("FishingIdle", 1);
             print("FishingOcean");
         }
@@ -219,23 +215,17 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingOnHook", false);
         _animator.SetBool("fishingOnHookLoop", true);
         // TODO: Quick time event, random time interval for ! pop-up when fishing, 3-7 seconds maybe
-        Invoke("FishingReelIn", 1);
+        Invoke("FishingReelIn", 8);
     }
     
-    // Might have to use a coroutine rather than Invoke on the functions before FishingReelIn
-    // has to do with taking player input (E) to reel in the catch
+    // Might have to use a coroutine rather than Invoke on the function before FishingReelIn
+    // has to do with taking player input (E) to reel in the catch (Quick time event)
     
     private void FishingReelIn()
     {
         _animator.SetBool("fishingOnHookLoop", false);
         _animator.SetBool("fishingReelIn", true);
-        // Might want to use a coroutine to wait for animation to finish before running pseudo-code
         Invoke("FishingAfterReelInForTesting", 1);
-        /*
-         Pseudo-code:
-         Randomly get one of the scriptable object items belonging to one of the specific biomes
-         then Kasper's script will make use of the Scrob that is chosen
-         */
     }
     
     private void FishingAfterReelInForTesting()
@@ -247,15 +237,18 @@ public class PlayerController : MonoBehaviour
         print("Success");
         // Run Kasper's dialogue mechanic after this, Rigidbody and _playerStatic should be set after his mechanic is done
         // Kasper's script will need the randomly chosen item from the respective biome array
+        
+        // Could have a public static bool here that is set to true when this function runs and then false in Kasper's script,
+        // that 
     }
     
-    private void UIPressE()
+    private void Activate_E_UI_Element()
     {
         uiESpriteRenderer.enabled = true;
-        Invoke("UIEndE", 2);
+        Invoke("Deactivate_E_UI_Element", 2);
     }
     
-    private void UIEndE()
+    private void Deactivate_E_UI_Element()
     {
         uiESpriteRenderer.enabled = false;
     }
