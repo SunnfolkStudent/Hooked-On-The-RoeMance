@@ -135,8 +135,6 @@ public class TypewriterTest : MonoBehaviour
         currentFish = Fish.Shark;
         // Getting the entire canvas
         _dialogueCanvas = GameObject.Find("Canvas");
-        
-        _erikNumber = PlayerController.OceanEntryNumber;
 
     }
     
@@ -186,6 +184,7 @@ public class TypewriterTest : MonoBehaviour
 
     public void RizzMode()
     {
+        _erikNumber = PlayerController.OceanEntryNumber;
         Debug.Log("erikNumber er ved Rizzmode: " + _erikNumber);
         // Enabling the different stuff
          _dialogueCanvas.SetActive(true);
