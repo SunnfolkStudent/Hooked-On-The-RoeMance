@@ -131,7 +131,6 @@ public class TypewriterTest : MonoBehaviour
         //RizzMode();
         
         // Prototyping
-        currentSCROB = allTheFish[_testFishSelected];
         currentFish = Fish.Shark;
         // Getting the entire canvas
         _dialogueCanvas = GameObject.Find("Canvas");
@@ -422,11 +421,11 @@ public class TypewriterTest : MonoBehaviour
 
     public void ChangeTextBoxes()
     {
-        _scrobDialogue = allTheFish[_testFishSelected].Dialogue[_currentDialogue];
-        _scrobOption1 = allTheFish[_testFishSelected].Option1[_currentDialogue];
-        _scrobOption2 = allTheFish[_testFishSelected].Option2[_currentDialogue];
-        _scrobOption3 = allTheFish[_testFishSelected].Option3[_currentDialogue];
-        _scrobOption4 = allTheFish[_testFishSelected].Option4[_currentDialogue];
+        _scrobDialogue = allTheFish[_erikNumber].Dialogue[_currentDialogue];
+        _scrobOption1 = allTheFish[_erikNumber].Option1[_currentDialogue];
+        _scrobOption2 = allTheFish[_erikNumber].Option2[_currentDialogue];
+        _scrobOption3 = allTheFish[_erikNumber].Option3[_currentDialogue];
+        _scrobOption4 = allTheFish[_erikNumber].Option4[_currentDialogue];
     }
 
     public void FinishDialogue()
@@ -451,7 +450,7 @@ public class TypewriterTest : MonoBehaviour
     {
         DisableOptions();
 
-        SetText(allTheFish[_testFishSelected].Dialogue[_currentDialogue]);
+        SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
     }
 
     
@@ -485,8 +484,8 @@ public class TypewriterTest : MonoBehaviour
         RemoveListeners();
         
         // Still prototyping
-        currentFish = Fish.Shark;
-        _scrobDialogue = TestJarkDialogue.Dialogue[_currentDialogue];
+        // currentFish = Fish.Shark;
+        _scrobDialogue = allTheFish[_erikNumber].Dialogue[_currentDialogue];
         
         
         
