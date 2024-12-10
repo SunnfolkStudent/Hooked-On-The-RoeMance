@@ -133,6 +133,7 @@ public class TypewriterTest : MonoBehaviour
         // Prototyping
         currentSCROB = allTheFish[_testFishSelected];
         currentFish = Fish.Shark;
+        // Getting the entire canvas
         _dialogueCanvas = GameObject.Find("Canvas");
         _dialogueCanvas.SetActive(false);
         
@@ -475,8 +476,7 @@ public class TypewriterTest : MonoBehaviour
         _button3ObjectText = _button3Object.GetComponentInChildren<TMP_Text>();
         _button4ObjectText = _button4Object.GetComponentInChildren<TMP_Text>();
         
-        // Getting the entire canvas
-        _dialogueCanvas = GameObject.Find("Canvas");
+        
         
         // Getting the main fish dialogue
         _textBox = GameObject.Find("FishText").GetComponent<TMP_Text>();
