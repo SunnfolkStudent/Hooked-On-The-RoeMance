@@ -132,7 +132,7 @@ public class TypewriterTest : MonoBehaviour
     {
         //RizzMode();
         
-        _spriteButtons = GameObject.FindGameObjectsWithTag("Buttons");
+        
         // Prototyping
         currentFish = Fish.Shark;
         // Getting the entire canvas
@@ -148,34 +148,34 @@ public class TypewriterTest : MonoBehaviour
         switch (_erikNumber)
         {
             case 1:
-                currentFish = Fish.Halibut;
-                break;
-            case 2:
-                currentFish = Fish.Koi;
-                break;
-            case 3:
-                currentFish = Fish.Clown;
-                break;
-            case 4:
                 currentFish = Fish.Shark;
                 break;
+            case 2:
+                currentFish = Fish.Jellyfish;
+                break;
+            case 3:
+                currentFish = Fish.Halibut;
+                break;
+            case 4:
+                currentFish = Fish.Angler;
+                break;
             case 5:
-                currentFish = Fish.Macarel;
+                currentFish = Fish.Blobfish;
                 break;
             case 6:
-                currentFish = Fish.Clam;
+                currentFish = Fish.Macarel;
                 break;
             case 7:
-                currentFish = Fish.Angler;
+                currentFish = Fish.Clown;
                 break;
             case 8:
                 currentFish = Fish.Octopus;
                 break;
             case 9:
-                currentFish = Fish.Jellyfish;
+                currentFish = Fish.Clam;
                 break;
             case 10:
-                currentFish = Fish.Blobfish;
+                currentFish = Fish.Koi;
                 break;    
         }
         
@@ -485,7 +485,7 @@ public class TypewriterTest : MonoBehaviour
         _button3ObjectText = _button3Object.GetComponentInChildren<TMP_Text>();
         _button4ObjectText = _button4Object.GetComponentInChildren<TMP_Text>();
         
-        
+        _spriteButtons = GameObject.FindGameObjectsWithTag("DialogueButton");
         
         // Getting the main fish dialogue
         _textBox = GameObject.Find("FishText").GetComponent<TMP_Text>();
@@ -495,8 +495,7 @@ public class TypewriterTest : MonoBehaviour
         RemoveListeners();
         
         // Still prototyping
-        // currentFish = Fish.Shark;
-        _scrobDialogue = allTheFish[_erikNumber].Dialogue[_currentDialogue];
+        
         
         // Delay for normal characters
         _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
@@ -526,10 +525,16 @@ public class TypewriterTest : MonoBehaviour
         _button3Object.SetActive(true);
         _button4Object.SetActive(true);
         
+        foreach (GameObject gameObject in _spriteButtons)
+        {
+            gameObject.SetActive(true);
+        }
+        
         //TODO update with relevant text
     }
     public void DisableOptions()
     {
+        Debug.Log("Disabling options");
         
         // _button1Object.SetActive(false);
         // _button2Object.SetActive(false);

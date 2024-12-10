@@ -153,16 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allTheFish:
-  - {fileID: 11400000, guid: 0b4171f87f8a2a549923b1da845a30d1, type: 2}
-  - {fileID: 11400000, guid: 8c199fbf0fcffa54b80f180f4013b607, type: 2}
-  - {fileID: 11400000, guid: c64c5d4c26470fd4383eb918e9787cf2, type: 2}
-  - {fileID: 11400000, guid: 3a147c4a10b3b4d4584e7029b19716f1, type: 2}
-  - {fileID: 11400000, guid: 7103787225f656c48a372bb4d0e29dc6, type: 2}
-  - {fileID: 11400000, guid: 7cd06e1af5328d04594cd8f93b1d2aa8, type: 2}
-  - {fileID: 11400000, guid: 3598795e97b564046b10fd54b2b11db1, type: 2}
-  - {fileID: 11400000, guid: 87c9996fe2dcc49498aec3c6da826f00, type: 2}
-  - {fileID: 11400000, guid: 6f283afbfbcc10e44a818ce6286b9144, type: 2}
-  - {fileID: 11400000, guid: b2d90b1e40057f642ab26ee9b9a2a34e, type: 2}
+  - {fileID: 11400000, guid: ab43b0a3e2d1af74ab64505c716626a9, type: 2}
+  - {fileID: 11400000, guid: b073c71c86375404a87a777f44436222, type: 2}
+  - {fileID: 11400000, guid: 0fdba33eb5361864089bcc7697bbc9a1, type: 2}
   TestJarkDialogue: {fileID: 0}
   currentFish: 0
   testText: "Yo, am I having d\xE9j\xE0 vu, bro? Didn\u2019t we just talk, dude?"
@@ -824,7 +817,7 @@ GameObject:
   - component: {fileID: 611008187}
   m_Layer: 6
   m_Name: Dialog_knapp_type_3
-  m_TagString: DialogueButton
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -990,7 +983,7 @@ GameObject:
   - component: {fileID: 631507949}
   m_Layer: 6
   m_Name: Dialog_knapp_type_2
-  m_TagString: DialogueButton
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1321,7 +1314,7 @@ GameObject:
   - component: {fileID: 835700607}
   m_Layer: 6
   m_Name: Dialog_knapp_type_4
-  m_TagString: DialogueButton
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2006,7 +1999,7 @@ GameObject:
   - component: {fileID: 1601323406}
   m_Layer: 6
   m_Name: Dialog_knapp_type_1
-  m_TagString: DialogueButton
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
