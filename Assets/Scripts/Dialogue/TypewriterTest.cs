@@ -64,6 +64,9 @@ public class TypewriterTest : MonoBehaviour
     private string _scrobOption2;
     private string _scrobOption3;
     private string _scrobOption4;
+    
+    // Slider
+    private Slider _slider;
 
     private PlayerController _yeah;
     
@@ -447,9 +450,10 @@ public class TypewriterTest : MonoBehaviour
         Debug.Log("Should exit dialogue here");
         RemoveListeners();
         NoRizz();
-        
-        // TODO: Call to ScoreManager to add 1 to total fish
-        
+        ScoreManager.CurrentScore++;
+
+        _slider.value += 1f;
+
     }
 
     public void NoRizz()
@@ -497,6 +501,7 @@ public class TypewriterTest : MonoBehaviour
         // Getting the main fish dialogue
         _textBox = GameObject.Find("FishText").GetComponent<TMP_Text>();
         _rizzSprite = GameObject.Find("FishSprite").GetComponent<SpriteRenderer>();
+        _slider = GameObject.Find("Slider").GetComponent<Slider>();
         
         
         #endregion
