@@ -62,11 +62,6 @@ public class PlayerController : MonoBehaviour
             FishingMechanic();
         }
         
-        // TODO: May want to add something to prevent the player from spamming E to pass the quick time event
-        // add a bool that's true while fishing
-        // if (_input.interact && new bool true && isDone2 == false)
-        // { Invoke fishingFailed }
-        
         if (_input.interact && fishingCanBeInterrupted && isDone2 == false)
         {
             CancelInvoke("QuickTimeEvent2");
