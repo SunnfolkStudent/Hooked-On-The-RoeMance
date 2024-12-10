@@ -186,6 +186,7 @@ public class TypewriterTest : MonoBehaviour
 
     public void RizzMode()
     {
+        Debug.Log("erikNumber er ved Rizzmode: " + _erikNumber);
         // Enabling the different stuff
          _dialogueCanvas.SetActive(true);
          SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
@@ -438,7 +439,7 @@ public class TypewriterTest : MonoBehaviour
     public void NoRizz()
     {
         // TODO Hide entire canvas? Don't think there's much more
-        
+        _currentDialogue = 0;
         DisableOptions();
         _dialogueCanvas.SetActive(false);
         // TODO: Add disabling the fish here
