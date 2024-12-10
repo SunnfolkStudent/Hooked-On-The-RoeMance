@@ -36,7 +36,7 @@ public class TypewriterTest : MonoBehaviour
     // Used for the two stages
     private int _currentDialogue = 0;
 
-    #region Buttons and dialogue fields
+    #region Lots of elements
     // All Buttons (for listeners)
     //private Button _button1;
     private Button _button1;
@@ -69,6 +69,16 @@ public class TypewriterTest : MonoBehaviour
     
     // The actual canvas
     private GameObject _dialogueCanvas;
+    
+    // Used to set what dialogue options are correct
+    private bool _firstDialogue;
+    private bool _secondDialogue;
+
+    private WaitForSeconds _simpleDelay;
+    private WaitForSeconds _interpunctuationDelay;
+
+    private float charactersPerSecond = 48;
+    private float interpunctuationDelay = 0.5f;
     #endregion
 
     public Fish currentFish;
@@ -88,12 +98,6 @@ public class TypewriterTest : MonoBehaviour
         Trash
     }
     
-    // Prototyping
-    [Header("Test String"), TextArea(5, 12)] 
-    [SerializeField] private string testText;
-    [TextArea(5, 12)]
-    [SerializeField] private string testText2;
-
     // Basic Typewriter Functionality
     private int _currentVisibleCharacterIndex;
     private Coroutine _typewriterCoroutine;
@@ -101,18 +105,8 @@ public class TypewriterTest : MonoBehaviour
     private GameObject[] _spriteButtons;
 
     
-    // Used to set what dialogue options are correct
-    private bool _firstDialogue;
-    private bool _secondDialogue;
-
-    private WaitForSeconds _simpleDelay;
-    private WaitForSeconds _interpunctuationDelay;
-
-    [Header("Typewriter Settings")] 
-    [SerializeField] private float charactersPerSecond = 48;
-    [SerializeField] private float interpunctuationDelay = 0.5f;
-
-
+    
+    
     // Skipping Functionality
     public bool CurrentlySkipping { get; private set; }
     private WaitForSeconds _skipDelay;
