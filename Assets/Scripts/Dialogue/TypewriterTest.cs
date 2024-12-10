@@ -133,6 +133,8 @@ public class TypewriterTest : MonoBehaviour
         // Prototyping
         currentSCROB = allTheFish[_testFishSelected];
         currentFish = Fish.Shark;
+        _dialogueCanvas = GameObject.Find("Canvas");
+        _dialogueCanvas.SetActive(false);
         
         _erikNumber = PlayerController.OceanEntryNumber;
 
@@ -186,7 +188,7 @@ public class TypewriterTest : MonoBehaviour
     {
         // Enabling the different stuff
          _dialogueCanvas.SetActive(true);
-         SetText(TestJarkDialogue.Dialogue[_currentDialogue]);
+         SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
         
         
         // TODO: add enabling the fish here
@@ -481,9 +483,7 @@ public class TypewriterTest : MonoBehaviour
         
         
         #endregion
-        
-        
-        //RemoveListeners();
+        RemoveListeners();
         
         // Still prototyping
         currentFish = Fish.Shark;
