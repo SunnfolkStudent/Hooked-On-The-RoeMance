@@ -1,0 +1,803 @@
+fileFormatVersion: 2
+guid: 61ab913cef5baea4f98ae794dba5ba6e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8426482518831626944
+    second: FishingSlapAfterSlap_Spritesheet_0
+  - first:
+      213: -5974437376552565261
+    second: FishingSlapAfterSlap_Spritesheet_1
+  - first:
+      213: -1702701954156136625
+    second: FishingSlapAfterSlap_Spritesheet_2
+  - first:
+      213: 3484014122593551896
+    second: FishingSlapAfterSlap_Spritesheet_3
+  - first:
+      213: -4092371678042389122
+    second: FishingSlapAfterSlap_Spritesheet_4
+  - first:
+      213: 4321585687462662832
+    second: FishingSlapAfterSlap_Spritesheet_5
+  - first:
+      213: -4943670316104910123
+    second: FishingSlapAfterSlap_Spritesheet_6
+  - first:
+      213: -1437389690488658910
+    second: FishingSlapAfterSlap_Spritesheet_7
+  - first:
+      213: 2954065571952482335
+    second: FishingSlapAfterSlap_Spritesheet_8
+  - first:
+      213: 4045639609047458873
+    second: FishingSlapAfterSlap_Spritesheet_9
+  - first:
+      213: -7104116546531773445
+    second: FishingSlapAfterSlap_Spritesheet_10
+  - first:
+      213: -1651259644636141696
+    second: FishingSlapAfterSlap_Spritesheet_11
+  - first:
+      213: -6679666028703989675
+    second: FishingSlapAfterSlap_Spritesheet_12
+  - first:
+      213: 2142464620936778265
+    second: FishingSlapAfterSlap_Spritesheet_13
+  - first:
+      213: 4207472927758469885
+    second: FishingSlapAfterSlap_Spritesheet_14
+  - first:
+      213: -1729163368304034115
+    second: FishingSlapAfterSlap_Spritesheet_15
+  - first:
+      213: 6428889999157052222
+    second: FishingSlapAfterSlap_Spritesheet_16
+  - first:
+      213: -3554458903024826501
+    second: FishingSlapAfterSlap_Spritesheet_17
+  - first:
+      213: -5104925877075732162
+    second: FishingSlapAfterSlap_Spritesheet_18
+  - first:
+      213: 5007170590567454136
+    second: FishingSlapAfterSlap_Spritesheet_19
+  - first:
+      213: -2363679858565131350
+    second: FishingSlapAfterSlap_Spritesheet_20
+  - first:
+      213: -1132920329406232702
+    second: FishingSlapAfterSlap_Spritesheet_21
+  - first:
+      213: 863882150270551288
+    second: FishingSlapAfterSlap_Spritesheet_22
+  - first:
+      213: 4394607307314430945
+    second: FishingSlapAfterSlap_Spritesheet_23
+  - first:
+      213: -1306436633880080811
+    second: FishingSlapAfterSlap_Spritesheet_24
+  - first:
+      213: 4836062306899069715
+    second: FishingSlapAfterSlap_Spritesheet_25
+  - first:
+      213: 7393089137407496655
+    second: FishingSlapAfterSlap_Spritesheet_26
+  - first:
+      213: -947014928932644636
+    second: FishingSlapAfterSlap_Spritesheet_27
+  - first:
+      213: 221387281475676769
+    second: FishingSlapAfterSlap_Spritesheet_28
+  - first:
+      213: -4296046125650428571
+    second: FishingSlapAfterSlap_Spritesheet_29
+  - first:
+      213: 3317797892410629526
+    second: FishingSlapAfterSlap_Spritesheet_30
+  - first:
+      213: 304212884060130433
+    second: FishingSlapAfterSlap_Spritesheet_31
+  - first:
+      213: 7014642384809874852
+    second: FishingSlapAfterSlap_Spritesheet_32
+  - first:
+      213: 4133337450564995603
+    second: FishingSlapAfterSlap_Spritesheet_33
+  - first:
+      213: -1966486120401057645
+    second: FishingSlapAfterSlap_Spritesheet_34
+  - first:
+      213: -417958702308296996
+    second: FishingSlapAfterSlap_Spritesheet_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Win64
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 172
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04580076bce1f0b80800000000000000
+      internalID: -8426482518831626944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 172
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f584c52cd8861da0800000000000000
+      internalID: -5974437376552565261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 172
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f47f8201899ce58e0800000000000000
+      internalID: -1702701954156136625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 172
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81602a9a264b95030800000000000000
+      internalID: 3484014122593551896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 172
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e750a6124a9f437c0800000000000000
+      internalID: -4092371678042389122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2df97394b59fb30800000000000000
+      internalID: 4321585687462662832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 129
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da7ce94a0e846bb0800000000000000
+      internalID: -4943670316104910123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 129
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2246d9e21bd5d0ce0800000000000000
+      internalID: -1437389690488658910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 129
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1850738cf2fef820800000000000000
+      internalID: 2954065571952482335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 129
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 934268a2acff42830800000000000000
+      internalID: 4045639609047458873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf3bff0e3ab196d90800000000000000
+      internalID: -7104116546531773445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 86
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08766891a1c8519e0800000000000000
+      internalID: -1651259644636141696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 86
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550cad4232f0d43a0800000000000000
+      internalID: -6679666028703989675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 86
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91257c2b8309bbd10800000000000000
+      internalID: 2142464620936778265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 86
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfacd1de552f36a30800000000000000
+      internalID: 4207472927758469885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 43
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbebe99f317c008e0800000000000000
+      internalID: -1729163368304034115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 43
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3341db7461083950800000000000000
+      internalID: 6428889999157052222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 43
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b770b74c5760caec0800000000000000
+      internalID: -3554458903024826501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 43
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e39933c36f8a729b0800000000000000
+      internalID: -5104925877075732162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 43
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b55e8c7f1b0d7540800000000000000
+      internalID: 5007170590567454136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa3da7321b5823fd0800000000000000
+      internalID: -2363679858565131350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2874cee76fe0740f0800000000000000
+      internalID: -1132920329406232702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f44da61d302dfb00800000000000000
+      internalID: 863882150270551288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingSlapAfterSlap_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e300d7ff08ccfc30800000000000000
+      internalID: 4394607307314430945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 63a9006a0d152514fb42bb015c3eec91
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FishingSlapAfterSlap_Spritesheet_0: -8426482518831626944
+      FishingSlapAfterSlap_Spritesheet_1: -5974437376552565261
+      FishingSlapAfterSlap_Spritesheet_10: -7104116546531773445
+      FishingSlapAfterSlap_Spritesheet_11: -1651259644636141696
+      FishingSlapAfterSlap_Spritesheet_12: -6679666028703989675
+      FishingSlapAfterSlap_Spritesheet_13: 2142464620936778265
+      FishingSlapAfterSlap_Spritesheet_14: 4207472927758469885
+      FishingSlapAfterSlap_Spritesheet_15: -1729163368304034115
+      FishingSlapAfterSlap_Spritesheet_16: 6428889999157052222
+      FishingSlapAfterSlap_Spritesheet_17: -3554458903024826501
+      FishingSlapAfterSlap_Spritesheet_18: -5104925877075732162
+      FishingSlapAfterSlap_Spritesheet_19: 5007170590567454136
+      FishingSlapAfterSlap_Spritesheet_2: -1702701954156136625
+      FishingSlapAfterSlap_Spritesheet_20: -2363679858565131350
+      FishingSlapAfterSlap_Spritesheet_21: -1132920329406232702
+      FishingSlapAfterSlap_Spritesheet_22: 863882150270551288
+      FishingSlapAfterSlap_Spritesheet_23: 4394607307314430945
+      FishingSlapAfterSlap_Spritesheet_3: 3484014122593551896
+      FishingSlapAfterSlap_Spritesheet_4: -4092371678042389122
+      FishingSlapAfterSlap_Spritesheet_5: 4321585687462662832
+      FishingSlapAfterSlap_Spritesheet_6: -4943670316104910123
+      FishingSlapAfterSlap_Spritesheet_7: -1437389690488658910
+      FishingSlapAfterSlap_Spritesheet_8: 2954065571952482335
+      FishingSlapAfterSlap_Spritesheet_9: 4045639609047458873
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

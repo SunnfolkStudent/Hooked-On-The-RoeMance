@@ -242,9 +242,9 @@ public class PlayerController : MonoBehaviour
     private void FishingAfterReelInForTesting()
     {
         _animator.SetBool("fishingReelIn", false);
-        _playerStatic = false;
+        //_playerStatic = false;
         _animator.SetBool("playerStatic", false);
-        _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        //_rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         MyScript.RizzMode();
         print("Success");
     }
