@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private bool _fishingReelIn;
     
     public static bool _playerStatic;
+    public static bool _isFishing = true;
     
     [SerializeField] 
     private SpriteRenderer uiESpriteRenderer;
@@ -56,9 +57,13 @@ public class PlayerController : MonoBehaviour
             AdjustPlayerFacingDirection();
         }
         
-        if (_input.interact && Time.time > _fishingCooldownTimer)
+        if (_input.interact && Time.time > _fishingCooldownTimer && _isFishing)
         {
+            _isFishing = false;
             _fishingCooldownTimer = Time.time + _fishingCooldown;
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             FishingMechanic();
         }
         
@@ -173,9 +178,9 @@ public class PlayerController : MonoBehaviour
         // Robin fiske musikk
         if (_isInOcean)
         {
-            _playerStatic = true;
-            _animator.SetBool("playerStatic", true);
-            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            //_playerStatic = true;
+            //_animator.SetBool("playerStatic", true);
+            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             OceanEntryNumber = Random.Range(0, 3);
             Invoke("FishingIdle", 1);
@@ -302,6 +307,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         _animator.SetBool("fishingOnHookLoop", false);
         _animator.SetBool("fishingFailed", true);
+        _isFishing = true;
         Debug.Log("FishingFailed, we'll get em' next time");
     }
 }

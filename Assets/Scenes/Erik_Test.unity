@@ -3184,7 +3184,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1861314416020377494, guid: 184e15d17313f2a4abadb70d20e75b92, type: 3}
       propertyPath: orthographic size
-      value: 9.6875
+      value: 8.4375
       objectReference: {fileID: 0}
     - target: {fileID: 2706330354255382205, guid: 184e15d17313f2a4abadb70d20e75b92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3229,6 +3229,10 @@ PrefabInstance:
     - target: {fileID: 3777998700706573238, guid: 184e15d17313f2a4abadb70d20e75b92, type: 3}
       propertyPath: m_Name
       value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198269715727157021, guid: 184e15d17313f2a4abadb70d20e75b92, type: 3}
+      propertyPath: m_GridSnapping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8163665152412203536, guid: 184e15d17313f2a4abadb70d20e75b92, type: 3}
       propertyPath: Target.TrackingTarget

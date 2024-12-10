@@ -465,6 +465,8 @@ public class TypewriterTest : MonoBehaviour
 
         PlayerController._playerStatic = false;
         PlayerController._rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        PlayerController._isFishing = true;
+        print("Does this run more than once once it has been called");
     }
 
     public void NextDialogue()
