@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public static int OceanEntryNumber, DeepseaEntryNumber, TropicalEntryNumber, ColdwaterEntryNumber;
     
     [Header("Fishing")] 
-    private float _fishingCooldown = 1f;
+    private float _fishingCooldown = 3f;
     private float _fishingCooldownTimer;
     private bool _fishingIdle;
     private bool _fishingThrow;
