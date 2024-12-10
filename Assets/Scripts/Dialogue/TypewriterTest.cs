@@ -29,6 +29,9 @@ public class TypewriterTest : MonoBehaviour
     public JarkData TestJarkDialogue;
     private int _testFishSelected = 0;
     private JarkData currentSCROB;
+    
+    public Sprite[] _fishSprites;
+    private SpriteRenderer _rizzSprite;
 
     private int _erikNumber;
     
@@ -124,9 +127,6 @@ public class TypewriterTest : MonoBehaviour
     
     private void Start()
     {
-        //RizzMode();
-        
-        
         // Prototyping
         currentFish = Fish.Shark;
         // Getting the entire canvas
@@ -141,8 +141,11 @@ public class TypewriterTest : MonoBehaviour
         // This is where all logic is calculated before calling for RizzMode()
         switch (_erikNumber)
         {
-            case 1:
+            case 0:
                 currentFish = Fish.Shark;
+                break;
+            case 1:
+                currentFish = Fish.Macarel;
                 break;
             case 2:
                 currentFish = Fish.Jellyfish;
@@ -160,17 +163,29 @@ public class TypewriterTest : MonoBehaviour
                 currentFish = Fish.Macarel;
                 break;
             case 7:
-                currentFish = Fish.Clown;
+                currentFish = Fish.Halibut;
                 break;
             case 8:
-                currentFish = Fish.Octopus;
+                currentFish = Fish.Halibut;
                 break;
             case 9:
-                currentFish = Fish.Clam;
+                currentFish = Fish.Koi;
                 break;
             case 10:
-                currentFish = Fish.Koi;
+                currentFish = Fish.Macarel;
                 break;    
+            case 11:
+                currentFish = Fish.Clown;
+                break;
+            case 12:
+                currentFish = Fish.Clam;
+                break;
+            case 13:
+                currentFish = Fish.Macarel;
+                break;
+            case 14:
+                currentFish = Fish.Halibut;
+                break;
         }
         
         RemoveListeners();
@@ -180,17 +195,13 @@ public class TypewriterTest : MonoBehaviour
 
     public void RizzMode()
     {
-        _erikNumber = PlayerController.OceanEntryNumber;
+        _erikNumber = PlayerController._kasperNumber;
         Debug.Log("erikNumber er ved Rizzmode: " + _erikNumber);
         // Enabling the different stuff
          _dialogueCanvas.SetActive(true);
+         _rizzSprite.sprite = _fishSprites[_erikNumber];
          SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
-        
-        
-        // TODO: add enabling the fish here
-        // TODO: Make dialogue windows popup
-        // TODO: Replace texts in main text and set revealed letters to zero
-        // TODO: have a switch case that contains enums for every fish
+         
         // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
         // TODO: get dialogue and options from PlayerController script
     }
@@ -437,6 +448,8 @@ public class TypewriterTest : MonoBehaviour
         RemoveListeners();
         NoRizz();
         
+        // TODO: Call to ScoreManager to add 1 to total fish
+        
     }
 
     public void NoRizz()
@@ -483,6 +496,7 @@ public class TypewriterTest : MonoBehaviour
         
         // Getting the main fish dialogue
         _textBox = GameObject.Find("FishText").GetComponent<TMP_Text>();
+        _rizzSprite = GameObject.Find("FishSprite").GetComponent<SpriteRenderer>();
         
         
         #endregion

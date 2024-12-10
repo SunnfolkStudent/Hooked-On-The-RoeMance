@@ -153,22 +153,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allTheFish:
-  - {fileID: 11400000, guid: 0b4171f87f8a2a549923b1da845a30d1, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 8c199fbf0fcffa54b80f180f4013b607, type: 2}
   - {fileID: 11400000, guid: c64c5d4c26470fd4383eb918e9787cf2, type: 2}
   - {fileID: 11400000, guid: 3a147c4a10b3b4d4584e7029b19716f1, type: 2}
   - {fileID: 11400000, guid: 7103787225f656c48a372bb4d0e29dc6, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: c64c5d4c26470fd4383eb918e9787cf2, type: 2}
+  - {fileID: 11400000, guid: c64c5d4c26470fd4383eb918e9787cf2, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 7cd06e1af5328d04594cd8f93b1d2aa8, type: 2}
   - {fileID: 11400000, guid: 3598795e97b564046b10fd54b2b11db1, type: 2}
   - {fileID: 11400000, guid: 87c9996fe2dcc49498aec3c6da826f00, type: 2}
   - {fileID: 11400000, guid: 6f283afbfbcc10e44a818ce6286b9144, type: 2}
-  - {fileID: 11400000, guid: b2d90b1e40057f642ab26ee9b9a2a34e, type: 2}
+  - {fileID: 11400000, guid: 7cd06e1af5328d04594cd8f93b1d2aa8, type: 2}
+  - {fileID: 11400000, guid: c64c5d4c26470fd4383eb918e9787cf2, type: 2}
   TestJarkDialogue: {fileID: 0}
+  _fishSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 4b61569e6986d22409efc4d1a921a77f, type: 3}
+  - {fileID: 21300000, guid: 07b3c5a5057853648a5cf48de2b9064d, type: 3}
+  - {fileID: 21300000, guid: 2ab838d139e824048a476f8b2d2d2ada, type: 3}
+  - {fileID: 21300000, guid: 3d14a9a7d5589104cb52ee78a1c96cad, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 07b3c5a5057853648a5cf48de2b9064d, type: 3}
+  - {fileID: 21300000, guid: 07b3c5a5057853648a5cf48de2b9064d, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: b76a949c2d265c144ae8adaf36beb476, type: 3}
+  - {fileID: 21300000, guid: 54d1db616d568664dbbb14223caf195e, type: 3}
+  - {fileID: 21300000, guid: 65945615f2df07d4f97d32f0759920a9, type: 3}
+  - {fileID: 21300000, guid: 70f054e55773f024a863334d2b56dd99, type: 3}
+  - {fileID: 21300000, guid: 29d7790fd1958424dae18047a99e8423, type: 3}
+  - {fileID: 21300000, guid: 07b3c5a5057853648a5cf48de2b9064d, type: 3}
   currentFish: 0
-  testText: "Yo, am I having d\xE9j\xE0 vu, bro? Didn\u2019t we just talk, dude?"
-  testText2: 
-  charactersPerSecond: 48
-  interpunctuationDelay: 0.5
   quickSkip: 0
   skipSpeedup: 5
   sendDoneDelay: 0.25
@@ -2274,15 +2291,15 @@ RectTransform:
   m_GameObject: {fileID: 1831533414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 40, z: 1}
+  m_LocalScale: {x: 64, y: 64, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 704829065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -194, y: 89}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 257}
+  m_SizeDelta: {x: 0, y: -111}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1831533416
 SpriteRenderer:
