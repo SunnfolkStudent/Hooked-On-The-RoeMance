@@ -199,7 +199,6 @@ public class TypewriterTest : MonoBehaviour
     public void RizzMode()
     {
         _erikNumber = PlayerController._kasperNumber;
-        Debug.Log("erikNumber er ved Rizzmode: " + _erikNumber);
         // Enabling the different stuff
          _dialogueCanvas.SetActive(true);
          _rizzSprite.sprite = _fishSprites[_erikNumber];
@@ -447,7 +446,7 @@ public class TypewriterTest : MonoBehaviour
 
     public void FinishDialogue()
     {
-        Debug.Log("Should exit dialogue here");
+        Debug.Log("currentDialogue burde være 0, den er: " + _currentDialogue);
         RemoveListeners();
         NoRizz();
         ScoreManager.CurrentScore++;
@@ -547,8 +546,6 @@ public class TypewriterTest : MonoBehaviour
     }
     public void DisableOptions()
     {
-        Debug.Log("Disabling options");
-        
         // _button1Object.SetActive(false);
         // _button2Object.SetActive(false);
         // _button3Object.SetActive(false);
@@ -591,7 +588,6 @@ public class TypewriterTest : MonoBehaviour
                 // THIS IS WHERE THE TEXT IS DONE!!!
                 // THIS IS WHERE THE TEXT IS DONE!!!
                 // THIS IS WHERE THE TEXT IS DONE!!!
-                Debug.Log("2nd try at text done");
                 EnableOptions();
                 DecideDialogue();
                 yield break;
