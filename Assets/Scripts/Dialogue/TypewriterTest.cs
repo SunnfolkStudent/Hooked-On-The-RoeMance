@@ -135,7 +135,6 @@ public class TypewriterTest : MonoBehaviour
         currentFish = Fish.Shark;
         // Getting the entire canvas
         _dialogueCanvas = GameObject.Find("Canvas");
-        _dialogueCanvas.SetActive(false);
         
         _erikNumber = PlayerController.OceanEntryNumber;
 
