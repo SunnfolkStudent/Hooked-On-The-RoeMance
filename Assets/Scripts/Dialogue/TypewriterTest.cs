@@ -134,7 +134,7 @@ public class TypewriterTest : MonoBehaviour
         currentFish = Fish.Shark;
         // Getting the entire canvas
         _dialogueCanvas = GameObject.Find("Canvas");
-
+        _dialogueCanvas.SetActive(false);
     }
     
     
@@ -426,6 +426,12 @@ public class TypewriterTest : MonoBehaviour
         _scrobOption2 = allTheFish[_erikNumber].Option2[_currentDialogue];
         _scrobOption3 = allTheFish[_erikNumber].Option3[_currentDialogue];
         _scrobOption4 = allTheFish[_erikNumber].Option4[_currentDialogue];
+
+        _button1ObjectText.text = allTheFish[_erikNumber].Option1[_currentDialogue];
+        _button2ObjectText.text = allTheFish[_erikNumber].Option2[_currentDialogue];
+        _button3ObjectText.text = allTheFish[_erikNumber].Option3[_currentDialogue];
+        _button4ObjectText.text = allTheFish[_erikNumber].Option4[_currentDialogue];
+        
     }
 
     public void FinishDialogue()
