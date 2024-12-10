@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private bool fishingCanBeInterrupted = false;
     
     public TypewriterTest MyScript;
+    public static int _kasperNumber;
     
     private void Start()
     {
@@ -184,6 +185,8 @@ public class PlayerController : MonoBehaviour
             OceanEntryNumber = Random.Range(0, 3);
             Invoke("FishingIdle", 1);
             print("FishingOcean");
+            _kasperNumber = OceanEntryNumber;
+            Debug.Log("Kasper sitt nummer er " + OceanEntryNumber);
         }
         if (_isInDeepsea)
         {
@@ -194,6 +197,8 @@ public class PlayerController : MonoBehaviour
             DeepseaEntryNumber = Random.Range(4, 7);
             Invoke("FishingIdle", 1);
             print("FishingDeepsea");
+            _kasperNumber = DeepseaEntryNumber;
+            Debug.Log("Kasper sitt nummer er " + DeepseaEntryNumber);
         }
         if (_isInTropical)
         {
@@ -204,6 +209,8 @@ public class PlayerController : MonoBehaviour
             TropicalEntryNumber = Random.Range(8, 11);
             Invoke("FishingIdle", 1);
             print("FishingTropical");
+            _kasperNumber = TropicalEntryNumber;
+            Debug.Log("Kasper sitt nummer er " + TropicalEntryNumber);
         }
         if (_isInColdwater)
         {
@@ -214,6 +221,8 @@ public class PlayerController : MonoBehaviour
             ColdwaterEntryNumber = Random.Range(12, 15);
             Invoke("FishingIdle", 1);
             print("FishingColdwater");
+            _kasperNumber = ColdwaterEntryNumber;
+            Debug.Log("Kasper sitt nummer er " + ColdwaterEntryNumber);
         }
     }
 
@@ -269,7 +278,7 @@ public class PlayerController : MonoBehaviour
     private void QuickTimeEvent()
     {
         var randomQuickTimeEventTimer = Random.Range(2, 6);
-        Debug.Log(randomQuickTimeEventTimer);
+        // Debug.Log(randomQuickTimeEventTimer);
         Invoke("QuickTimeEvent2", randomQuickTimeEventTimer);
     }
 

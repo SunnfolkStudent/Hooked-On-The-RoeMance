@@ -18,20 +18,20 @@ MonoBehaviour:
   fishName: 
   habitat: 0
   Dialogue:
-  - 
-  - 
+  - "Why won\u2019t people leave me alone\u2026 What did I do wrong?"
+  - "But\u2026 look at me\u2026"
   Option1:
-  - 
-  - 
+  - "You\u2019re quite the catch "
+  - "Actually\u2026 you\u2019re kinda gross..."
   Option2:
-  - 
-  - 
+  - "You\u2019re so ugly!"
+  - I see quite the catch
   Option3:
-  - 
-  - 
+  - "Don\u2019t be so shellfless"
+  - "Don\u2019t judge a shell by its shine "
   Option4:
-  - 
-  - 
+  - <b>You</b> are wrong
+  - "I don\u2019t see anything wrong with you"
   music1: 
   music2: 
   voice1: 
