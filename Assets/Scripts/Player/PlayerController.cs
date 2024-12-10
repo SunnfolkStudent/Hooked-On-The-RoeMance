@@ -36,8 +36,8 @@ public class PlayerController : MonoBehaviour
     private float _uiCooldownTimer;
     private bool isDone = false;
     private bool isDone2 = false;
-
-    //public GameObject Kasper;
+    private bool fishingCanBeInterrupted = false;
+    
     public TypewriterTest MyScript;
     
     private void Start()
@@ -66,7 +66,14 @@ public class PlayerController : MonoBehaviour
         // if (_input.interact && new bool true && isDone2 == false)
         // { Invoke fishingFailed }
         
-        if (_input.interact && isDone2 == true)
+        if (_input.interact && fishingCanBeInterrupted && isDone2 == false)
+        {
+            CancelInvoke("QuickTimeEvent2");
+            Invoke("FishingFailed", 0);
+            print("Test");
+        }
+        
+        if (_input.interact && isDone2)
         {
             Invoke("QuickTimeEvent3", 0);
             print("Invoking QuickTimeEvent3");
@@ -230,6 +237,7 @@ public class PlayerController : MonoBehaviour
         Invoke("QuickTimeEvent", 0);
         _animator.SetBool("fishingOnHook", false);
         _animator.SetBool("fishingOnHookLoop", true);
+        fishingCanBeInterrupted = true;
     }
     
     private void FishingReelIn()
@@ -242,9 +250,7 @@ public class PlayerController : MonoBehaviour
     private void FishingAfterReelInForTesting()
     {
         _animator.SetBool("fishingReelIn", false);
-        //_playerStatic = false;
         _animator.SetBool("playerStatic", false);
-        //_rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         MyScript.RizzMode();
         print("Success");
     }
@@ -284,6 +290,7 @@ public class PlayerController : MonoBehaviour
 
     private void FishingFailed()
     {
+        fishingCanBeInterrupted = false;
         isDone2 = false;
         uiExclamationmarkSpriteRenderer.enabled = false;
         _playerStatic = false;
