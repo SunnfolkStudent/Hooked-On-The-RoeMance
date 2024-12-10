@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
-            OceanEntryNumber = Random.Range(1, 5);
+            OceanEntryNumber = Random.Range(0, 3);
             Invoke("FishingIdle", 1);
             print("FishingOcean");
         }
@@ -181,7 +181,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
-            // TODO: Get random number here for example from [3, 6]
+            DeepseaEntryNumber = Random.Range(4, 7);
             Invoke("FishingIdle", 1);
             print("FishingDeepsea");
         }
@@ -191,7 +191,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
-            // TODO: Get random number here for example from [3, 6]
+            TropicalEntryNumber = Random.Range(8, 11);
             Invoke("FishingIdle", 1);
             print("FishingTropical");
         }
@@ -201,7 +201,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
-            // TODO: Get random number here for example from [3, 6]
+            ColdwaterEntryNumber = Random.Range(12, 15);
             Invoke("FishingIdle", 1);
             print("FishingColdwater");
         }
