@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,8 +27,10 @@ public class TypewriterTest : MonoBehaviour
     // CHANGE HERE
     public JarkData[] allTheFish;
     public JarkData TestJarkDialogue;
-    private int _testFishSelected;
+    private int _testFishSelected = 0;
     private JarkData currentSCROB;
+
+    private int _erikNumber;
     
     
     // Used for the two stages
@@ -60,8 +64,6 @@ public class TypewriterTest : MonoBehaviour
 
     private PlayerController _yeah;
     
-    
-    
     // The actual fish dialogue
     private TMP_Text _textBox;
     
@@ -82,7 +84,8 @@ public class TypewriterTest : MonoBehaviour
         Halibut,
         Clam,
         Blobfish,
-        Jellyfish
+        Jellyfish,
+        Trash
     }
     
     // Prototyping
@@ -125,18 +128,55 @@ public class TypewriterTest : MonoBehaviour
     
     private void Start()
     {
-        RizzMode();
+        //RizzMode();
         
         // Prototyping
         currentSCROB = allTheFish[_testFishSelected];
         currentFish = Fish.Shark;
+        
+        _erikNumber = PlayerController.OceanEntryNumber;
 
     }
     
     
     public void DecideFish()
     {
+        
         // This is where all logic is calculated before calling for RizzMode()
+        switch (_erikNumber)
+        {
+            case 1:
+                currentFish = Fish.Halibut;
+                break;
+            case 2:
+                currentFish = Fish.Koi;
+                break;
+            case 3:
+                currentFish = Fish.Clown;
+                break;
+            case 4:
+                currentFish = Fish.Shark;
+                break;
+            case 5:
+                currentFish = Fish.Macarel;
+                break;
+            case 6:
+                currentFish = Fish.Clam;
+                break;
+            case 7:
+                currentFish = Fish.Angler;
+                break;
+            case 8:
+                currentFish = Fish.Octopus;
+                break;
+            case 9:
+                currentFish = Fish.Jellyfish;
+                break;
+            case 10:
+                currentFish = Fish.Blobfish;
+                break;    
+        }
+        
         RemoveListeners();
         DecideDialogue();
         RizzMode();
