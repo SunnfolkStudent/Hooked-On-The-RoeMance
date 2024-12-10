@@ -431,7 +431,9 @@ public class TypewriterTest : MonoBehaviour
     public void FinishDialogue()
     {
         Debug.Log("Should exit dialogue here");
+        RemoveListeners();
         NoRizz();
+        
     }
 
     public void NoRizz()
