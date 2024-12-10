@@ -15,11 +15,11 @@ MonoBehaviour:
   randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: Jark
+  fishName: 
   habitat: 0
   Dialogue:
-  - "Yo, am I having d\xE9j\xE0 vu, <b>bro</b>? Didn\u2019t we just talk, <b>dude</b>?"
-  - Right? I knew we had a connection, <b>bro</b>! How about you and I go for a ride?
+  - "Yo, am I having d\xE9j\xE0 vu, bro? Didn\u2019t we just talk, dude?"
+  - Right? I knew we had a connection, bro! How about you and I go for a ride?
   Option1:
   - "Yeah\u2026 we did!"
   - Sure, take a perch in my boat
@@ -32,3 +32,8 @@ MonoBehaviour:
   Option4:
   - "You <b>do</b> give me the creeps\u2026"
   - Sure, bro!
+  music1: 
+  music2: 
+  voice1: 
+  voice2: 
+  voice3: 

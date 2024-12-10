@@ -98,6 +98,8 @@ public class TypewriterTest : MonoBehaviour
     private int _currentVisibleCharacterIndex;
     private Coroutine _typewriterCoroutine;
 
+    private GameObject[] _spriteButtons;
+
     
     // Used to set what dialogue options are correct
     private bool _firstDialogue;
@@ -130,6 +132,7 @@ public class TypewriterTest : MonoBehaviour
     {
         //RizzMode();
         
+        _spriteButtons = GameObject.FindGameObjectsWithTag("Buttons");
         // Prototyping
         currentFish = Fish.Shark;
         // Getting the entire canvas
@@ -495,14 +498,6 @@ public class TypewriterTest : MonoBehaviour
         // currentFish = Fish.Shark;
         _scrobDialogue = allTheFish[_erikNumber].Dialogue[_currentDialogue];
         
-        
-        
-        // _button1.onClick.AddListener(NextDialogue);
-        // _button2.onClick.AddListener(NextDialogue);
-        // _button3.onClick.AddListener(NextDialogue);
-        // _button4.onClick.AddListener(NextDialogue);
-
-        
         // Delay for normal characters
         _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
         // Delay for interpunctuations
@@ -535,10 +530,15 @@ public class TypewriterTest : MonoBehaviour
     }
     public void DisableOptions()
     {
-        _button1Object.SetActive(false);
-        _button2Object.SetActive(false);
-        _button3Object.SetActive(false);
-        _button4Object.SetActive(false);
+        
+        // _button1Object.SetActive(false);
+        // _button2Object.SetActive(false);
+        // _button3Object.SetActive(false);
+        // _button4Object.SetActive(false);
+        foreach (GameObject gameObject in _spriteButtons)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void SetText(string text)

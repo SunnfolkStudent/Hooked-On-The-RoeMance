@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c96fc9275c8654ca2dc544fe6d76b7, type: 3}
-  m_Name: GoldDiggerKoi
+  m_Name: Augustopus
   m_EditorClassIdentifier: 
   randomNumber: 0
   sprite: {fileID: 0}
@@ -18,22 +18,20 @@ MonoBehaviour:
   fishName: 
   habitat: 0
   Dialogue:
-  - "My, aren\u2019t you a fine specimen? Royal yellow, verdant green, all at once.
-    Say, aren\u2019t you quite the wealthy one?"
-  - "Now, that\u2019s a tempting~ offer. Now, what would like me to wear to this
-    exclusive occasion?"
+  - 
+  - 
   Option1:
-  - Of course, I own 1000 shares of Nvidia!
-  - "I\u2019d like to see you in some fishnets"
+  - 
+  - 
   Option2:
-  - Eh, I get by
-  - "I don\u2019t care"
+  - 
+  - 
   Option3:
-  - "If you come back to my place, I\u2019ll show you my sand dollars"
-  - Wear a nice dress for me
+  - 
+  - 
   Option4:
-  - Yeah? How could you tell?
-  - Eh, something basic
+  - 
+  - 
   music1: 
   music2: 
   voice1: 

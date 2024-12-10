@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c96fc9275c8654ca2dc544fe6d76b7, type: 3}
-  m_Name: GoldDiggerKoi
+  m_Name: Shellyfish
   m_EditorClassIdentifier: 
   randomNumber: 0
   sprite: {fileID: 0}
@@ -18,22 +18,22 @@ MonoBehaviour:
   fishName: 
   habitat: 0
   Dialogue:
-  - "My, aren\u2019t you a fine specimen? Royal yellow, verdant green, all at once.
-    Say, aren\u2019t you quite the wealthy one?"
-  - "Now, that\u2019s a tempting~ offer. Now, what would like me to wear to this
-    exclusive occasion?"
+  - "Oh\u2026 h-hi\u2026 I was wondering\u2026 what do you think of the ocean at
+    night? I think it\u2019s so peaceful..."
+  - "Right? I\u2026 wanna ask you something. So\u2026 could I come with you o-on
+    the boat?"
   Option1:
-  - Of course, I own 1000 shares of Nvidia!
-  - "I\u2019d like to see you in some fishnets"
+  - I sea what you mean
+  - Crabsolutely
   Option2:
-  - Eh, I get by
-  - "I don\u2019t care"
+  - "Nah, it\u2019s kinda boring"
+  - No.
   Option3:
-  - "If you come back to my place, I\u2019ll show you my sand dollars"
-  - Wear a nice dress for me
+  - "I don\u2019t really like the ocean"
+  - "Let\u2019s make it ofishial"
   Option4:
-  - Yeah? How could you tell?
-  - Eh, something basic
+  - "It\u2019s beautiful"
+  - "I hope you\u2019re squdding. <b>You</b>, on <b>my</b> boat?"
   music1: 
   music2: 
   voice1: 
