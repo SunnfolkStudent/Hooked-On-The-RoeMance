@@ -153,12 +153,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allTheFish:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 0b4171f87f8a2a549923b1da845a30d1, type: 2}
+  - {fileID: 11400000, guid: 7cd06e1af5328d04594cd8f93b1d2aa8, type: 2}
   - {fileID: 11400000, guid: 8c199fbf0fcffa54b80f180f4013b607, type: 2}
   - {fileID: 11400000, guid: c64c5d4c26470fd4383eb918e9787cf2, type: 2}
   - {fileID: 11400000, guid: 3a147c4a10b3b4d4584e7029b19716f1, type: 2}
   - {fileID: 11400000, guid: 7103787225f656c48a372bb4d0e29dc6, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 7cd06e1af5328d04594cd8f93b1d2aa8, type: 2}
   - {fileID: 11400000, guid: c64c5d4c26470fd4383eb918e9787cf2, type: 2}
   - {fileID: 11400000, guid: c64c5d4c26470fd4383eb918e9787cf2, type: 2}
   - {fileID: 0}
@@ -171,11 +172,12 @@ MonoBehaviour:
   TestJarkDialogue: {fileID: 0}
   _fishSprites:
   - {fileID: 0}
+  - {fileID: 21300000, guid: da93c036cd538d74db2c3f672968824c, type: 3}
   - {fileID: 21300000, guid: 4b61569e6986d22409efc4d1a921a77f, type: 3}
   - {fileID: 21300000, guid: 07b3c5a5057853648a5cf48de2b9064d, type: 3}
   - {fileID: 21300000, guid: 2ab838d139e824048a476f8b2d2d2ada, type: 3}
   - {fileID: 21300000, guid: 3d14a9a7d5589104cb52ee78a1c96cad, type: 3}
-  - {fileID: 0}
+  - {fileID: 3866962215868304174, guid: 58942086adc90fb4f9ef9903212e91b5, type: 3}
   - {fileID: 21300000, guid: 07b3c5a5057853648a5cf48de2b9064d, type: 3}
   - {fileID: 21300000, guid: 07b3c5a5057853648a5cf48de2b9064d, type: 3}
   - {fileID: 0}
