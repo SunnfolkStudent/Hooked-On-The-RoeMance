@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     
     [Header("Biomes")]
-    private bool _isInOcean, _isInDeepsea, _isInTropical, _isInColdwater;
+    public static bool _isInOcean, _isInDeepsea, _isInTropical, _isInColdwater;
     
     [Header("Biome entry numbers")] 
     public static int OceanEntryNumber, DeepseaEntryNumber, TropicalEntryNumber, ColdwaterEntryNumber;
