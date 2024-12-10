@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     private float _uiCooldownTimer;
     private bool isDone = false;
     private bool isDone2 = false;
+
+    //public GameObject Kasper;
+    public TypewriterTest MyScript;
     
     private void Start()
     {
@@ -242,6 +245,7 @@ public class PlayerController : MonoBehaviour
         _playerStatic = false;
         _animator.SetBool("playerStatic", false);
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        MyScript.RizzMode();
         print("Success");
     }
     
