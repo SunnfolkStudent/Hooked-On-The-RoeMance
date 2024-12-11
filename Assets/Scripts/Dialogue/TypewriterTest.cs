@@ -135,9 +135,6 @@ public class TypewriterTest : MonoBehaviour
     
     private void Start()
     {
-        caughtFishes.Add(2);
-        if (caughtFishes.Contains(2))
-            Debug.Log("EZ");
         // Prototyping
         currentFish = Fish.Shark;
         // Getting the entire canvas
@@ -455,7 +452,8 @@ public class TypewriterTest : MonoBehaviour
         RemoveListeners();
         NoRizz();
         ScoreManager.CurrentScore--;
-        _slider.value -= 1f;
+        if (_slider.value >= 1f) 
+            _slider.value -= 1f;
     }
 
     public void ChangeTextBoxes()

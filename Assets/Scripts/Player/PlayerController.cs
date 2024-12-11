@@ -200,6 +200,8 @@ public class PlayerController : MonoBehaviour
             Invoke("FishingIdle", 1);
             print("FishingDeepsea");
             _kasperNumber = DeepseaEntryNumber;
+            if (MyScript.caughtFishes.Contains(_kasperNumber))
+                _kasperNumber = 16;
             Debug.Log("Kasper sitt nummer er " + DeepseaEntryNumber);
         }
         if (_isInTropical)
@@ -212,6 +214,8 @@ public class PlayerController : MonoBehaviour
             Invoke("FishingIdle", 1);
             print("FishingTropical");
             _kasperNumber = TropicalEntryNumber;
+            if (MyScript.caughtFishes.Contains(_kasperNumber))
+                _kasperNumber = 16;
             Debug.Log("Kasper sitt nummer er " + TropicalEntryNumber);
         }
         if (_isInColdwater)
@@ -224,6 +228,8 @@ public class PlayerController : MonoBehaviour
             Invoke("FishingIdle", 1);
             print("FishingColdwater");
             _kasperNumber = ColdwaterEntryNumber;
+            if (MyScript.caughtFishes.Contains(_kasperNumber))
+                _kasperNumber = 16;
             Debug.Log("Kasper sitt nummer er " + ColdwaterEntryNumber);
         }
     }
