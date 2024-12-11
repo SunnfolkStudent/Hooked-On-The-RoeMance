@@ -64,6 +64,9 @@ public class TypewriterTest : MonoBehaviour
     private string _scrobOption2;
     private string _scrobOption3;
     private string _scrobOption4;
+
+    public Sprite[] weightSprites;
+    private SpriteRenderer uiSprite;
     
     // Slider
     private Slider _slider;
@@ -107,11 +110,7 @@ public class TypewriterTest : MonoBehaviour
     // Basic Typewriter Functionality
     private int _currentVisibleCharacterIndex;
     private Coroutine _typewriterCoroutine;
-
     private GameObject[] _spriteButtons;
-
-    
-    
     
     // Skipping Functionality
     public bool CurrentlySkipping { get; private set; }
@@ -427,6 +426,10 @@ public class TypewriterTest : MonoBehaviour
     public void WrongDialogue()
     {
         Debug.Log("You dumbass bitch");
+        RemoveListeners();
+        NoRizz();
+        ScoreManager.CurrentScore--;
+        _slider.value -= 1f;
     }
 
     public void ChangeTextBoxes()
@@ -450,7 +453,6 @@ public class TypewriterTest : MonoBehaviour
         RemoveListeners();
         NoRizz();
         ScoreManager.CurrentScore++;
-
         _slider.value += 1f;
 
     }

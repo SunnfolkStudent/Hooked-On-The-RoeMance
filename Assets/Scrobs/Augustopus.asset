@@ -18,20 +18,21 @@ MonoBehaviour:
   fishName: 
   habitat: 0
   Dialogue:
-  - 
-  - 
+  - "You\u2019re the first man who\u2019s managed to reel me in. Do you like raisins?
+    How do you feel about a date?"
+  - Wait. Really? Then, where would you want to go?
   Option1:
-  - 
-  - 
+  - No, they taste yucky
+  - "I\u2019ve got tickets for a concert with Wu Tang Clam"
   Option2:
-  - 
-  - 
+  - "I\u2019ll take that opportunaty"
+  - Anywhere with the gill of my dreams
   Option3:
-  - 
-  - 
+  - "As long as you\u2019re paying"
+  - My basement. Now.
   Option4:
-  - 
-  - 
+  - Sure
+  - "Let\u2019s head to the Reelim Inn"
   music1: 
   music2: 
   voice1: 

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class ScoreManager : MonoBehaviour
 {
     public static int CurrentScore;
+
+    private Sprite[] weightSprites;
+    
     void FixedUpdate()
     {
         if (CurrentScore >= 6)
@@ -14,4 +17,6 @@ public class ScoreManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    
+    
 }
