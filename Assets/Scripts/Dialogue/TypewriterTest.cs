@@ -25,7 +25,9 @@ public class TypewriterTest : MonoBehaviour
      * 10. Melancholic Blobfish
      */
     #endregion
-    
+
+
+    private bool e;
     // CHANGE HERE
     public JarkData[] allTheFish;
     public JarkData TestJarkDialogue;
@@ -36,6 +38,8 @@ public class TypewriterTest : MonoBehaviour
     private SpriteRenderer _rizzSprite;
 
     private int _erikNumber;
+
+    public List<int> caughtFishes = new List<int>();
     
     
     // Used for the two stages
@@ -131,11 +135,15 @@ public class TypewriterTest : MonoBehaviour
     
     private void Start()
     {
+        caughtFishes.Add(2);
+        if (caughtFishes.Contains(2))
+            Debug.Log("EZ");
         // Prototyping
         currentFish = Fish.Shark;
         // Getting the entire canvas
         _dialogueCanvas = GameObject.Find("Canvas");
         _dialogueCanvas.SetActive(false);
+        
     }
     
     
@@ -182,13 +190,19 @@ public class TypewriterTest : MonoBehaviour
                 currentFish = Fish.Clown;
                 break;
             case 12:
-                currentFish = Fish.Clam;
+                currentFish = Fish.Octopus;
                 break;
             case 13:
-                currentFish = Fish.Macarel;
+                currentFish = Fish.Clam;
                 break;
             case 14:
+                currentFish = Fish.Macarel;
+                break;
+            case 15:
                 currentFish = Fish.Halibut;
+                break;
+            case 16:
+                currentFish = Fish.Trash;
                 break;
         }
         
@@ -254,11 +268,11 @@ public class TypewriterTest : MonoBehaviour
                     ChangeTextBoxes();
                 }
                 break;
-            case Fish.Macarel: // TO BE COMPLETED
+            case Fish.Macarel:
                 if (_currentDialogue >= 0)
                 {
                     _button1.onClick.AddListener(CorrectDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(CorrectDialogue);
                     _button3.onClick.AddListener(CorrectDialogue);
                     _button4.onClick.AddListener(CorrectDialogue);
                     ChangeTextBoxes();
@@ -267,38 +281,38 @@ public class TypewriterTest : MonoBehaviour
                 if (_currentDialogue == 1)
                 {
                     RemoveListeners();
-                    _button1.onClick.AddListener(FinishDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
-                    _button3.onClick.AddListener(FinishDialogue);
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(FinishDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
                     _button4.onClick.AddListener(FinishDialogue);
                     ChangeTextBoxes();
                 }
                 break;
-            case Fish.Angler: // TO BE COMPLETED
+            case Fish.Angler: 
                 if (_currentDialogue >= 0)
                 {
-                    _button1.onClick.AddListener(CorrectDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(CorrectDialogue);
                     _button3.onClick.AddListener(CorrectDialogue);
-                    _button4.onClick.AddListener(CorrectDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
                     ChangeTextBoxes();
                     
                 }
                 if (_currentDialogue == 1)
                 {
                     RemoveListeners();
-                    _button1.onClick.AddListener(FinishDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
-                    _button3.onClick.AddListener(FinishDialogue);
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(FinishDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
                     _button4.onClick.AddListener(FinishDialogue);
                     ChangeTextBoxes();
                 }
                 break;
-            case Fish.Octopus: // TO BE COMPLETED
+            case Fish.Octopus: 
                 if (_currentDialogue >= 0)
                 {
-                    _button1.onClick.AddListener(CorrectDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(CorrectDialogue);
                     _button3.onClick.AddListener(CorrectDialogue);
                     _button4.onClick.AddListener(CorrectDialogue);
                     ChangeTextBoxes();
@@ -308,8 +322,8 @@ public class TypewriterTest : MonoBehaviour
                 {
                     RemoveListeners();
                     _button1.onClick.AddListener(FinishDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
-                    _button3.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(FinishDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
                     _button4.onClick.AddListener(FinishDialogue);
                     ChangeTextBoxes();
                 }
@@ -414,6 +428,16 @@ public class TypewriterTest : MonoBehaviour
                     ChangeTextBoxes();
                 }
                 break;
+            case Fish.Trash:
+                if (_currentDialogue >= 0)
+                {
+                    _button1.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(FinishDialogue);
+                    _button3.onClick.AddListener(FinishDialogue);
+                    _button4.onClick.AddListener(FinishDialogue);
+                    ChangeTextBoxes();
+                }
+                break;
         }
         #endregion
     }
@@ -427,7 +451,7 @@ public class TypewriterTest : MonoBehaviour
 
     public void WrongDialogue()
     {
-        Debug.Log("You dumbass bitch");
+        Debug.Log("Wrong Dialogue");
         RemoveListeners();
         NoRizz();
         ScoreManager.CurrentScore--;
@@ -454,8 +478,12 @@ public class TypewriterTest : MonoBehaviour
         Debug.Log("currentDialogue burde være 0, den er: " + _currentDialogue);
         RemoveListeners();
         NoRizz();
+        if (_erikNumber == 16)
+            return;
+        
         ScoreManager.CurrentScore++;
         _slider.value += 1f;
+        caughtFishes.Add(_erikNumber);
 
     }
 

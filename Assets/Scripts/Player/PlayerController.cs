@@ -186,6 +186,8 @@ public class PlayerController : MonoBehaviour
             Invoke("FishingIdle", 1);
             print("FishingOcean");
             _kasperNumber = OceanEntryNumber;
+            if (MyScript.caughtFishes.Contains(_kasperNumber))
+                _kasperNumber = 16;
             Debug.Log("Kasper sitt nummer er " + OceanEntryNumber);
         }
         if (_isInDeepsea)

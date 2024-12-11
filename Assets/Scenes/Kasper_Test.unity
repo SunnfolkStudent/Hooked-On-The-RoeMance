@@ -259,6 +259,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6f283afbfbcc10e44a818ce6286b9144, type: 2}
   - {fileID: 11400000, guid: 7cd06e1af5328d04594cd8f93b1d2aa8, type: 2}
   - {fileID: 11400000, guid: c64c5d4c26470fd4383eb918e9787cf2, type: 2}
+  - {fileID: 11400000, guid: fe42a339dd5dfdb4ab1533190d0d2184, type: 2}
   TestJarkDialogue: {fileID: 0}
   _fishSprites:
   - {fileID: 21300000, guid: e71133b4cc089c840ab8000ec63fd10f, type: 3}
@@ -277,6 +278,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 70f054e55773f024a863334d2b56dd99, type: 3}
   - {fileID: 21300000, guid: 29d7790fd1958424dae18047a99e8423, type: 3}
   - {fileID: 21300000, guid: 07b3c5a5057853648a5cf48de2b9064d, type: 3}
+  - {fileID: 0}
+  caughtFishes: 
   weightSprites: []
   currentFish: 0
   quickSkip: 0
