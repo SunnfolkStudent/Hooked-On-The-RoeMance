@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private float _uiCooldownTimer;
     private bool isDone = false;
     private bool isDone2 = false;
-    private bool fishingCanBeInterrupted = false;
+    public static bool fishingCanBeInterrupted = false;
     
     public TypewriterTest MyScript;
     public static int _kasperNumber;
@@ -232,6 +232,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingThrow", false);
         _animator.SetBool("fishingIdle", true);
         Invoke("FishingOnHook", 1);
+        Debug.Log("FishingIdle");
     }
 
     private void FishingOnHook()
@@ -239,6 +240,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingIdle", false);
         _animator.SetBool("fishingOnHook", true);
         Invoke("FishingOnHookLoop", 1);
+        Debug.Log("FishingOnHook");
     }
     
     private void FishingOnHookLoop()
@@ -247,6 +249,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingOnHook", false);
         _animator.SetBool("fishingOnHookLoop", true);
         fishingCanBeInterrupted = true;
+        Debug.Log("FishingOnHookLoop");
     }
     
     private void FishingReelIn()
@@ -254,6 +257,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingOnHookLoop", false);
         _animator.SetBool("fishingReelIn", true);
         Invoke("FishingAfterReelInForTesting", 1);
+        Debug.Log("FishingReelIn");
     }
     
     private void FishingAfterReelInForTesting()
@@ -261,6 +265,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingReelIn", false);
         //_animator.SetBool("playerStatic", false);
         MyScript.RizzMode();
+        //CancelInvoke("FishingFailed");
         print("Success");
     }
     
@@ -277,7 +282,7 @@ public class PlayerController : MonoBehaviour
     
     private void QuickTimeEvent()
     {
-        var randomQuickTimeEventTimer = Random.Range(2, 6);
+        var randomQuickTimeEventTimer = Random.Range(1, 5);
         // Debug.Log(randomQuickTimeEventTimer);
         Invoke("QuickTimeEvent2", randomQuickTimeEventTimer);
     }
