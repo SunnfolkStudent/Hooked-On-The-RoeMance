@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class TypewriterTest : MonoBehaviour
 {
+    [SerializeField]
+    private Animator _animator;
     #region README about order of scrobs
     /*  INFORMATION REGARDING THE ORDER OF THE FISH
      * 1. Posh Halibut
@@ -468,6 +470,7 @@ public class TypewriterTest : MonoBehaviour
         PlayerController._playerStatic = false;
         PlayerController._rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         PlayerController._isFishing = true;
+        _animator.SetBool("playerStatic", false);
         print("Does this run more than once once it has been called");
     }
 
