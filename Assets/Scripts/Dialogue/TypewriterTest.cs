@@ -70,15 +70,6 @@ public class TypewriterTest : MonoBehaviour
     private string _scrobOption2;
     private string _scrobOption3;
     private string _scrobOption4;
-    
-    // Event Functionality
-    private WaitForSeconds _textBoxFullEventDelay;
-    [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
-    
-    // Basic Typewriter Functionality
-    private int _currentVisibleCharacterIndex;
-    private Coroutine _typewriterCoroutine;
-    private GameObject[] _spriteButtons;
 
     public Sprite[] weightSprites;
     private SpriteRenderer uiSprite;
@@ -121,10 +112,12 @@ public class TypewriterTest : MonoBehaviour
         Jellyfish,
         Trash
     }
-     
- 
     
-    #region NOT BEING USED
+    // Basic Typewriter Functionality
+    private int _currentVisibleCharacterIndex;
+    private Coroutine _typewriterCoroutine;
+    private GameObject[] _spriteButtons;
+    
     // Skipping Functionality
     public bool CurrentlySkipping { get; private set; }
     private WaitForSeconds _skipDelay;
@@ -133,8 +126,11 @@ public class TypewriterTest : MonoBehaviour
     [SerializeField] private bool quickSkip;
     // How much skipping speeds up dialogue
     [SerializeField] [Min(1)] private int skipSpeedup = 5;
-    #endregion
-   
+
+
+    // Event Functionality
+    private WaitForSeconds _textBoxFullEventDelay;
+    [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
     
     
     private void Start()
@@ -147,6 +143,71 @@ public class TypewriterTest : MonoBehaviour
         
     }
     
+    
+    public void DecideFish()
+    {
+        
+        // This is where all logic is calculated before calling for RizzMode()
+        switch (_erikNumber)
+        {
+            case 0:
+                currentFish = Fish.Shark;
+                break;
+            case 1:
+                currentFish = Fish.Macarel;
+                break;
+            case 2:
+                currentFish = Fish.Jellyfish;
+                break;
+            case 3:
+                currentFish = Fish.Halibut;
+                break;
+            case 4:
+                currentFish = Fish.Angler;
+                break;
+            case 5:
+                currentFish = Fish.Blobfish;
+                break;
+            case 6:
+                currentFish = Fish.Macarel;
+                break;
+            case 7:
+                currentFish = Fish.Halibut;
+                break;
+            case 8:
+                currentFish = Fish.Halibut;
+                break;
+            case 9:
+                currentFish = Fish.Koi;
+                break;
+            case 10:
+                currentFish = Fish.Macarel;
+                break;    
+            case 11:
+                currentFish = Fish.Clown;
+                break;
+            case 12:
+                currentFish = Fish.Octopus;
+                break;
+            case 13:
+                currentFish = Fish.Clam;
+                break;
+            case 14:
+                currentFish = Fish.Macarel;
+                break;
+            case 15:
+                currentFish = Fish.Halibut;
+                break;
+            case 16:
+                currentFish = Fish.Trash;
+                break;
+        }
+        
+        RemoveListeners();
+        DecideDialogue();
+        RizzMode();
+    }
+
     public void RizzMode()
     {
         _erikNumber = PlayerController._kasperNumber;
@@ -393,9 +454,7 @@ public class TypewriterTest : MonoBehaviour
         ScoreManager.CurrentScore--;
         if (_slider.value >= 1f) 
             _slider.value -= 1f;
-        _animator.SetBool("fishingSlap", true);
     }
-
 
     public void ChangeTextBoxes()
     {

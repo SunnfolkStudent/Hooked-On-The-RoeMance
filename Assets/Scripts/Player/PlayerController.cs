@@ -264,7 +264,7 @@ public class PlayerController : MonoBehaviour
     {
         _animator.SetBool("fishingReelIn", false);
         //_animator.SetBool("playerStatic", false);
-        MyScript.RizzMode();
+        MyScript.DecideFish();
         //CancelInvoke("FishingFailed");
         print("Success");
     }
