@@ -18,7 +18,7 @@ public class AudioManagerController : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         
-        if (sceneName == "Robin")
+        if (sceneName == "Erik_Test")
         {
             Debug.Log("Scene Robin");
             musicInstance.setParameterByName("Main Music", 1);
