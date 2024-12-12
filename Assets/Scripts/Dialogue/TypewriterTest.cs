@@ -26,8 +26,7 @@ public class TypewriterTest : MonoBehaviour
      */
     #endregion
 
-
-    private bool _buttonsPressed = false;
+    
     // CHANGE HERE
     public JarkData[] allTheFish;
     public JarkData TestJarkDialogue;
@@ -445,11 +444,10 @@ public class TypewriterTest : MonoBehaviour
 
     public void CorrectDialogue()
     {
-        if (_buttonsPressed)
-        {
-            return;
-        }
+        
         _currentDialogue++;
+        if (_currentDialogue >= 2)
+            _currentDialogue = 1;
         print("Uhm?");
         NextDialogue();
     }
@@ -514,7 +512,6 @@ public class TypewriterTest : MonoBehaviour
 
     public void NextDialogue()
     {
-        _buttonsPressed = false;
         DisableOptions();
 
         SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
