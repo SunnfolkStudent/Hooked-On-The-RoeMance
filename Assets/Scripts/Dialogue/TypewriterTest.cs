@@ -133,7 +133,7 @@ public class TypewriterTest : MonoBehaviour
 
     // Event Functionality
     private WaitForSeconds _textBoxFullEventDelay;
-    [SerializeField] [Range(0.1f, 0.5f)] private float sendDoneDelay = 0.25f;
+    private float sendDoneDelay = 0.25f;
     
     
     private void Start()
