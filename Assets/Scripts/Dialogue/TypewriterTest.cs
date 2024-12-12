@@ -207,7 +207,7 @@ public class TypewriterTest : MonoBehaviour
         Debug.Log("ErikNumber is" + erik);
         
         RemoveListeners();
-        DecideDialogue();
+        // DecideDialogue();
         RizzMode();
     }
 
