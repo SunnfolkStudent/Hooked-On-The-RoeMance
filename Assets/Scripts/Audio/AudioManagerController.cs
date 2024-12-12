@@ -12,7 +12,7 @@ public class AudioManagerController : MonoBehaviour
 
     private void Start()
     {
-        musicInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/mx_generalMusic");
+        musicInstance = RuntimeManager.CreateInstance("event:/Music/mx_generalMusic");
         musicInstance.start();
         
         Scene currentScene = SceneManager.GetActiveScene();
@@ -21,7 +21,7 @@ public class AudioManagerController : MonoBehaviour
         if (sceneName == "Robin")
         {
             Debug.Log("Scene Robin");
-            musicInstance.setParameterByName("Main Music", 1f);
+            musicInstance.setParameterByName("Main Music", 1);
         }
     }
 
