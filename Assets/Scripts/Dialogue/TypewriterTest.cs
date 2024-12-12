@@ -138,6 +138,7 @@ public class TypewriterTest : MonoBehaviour
     
     private void Start()
     {
+        Debug.Log("Fuck Y'all");
         // Prototyping
         currentFish = Fish.Shark;
         // Getting the entire canvas
