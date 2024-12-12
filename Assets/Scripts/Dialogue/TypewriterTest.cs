@@ -27,7 +27,7 @@ public class TypewriterTest : MonoBehaviour
     #endregion
 
 
-    private bool e;
+    private bool _buttonsPressed = false;
     // CHANGE HERE
     public JarkData[] allTheFish;
     public JarkData TestJarkDialogue;
@@ -445,6 +445,10 @@ public class TypewriterTest : MonoBehaviour
 
     public void CorrectDialogue()
     {
+        if (_buttonsPressed)
+        {
+            return;
+        }
         _currentDialogue++;
         print("Uhm?");
         NextDialogue();
@@ -462,7 +466,6 @@ public class TypewriterTest : MonoBehaviour
 
     public void ChangeTextBoxes()
     {
-        RemoveListeners();
         Debug.Log("After change: " + currentFish);
         Debug.Log("After change, erik: " + _erikNumber);
         Debug.Log("After change, dia: " + _currentDialogue);
@@ -511,6 +514,7 @@ public class TypewriterTest : MonoBehaviour
 
     public void NextDialogue()
     {
+        _buttonsPressed = false;
         DisableOptions();
 
         SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
