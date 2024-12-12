@@ -197,6 +197,7 @@ MonoBehaviour:
   moveSpeed: 5
   uiESpriteRenderer: {fileID: 4335468827197845102}
   uiExclamationmarkSpriteRenderer: {fileID: 4484331093466572456}
+  MyScript: {fileID: 0}
 --- !u!114 &8766615132982431685
 MonoBehaviour:
   m_ObjectHideFlags: 0

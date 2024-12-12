@@ -19,13 +19,14 @@ public class PlayerController : MonoBehaviour
     public static int OceanEntryNumber, DeepseaEntryNumber, TropicalEntryNumber, ColdwaterEntryNumber;
     
     [Header("Fishing")] 
-    private float _fishingCooldown = 1f;
+    private float _fishingCooldown = 3f;
     private float _fishingCooldownTimer;
     private bool _fishingIdle;
     private bool _fishingThrow;
     private bool _fishingReelIn;
     
     public static bool _playerStatic;
+    public static bool _isFishing = true;
     
     [SerializeField] 
     private SpriteRenderer uiESpriteRenderer;
@@ -36,6 +37,10 @@ public class PlayerController : MonoBehaviour
     private float _uiCooldownTimer;
     private bool isDone = false;
     private bool isDone2 = false;
+    public static bool fishingCanBeInterrupted = false;
+    
+    public TypewriterTest MyScript;
+    public static int _kasperNumber;
     
     private void Start()
     {
@@ -52,18 +57,24 @@ public class PlayerController : MonoBehaviour
             AdjustPlayerFacingDirection();
         }
         
-        if (_input.interact && Time.time > _fishingCooldownTimer)
+        if (_input.interact && Time.time > _fishingCooldownTimer && _isFishing)
         {
+            _isFishing = false;
             _fishingCooldownTimer = Time.time + _fishingCooldown;
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             FishingMechanic();
         }
         
-        // TODO: May want to add something to prevent the player from spamming E to pass the quick time event
-        // add a bool that's true while fishing
-        // if (_input.interact && new bool true && isDone2 == false)
-        // { Invoke fishingFailed }
+        if (_input.interact && fishingCanBeInterrupted && isDone2 == false)
+        {
+            CancelInvoke("QuickTimeEvent2");
+            Invoke("FishingFailed", 0);
+            print("Test");
+        }
         
-        if (_input.interact && isDone2 == true)
+        if (_input.interact && isDone2)
         {
             Invoke("QuickTimeEvent3", 0);
             print("Invoking QuickTimeEvent3");
@@ -167,13 +178,15 @@ public class PlayerController : MonoBehaviour
         // Robin fiske musikk
         if (_isInOcean)
         {
-            _playerStatic = true;
-            _animator.SetBool("playerStatic", true);
-            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            //_playerStatic = true;
+            //_animator.SetBool("playerStatic", true);
+            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             OceanEntryNumber = Random.Range(0, 3);
             Invoke("FishingIdle", 1);
-            print("FishingOcean");
+            _kasperNumber = OceanEntryNumber;
+            if (MyScript.caughtFishes.Contains(_kasperNumber))
+                _kasperNumber = 16;
         }
         if (_isInDeepsea)
         {
@@ -183,7 +196,9 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("fishingThrow", true);
             DeepseaEntryNumber = Random.Range(4, 7);
             Invoke("FishingIdle", 1);
-            print("FishingDeepsea");
+            _kasperNumber = DeepseaEntryNumber;
+            if (MyScript.caughtFishes.Contains(_kasperNumber))
+                _kasperNumber = 16;
         }
         if (_isInTropical)
         {
@@ -193,7 +208,9 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("fishingThrow", true);
             TropicalEntryNumber = Random.Range(8, 11);
             Invoke("FishingIdle", 1);
-            print("FishingTropical");
+            _kasperNumber = TropicalEntryNumber;
+            if (MyScript.caughtFishes.Contains(_kasperNumber))
+                _kasperNumber = 16;
         }
         if (_isInColdwater)
         {
@@ -203,7 +220,9 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("fishingThrow", true);
             ColdwaterEntryNumber = Random.Range(12, 15);
             Invoke("FishingIdle", 1);
-            print("FishingColdwater");
+            _kasperNumber = ColdwaterEntryNumber;
+            if (MyScript.caughtFishes.Contains(_kasperNumber))
+                _kasperNumber = 16;
         }
     }
 
@@ -213,6 +232,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingThrow", false);
         _animator.SetBool("fishingIdle", true);
         Invoke("FishingOnHook", 1);
+        Debug.Log("FishingIdle");
     }
 
     private void FishingOnHook()
@@ -220,6 +240,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingIdle", false);
         _animator.SetBool("fishingOnHook", true);
         Invoke("FishingOnHookLoop", 1);
+        Debug.Log("FishingOnHook");
     }
     
     private void FishingOnHookLoop()
@@ -227,6 +248,8 @@ public class PlayerController : MonoBehaviour
         Invoke("QuickTimeEvent", 0);
         _animator.SetBool("fishingOnHook", false);
         _animator.SetBool("fishingOnHookLoop", true);
+        fishingCanBeInterrupted = true;
+        Debug.Log("FishingOnHookLoop");
     }
     
     private void FishingReelIn()
@@ -234,14 +257,15 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingOnHookLoop", false);
         _animator.SetBool("fishingReelIn", true);
         Invoke("FishingAfterReelInForTesting", 1);
+        Debug.Log("FishingReelIn");
     }
     
     private void FishingAfterReelInForTesting()
     {
         _animator.SetBool("fishingReelIn", false);
-        _playerStatic = false;
-        _animator.SetBool("playerStatic", false);
-        _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        //_animator.SetBool("playerStatic", false);
+        MyScript.DecideFish(_kasperNumber);
+        //CancelInvoke("FishingFailed");
         print("Success");
     }
     
@@ -258,8 +282,8 @@ public class PlayerController : MonoBehaviour
     
     private void QuickTimeEvent()
     {
-        var randomQuickTimeEventTimer = Random.Range(2, 6);
-        Debug.Log(randomQuickTimeEventTimer);
+        var randomQuickTimeEventTimer = Random.Range(1, 5);
+        // Debug.Log(randomQuickTimeEventTimer);
         Invoke("QuickTimeEvent2", randomQuickTimeEventTimer);
     }
 
@@ -280,6 +304,7 @@ public class PlayerController : MonoBehaviour
 
     private void FishingFailed()
     {
+        fishingCanBeInterrupted = false;
         isDone2 = false;
         uiExclamationmarkSpriteRenderer.enabled = false;
         _playerStatic = false;
@@ -287,6 +312,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         _animator.SetBool("fishingOnHookLoop", false);
         _animator.SetBool("fishingFailed", true);
+        _isFishing = true;
         Debug.Log("FishingFailed, we'll get em' next time");
     }
 }

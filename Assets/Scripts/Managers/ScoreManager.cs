@@ -1,16 +1,22 @@
 using UnityEngine;
+using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public static int CurrentScore;
 
-    // Update is called once per frame
-    void Update()
+    private Sprite[] weightSprites;
+    
+    void FixedUpdate()
     {
-        
+        if (CurrentScore >= 6)
+            Victory();
     }
+    public void Victory()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    
+    
 }

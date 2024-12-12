@@ -17,6 +17,12 @@ public class JarkData : ScriptableObject
     [TextArea(5, 12)] public string[] Option2;
     [TextArea(5, 12)] public string[] Option3;
     [TextArea(5, 12)] public string[] Option4;
+
+    public string music1;
+    public string music2;
+    public string voice1;
+    public string voice2;
+    public string voice3;
     
     
     

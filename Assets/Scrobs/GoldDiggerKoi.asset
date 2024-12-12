@@ -18,8 +18,8 @@ MonoBehaviour:
   fishName: 
   habitat: 0
   Dialogue:
-  - "My, aren\u2019t you a fine specimen? Royal yellow, verdant green, all at once.
-    Say, aren\u2019t you quite the wealthy one?"
+  - "My, aren\u2019t you a <b>fine</b> specimen? Royal yellow, verdant green, all
+    at once. Say, aren\u2019t you quite the wealthy one?"
   - "Now, that\u2019s a tempting~ offer. Now, what would like me to wear to this
     exclusive occasion?"
   Option1:
@@ -29,8 +29,13 @@ MonoBehaviour:
   - Eh, I get by
   - "I don\u2019t care"
   Option3:
-  - Wear a nice dress for me
+  - "If you come back to my place, I\u2019ll show you my sand dollars"
   - Wear a nice dress for me
   Option4:
   - Yeah? How could you tell?
   - Eh, something basic
+  music1: 
+  music2: 
+  voice1: 
+  voice2: 
+  voice3: 

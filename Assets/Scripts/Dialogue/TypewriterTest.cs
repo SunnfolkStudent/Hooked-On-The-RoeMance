@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class TypewriterTest : MonoBehaviour
 {
+    [SerializeField]
+    private Animator _animator;
     #region README about order of scrobs
     /*  INFORMATION REGARDING THE ORDER OF THE FISH
      * 1. Posh Halibut
@@ -23,20 +25,28 @@ public class TypewriterTest : MonoBehaviour
      * 10. Melancholic Blobfish
      */
     #endregion
+
+    [SerializeField]
+    private GameObject FishSlapObject;
     
     // CHANGE HERE
     public JarkData[] allTheFish;
     public JarkData TestJarkDialogue;
     private int _testFishSelected = 0;
     private JarkData currentSCROB;
+    
+    public Sprite[] _fishSprites;
+    private SpriteRenderer _rizzSprite;
 
     private int _erikNumber;
+
+    public List<int> caughtFishes = new List<int>();
     
     
     // Used for the two stages
     private int _currentDialogue = 0;
 
-    #region Buttons and dialogue fields
+    #region Lots of elements
     // All Buttons (for listeners)
     //private Button _button1;
     private Button _button1;
@@ -62,6 +72,12 @@ public class TypewriterTest : MonoBehaviour
     private string _scrobOption3;
     private string _scrobOption4;
 
+    public Sprite[] weightSprites;
+    private SpriteRenderer uiSprite;
+    
+    // Slider
+    private Slider _slider;
+
     private PlayerController _yeah;
     
     // The actual fish dialogue
@@ -69,6 +85,16 @@ public class TypewriterTest : MonoBehaviour
     
     // The actual canvas
     private GameObject _dialogueCanvas;
+    
+    // Used to set what dialogue options are correct
+    private bool _firstDialogue;
+    private bool _secondDialogue;
+
+    private WaitForSeconds _simpleDelay;
+    private WaitForSeconds _interpunctuationDelay;
+
+    private float charactersPerSecond = 48;
+    private float interpunctuationDelay = 0.5f;
     #endregion
 
     public Fish currentFish;
@@ -88,29 +114,11 @@ public class TypewriterTest : MonoBehaviour
         Trash
     }
     
-    // Prototyping
-    [Header("Test String"), TextArea(5, 12)] 
-    [SerializeField] private string testText;
-    [TextArea(5, 12)]
-    [SerializeField] private string testText2;
-
     // Basic Typewriter Functionality
     private int _currentVisibleCharacterIndex;
     private Coroutine _typewriterCoroutine;
-
+    private GameObject[] _spriteButtons;
     
-    // Used to set what dialogue options are correct
-    private bool _firstDialogue;
-    private bool _secondDialogue;
-
-    private WaitForSeconds _simpleDelay;
-    private WaitForSeconds _interpunctuationDelay;
-
-    [Header("Typewriter Settings")] 
-    [SerializeField] private float charactersPerSecond = 48;
-    [SerializeField] private float interpunctuationDelay = 0.5f;
-
-
     // Skipping Functionality
     public bool CurrentlySkipping { get; private set; }
     private WaitForSeconds _skipDelay;
@@ -128,71 +136,91 @@ public class TypewriterTest : MonoBehaviour
     
     private void Start()
     {
-        //RizzMode();
-        
         // Prototyping
-        currentSCROB = allTheFish[_testFishSelected];
         currentFish = Fish.Shark;
+        // Getting the entire canvas
+        _dialogueCanvas = GameObject.Find("Canvas");
+        _dialogueCanvas.SetActive(false);
         
-        _erikNumber = PlayerController.OceanEntryNumber;
-
     }
     
     
-    public void DecideFish()
+    public void DecideFish(int erik)
     {
-        
+        _erikNumber = erik;
         // This is where all logic is calculated before calling for RizzMode()
-        switch (_erikNumber)
+        switch (erik)
         {
-            case 1:
-                currentFish = Fish.Halibut;
-                break;
-            case 2:
-                currentFish = Fish.Koi;
-                break;
-            case 3:
-                currentFish = Fish.Clown;
-                break;
-            case 4:
+            case 0:
                 currentFish = Fish.Shark;
                 break;
-            case 5:
+            case 1:
                 currentFish = Fish.Macarel;
                 break;
-            case 6:
-                currentFish = Fish.Clam;
-                break;
-            case 7:
-                currentFish = Fish.Angler;
-                break;
-            case 8:
-                currentFish = Fish.Octopus;
-                break;
-            case 9:
+            case 2:
                 currentFish = Fish.Jellyfish;
                 break;
-            case 10:
+            case 3:
+                currentFish = Fish.Halibut;
+                break;
+            case 4:
+                currentFish = Fish.Angler;
+                break;
+            case 5:
                 currentFish = Fish.Blobfish;
+                break;
+            case 6:
+                currentFish = Fish.Macarel;
+                break;
+            case 7:
+                currentFish = Fish.Halibut;
+                break;
+            case 8:
+                currentFish = Fish.Halibut;
+                break;
+            case 9:
+                currentFish = Fish.Koi;
+                break;
+            case 10:
+                currentFish = Fish.Macarel;
                 break;    
+            case 11:
+                currentFish = Fish.Clown;
+                break;
+            case 12:
+                currentFish = Fish.Octopus;
+                break;
+            case 13:
+                currentFish = Fish.Clam;
+                break;
+            case 14:
+                currentFish = Fish.Macarel;
+                break;
+            case 15:
+                currentFish = Fish.Halibut;
+                break;
+            case 16:
+                currentFish = Fish.Trash;
+                break;
         }
         
+        Debug.Log("enum is " + currentFish);
+        Debug.Log("currentdialogue is "+ _currentDialogue);
+        Debug.Log("ErikNumber is" + erik);
+        
         RemoveListeners();
-        DecideDialogue();
+        // DecideDialogue();
         RizzMode();
     }
 
     public void RizzMode()
     {
+        _erikNumber = PlayerController._kasperNumber;
         // Enabling the different stuff
          _dialogueCanvas.SetActive(true);
-         SetText(TestJarkDialogue.Dialogue[_currentDialogue]);
-        
-        
-        // TODO: add enabling the fish here
-        // TODO: Make dialogue windows popup
-        // TODO: Replace texts in main text and set revealed letters to zero
-        // TODO: have a switch case that contains enums for every fish
+         _rizzSprite.sprite = _fishSprites[_erikNumber];
+         SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
+         
         // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
         // TODO: get dialogue and options from PlayerController script
     }
@@ -242,11 +270,11 @@ public class TypewriterTest : MonoBehaviour
                     ChangeTextBoxes();
                 }
                 break;
-            case Fish.Macarel: // TO BE COMPLETED
+            case Fish.Macarel:
                 if (_currentDialogue >= 0)
                 {
                     _button1.onClick.AddListener(CorrectDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(CorrectDialogue);
                     _button3.onClick.AddListener(CorrectDialogue);
                     _button4.onClick.AddListener(CorrectDialogue);
                     ChangeTextBoxes();
@@ -255,38 +283,38 @@ public class TypewriterTest : MonoBehaviour
                 if (_currentDialogue == 1)
                 {
                     RemoveListeners();
-                    _button1.onClick.AddListener(FinishDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
-                    _button3.onClick.AddListener(FinishDialogue);
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(FinishDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
                     _button4.onClick.AddListener(FinishDialogue);
                     ChangeTextBoxes();
                 }
                 break;
-            case Fish.Angler: // TO BE COMPLETED
+            case Fish.Angler: 
                 if (_currentDialogue >= 0)
                 {
-                    _button1.onClick.AddListener(CorrectDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(CorrectDialogue);
                     _button3.onClick.AddListener(CorrectDialogue);
-                    _button4.onClick.AddListener(CorrectDialogue);
+                    _button4.onClick.AddListener(WrongDialogue);
                     ChangeTextBoxes();
                     
                 }
                 if (_currentDialogue == 1)
                 {
                     RemoveListeners();
-                    _button1.onClick.AddListener(FinishDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
-                    _button3.onClick.AddListener(FinishDialogue);
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(FinishDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
                     _button4.onClick.AddListener(FinishDialogue);
                     ChangeTextBoxes();
                 }
                 break;
-            case Fish.Octopus: // TO BE COMPLETED
+            case Fish.Octopus: 
                 if (_currentDialogue >= 0)
                 {
-                    _button1.onClick.AddListener(CorrectDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
+                    _button1.onClick.AddListener(WrongDialogue);
+                    _button2.onClick.AddListener(CorrectDialogue);
                     _button3.onClick.AddListener(CorrectDialogue);
                     _button4.onClick.AddListener(CorrectDialogue);
                     ChangeTextBoxes();
@@ -296,8 +324,8 @@ public class TypewriterTest : MonoBehaviour
                 {
                     RemoveListeners();
                     _button1.onClick.AddListener(FinishDialogue);
-                    _button2.onClick.AddListener(WrongDialogue);
-                    _button3.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(FinishDialogue);
+                    _button3.onClick.AddListener(WrongDialogue);
                     _button4.onClick.AddListener(FinishDialogue);
                     ChangeTextBoxes();
                 }
@@ -402,54 +430,113 @@ public class TypewriterTest : MonoBehaviour
                     ChangeTextBoxes();
                 }
                 break;
+            case Fish.Trash:
+                if (_currentDialogue >= 0)
+                {
+                    _button1.onClick.AddListener(FinishDialogue);
+                    _button2.onClick.AddListener(FinishDialogue);
+                    _button3.onClick.AddListener(FinishDialogue);
+                    _button4.onClick.AddListener(FinishDialogue);
+                    ChangeTextBoxes();
+                }
+                break;
         }
         #endregion
     }
 
     public void CorrectDialogue()
     {
+        
         _currentDialogue++;
+        if (_currentDialogue >= 2)
+            _currentDialogue = 1;
         print("Uhm?");
         NextDialogue();
     }
 
     public void WrongDialogue()
     {
-        Debug.Log("You dumbass bitch");
+        Debug.Log("Wrong Dialogue");
+        RemoveListeners();
+        NoRizz();
+        ScoreManager.CurrentScore--;
+        if (_slider.value >= 1f) 
+            _slider.value -= 1f;
+        Invoke("FishSlapScreen", 0);
+    }
+
+    private void FishSlapScreen()
+    {
+        FishSlapObject.SetActive(true);
+        Invoke("FishSlapScreenFinished", 1.18f);
+    }
+
+    private void FishSlapScreenFinished()
+    {
+        FishSlapObject.SetActive(false);
+        _animator.SetBool("fishingSlap", true);
+        Invoke("FishingSlapFinished", 2f);
+    }
+
+    private void FishingSlapFinished()
+    {
+        _animator.SetBool("fishingSlap", false);
+        // TODO: move player being able to move again down here
     }
 
     public void ChangeTextBoxes()
     {
-        _scrobDialogue = allTheFish[_testFishSelected].Dialogue[_currentDialogue];
-        _scrobOption1 = allTheFish[_testFishSelected].Option1[_currentDialogue];
-        _scrobOption2 = allTheFish[_testFishSelected].Option2[_currentDialogue];
-        _scrobOption3 = allTheFish[_testFishSelected].Option3[_currentDialogue];
-        _scrobOption4 = allTheFish[_testFishSelected].Option4[_currentDialogue];
+        Debug.Log("After change: " + currentFish);
+        Debug.Log("After change, erik: " + _erikNumber);
+        Debug.Log("After change, dia: " + _currentDialogue);
+        _scrobDialogue = allTheFish[_erikNumber].Dialogue[_currentDialogue];
+        _scrobOption1 = allTheFish[_erikNumber].Option1[_currentDialogue];
+        _scrobOption2 = allTheFish[_erikNumber].Option2[_currentDialogue];
+        _scrobOption3 = allTheFish[_erikNumber].Option3[_currentDialogue];
+        _scrobOption4 = allTheFish[_erikNumber].Option4[_currentDialogue];
+
+        _button1ObjectText.text = allTheFish[_erikNumber].Option1[_currentDialogue];
+        _button2ObjectText.text = allTheFish[_erikNumber].Option2[_currentDialogue];
+        _button3ObjectText.text = allTheFish[_erikNumber].Option3[_currentDialogue];
+        _button4ObjectText.text = allTheFish[_erikNumber].Option4[_currentDialogue];
+        
     }
 
     public void FinishDialogue()
     {
-        Debug.Log("Should exit dialogue here");
+        Debug.Log("currentDialogue burde være 0, den er: " + _currentDialogue);
+        RemoveListeners();
         NoRizz();
+        if (_erikNumber == 16)
+            return;
+        
+        ScoreManager.CurrentScore++;
+        _slider.value += 1f;
+        caughtFishes.Add(_erikNumber);
+
     }
 
     public void NoRizz()
     {
         // TODO Hide entire canvas? Don't think there's much more
-        
+        _currentDialogue = 0;
         DisableOptions();
         _dialogueCanvas.SetActive(false);
         // TODO: Add disabling the fish here
 
         PlayerController._playerStatic = false;
         PlayerController._rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        PlayerController._isFishing = true;
+        _animator.SetBool("playerStatic", false);
+        PlayerController.fishingCanBeInterrupted = false;
+        print("Does this run more than once once it has been called");
     }
 
     public void NextDialogue()
     {
         DisableOptions();
 
-        SetText(allTheFish[_testFishSelected].Dialogue[_currentDialogue]);
+        SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
     }
 
     
@@ -473,29 +560,19 @@ public class TypewriterTest : MonoBehaviour
         _button3ObjectText = _button3Object.GetComponentInChildren<TMP_Text>();
         _button4ObjectText = _button4Object.GetComponentInChildren<TMP_Text>();
         
-        // Getting the entire canvas
-        _dialogueCanvas = GameObject.Find("Canvas");
+        _spriteButtons = GameObject.FindGameObjectsWithTag("DialogueButton");
         
         // Getting the main fish dialogue
         _textBox = GameObject.Find("FishText").GetComponent<TMP_Text>();
+        _rizzSprite = GameObject.Find("FishSprite").GetComponent<SpriteRenderer>();
+        _slider = GameObject.Find("Slider").GetComponent<Slider>();
         
         
         #endregion
-        
-        
-        //RemoveListeners();
+        RemoveListeners();
         
         // Still prototyping
-        currentFish = Fish.Shark;
-        _scrobDialogue = TestJarkDialogue.Dialogue[_currentDialogue];
         
-        
-        
-        // _button1.onClick.AddListener(NextDialogue);
-        // _button2.onClick.AddListener(NextDialogue);
-        // _button3.onClick.AddListener(NextDialogue);
-        // _button4.onClick.AddListener(NextDialogue);
-
         
         // Delay for normal characters
         _simpleDelay = new WaitForSeconds(1 / charactersPerSecond);
@@ -525,14 +602,23 @@ public class TypewriterTest : MonoBehaviour
         _button3Object.SetActive(true);
         _button4Object.SetActive(true);
         
+        foreach (GameObject gameObject in _spriteButtons)
+        {
+            gameObject.SetActive(true);
+        }
+        
         //TODO update with relevant text
     }
     public void DisableOptions()
     {
-        _button1Object.SetActive(false);
-        _button2Object.SetActive(false);
-        _button3Object.SetActive(false);
-        _button4Object.SetActive(false);
+        // _button1Object.SetActive(false);
+        // _button2Object.SetActive(false);
+        // _button3Object.SetActive(false);
+        // _button4Object.SetActive(false);
+        foreach (GameObject gameObject in _spriteButtons)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void SetText(string text)
@@ -567,7 +653,6 @@ public class TypewriterTest : MonoBehaviour
                 // THIS IS WHERE THE TEXT IS DONE!!!
                 // THIS IS WHERE THE TEXT IS DONE!!!
                 // THIS IS WHERE THE TEXT IS DONE!!!
-                Debug.Log("2nd try at text done");
                 EnableOptions();
                 DecideDialogue();
                 yield break;
