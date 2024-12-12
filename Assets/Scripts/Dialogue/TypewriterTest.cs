@@ -462,7 +462,7 @@ public class TypewriterTest : MonoBehaviour
 
     public void ChangeTextBoxes()
     {
-        
+        RemoveListeners();
         Debug.Log("After change: " + currentFish);
         Debug.Log("After change, erik: " + _erikNumber);
         Debug.Log("After change, dia: " + _currentDialogue);
