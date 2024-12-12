@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         
         if (_input.interact && Time.time > _fishingCooldownTimer && _isFishing)
         {
+            // Robin fiske musikk
             _isFishing = false;
             _fishingCooldownTimer = Time.time + _fishingCooldown;
             _playerStatic = true;
@@ -83,6 +84,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat("moveY", _input.movement.y);
         _animator.SetFloat("moveX", _input.movement.x);
         
+        // TODO: Remove this for final build
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -165,7 +167,7 @@ public class PlayerController : MonoBehaviour
         _isInColdwater = false;
         _isInDeepsea = false;
         _isInTropical = false;
-        // This if statement fixes a bug in unity where TriggerEnter and TriggerExit is run when an object
+        // This if statement resolves a quirk in unity where OnTriggerEnter and OnTriggerExit is run when an object
         // changes rigidbody type
         if (_rigidbody2D.bodyType == RigidbodyType2D.Dynamic)
         {
@@ -175,7 +177,6 @@ public class PlayerController : MonoBehaviour
     
     private void FishingMechanic()
     {
-        // Robin fiske musikk
         if (_isInOcean)
         {
             //_playerStatic = true;
@@ -190,9 +191,9 @@ public class PlayerController : MonoBehaviour
         }
         if (_isInDeepsea)
         {
-            _playerStatic = true;
-            _animator.SetBool("playerStatic", true);
-            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            //_playerStatic = true;
+            //_animator.SetBool("playerStatic", true);
+            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             DeepseaEntryNumber = Random.Range(4, 7);
             Invoke("FishingIdle", 1);
@@ -202,9 +203,9 @@ public class PlayerController : MonoBehaviour
         }
         if (_isInTropical)
         {
-            _playerStatic = true;
-            _animator.SetBool("playerStatic", true);
-            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            //_playerStatic = true;
+            //_animator.SetBool("playerStatic", true);
+            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             TropicalEntryNumber = Random.Range(8, 11);
             Invoke("FishingIdle", 1);
@@ -214,9 +215,9 @@ public class PlayerController : MonoBehaviour
         }
         if (_isInColdwater)
         {
-            _playerStatic = true;
-            _animator.SetBool("playerStatic", true);
-            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            //_playerStatic = true;
+            //_animator.SetBool("playerStatic", true);
+            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             ColdwaterEntryNumber = Random.Range(12, 15);
             Invoke("FishingIdle", 1);
@@ -282,7 +283,7 @@ public class PlayerController : MonoBehaviour
     
     private void QuickTimeEvent()
     {
-        var randomQuickTimeEventTimer = Random.Range(1, 5);
+        var randomQuickTimeEventTimer = Random.Range(0, 4);
         // Debug.Log(randomQuickTimeEventTimer);
         Invoke("QuickTimeEvent2", randomQuickTimeEventTimer);
     }
@@ -291,7 +292,7 @@ public class PlayerController : MonoBehaviour
     {
         uiExclamationmarkSpriteRenderer.enabled = true;
         isDone2 = true;
-        Invoke("FishingFailed", 2);
+        Invoke("FishingFailed", 1);
     }
 
     private void QuickTimeEvent3()

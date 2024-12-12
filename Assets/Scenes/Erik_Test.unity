@@ -714,7 +714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &145067121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7202,6 +7202,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5504915632693024948, guid: 686e475612b0c8543b29e39192beac83, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504915632693024948, guid: 686e475612b0c8543b29e39192beac83, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6777406517355208303, guid: 686e475612b0c8543b29e39192beac83, type: 3}
       propertyPath: Kasper
       value: 
@@ -7210,6 +7218,22 @@ PrefabInstance:
       propertyPath: MyScript
       value: 
       objectReference: {fileID: 145067121}
+    - target: {fileID: 7116161667602308339, guid: 686e475612b0c8543b29e39192beac83, type: 3}
+      propertyPath: m_Size.x
+      value: 2.9211133
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116161667602308339, guid: 686e475612b0c8543b29e39192beac83, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5052661
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116161667602308339, guid: 686e475612b0c8543b29e39192beac83, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.131369
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116161667602308339, guid: 686e475612b0c8543b29e39192beac83, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.015406072
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
