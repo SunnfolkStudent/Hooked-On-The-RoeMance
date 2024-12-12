@@ -28,6 +28,8 @@ public class TypewriterTest : MonoBehaviour
 
     [SerializeField]
     private GameObject FishSlapObject;
+
+    private FMOD_Controller _FMOD;
     
     // CHANGE HERE
     public JarkData[] allTheFish;
@@ -141,6 +143,8 @@ public class TypewriterTest : MonoBehaviour
         // Getting the entire canvas
         _dialogueCanvas = GameObject.Find("Canvas");
         _dialogueCanvas.SetActive(false);
+        
+        _FMOD = GameObject.Find("AudioManager").GetComponent<FMOD_Controller>();
         
     }
     
