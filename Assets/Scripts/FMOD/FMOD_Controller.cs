@@ -21,7 +21,7 @@ public class FMOD_Controller : MonoBehaviour
         
         if (sceneName == "Erik_Test")
         {
-            Debug.Log("Scene Robin");
+            Debug.Log("Robin_Test");
             musicInstance.setParameterByName("Main Music", 1);
         }
     }
@@ -39,4 +39,20 @@ public class FMOD_Controller : MonoBehaviour
     {
         
     }
+
+    public void FishingMode(int value)
+    {
+        musicInstance.setParameterByName("Mode", value);
+    }
+
+    public void CharacterTheme(int value)
+    {
+        musicInstance.setParameterByName("Character", value);
+    }
+
+    public void PlayVoiceline(string voiceline)
+    {
+        RuntimeManager.PlayOneShot(voiceline);
+    }
+    
 }
