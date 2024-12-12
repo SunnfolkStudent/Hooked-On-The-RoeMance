@@ -462,6 +462,10 @@ public class TypewriterTest : MonoBehaviour
 
     public void ChangeTextBoxes()
     {
+        
+        Debug.Log("After change: " + currentFish);
+        Debug.Log("After change, erik: " + _erikNumber);
+        Debug.Log("After change, dia: " + _currentDialogue);
         _scrobDialogue = allTheFish[_erikNumber].Dialogue[_currentDialogue];
         _scrobOption1 = allTheFish[_erikNumber].Option1[_currentDialogue];
         _scrobOption2 = allTheFish[_erikNumber].Option2[_currentDialogue];
