@@ -203,6 +203,10 @@ public class TypewriterTest : MonoBehaviour
                 break;
         }
         
+        Debug.Log("enum is " + currentFish);
+        Debug.Log("currentdialogue is "+ _currentDialogue);
+        Debug.Log("ErikNumber is" + _erikNumber);
+        
         RemoveListeners();
         DecideDialogue();
         RizzMode();
