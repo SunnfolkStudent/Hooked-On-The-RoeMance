@@ -26,6 +26,8 @@ public class TypewriterTest : MonoBehaviour
      */
     #endregion
 
+    [SerializeField]
+    private GameObject FishSlapObject;
     
     // CHANGE HERE
     public JarkData[] allTheFish;
@@ -460,6 +462,26 @@ public class TypewriterTest : MonoBehaviour
         ScoreManager.CurrentScore--;
         if (_slider.value >= 1f) 
             _slider.value -= 1f;
+        Invoke("FishSlapScreen", 0);
+    }
+
+    private void FishSlapScreen()
+    {
+        FishSlapObject.SetActive(true);
+        Invoke("FishSlapScreenFinished", 1.18f);
+    }
+
+    private void FishSlapScreenFinished()
+    {
+        FishSlapObject.SetActive(false);
+        _animator.SetBool("fishingSlap", true);
+        Invoke("FishingSlapFinished", 2f);
+    }
+
+    private void FishingSlapFinished()
+    {
+        _animator.SetBool("fishingSlap", false);
+        // TODO: move player being able to move again down here
     }
 
     public void ChangeTextBoxes()
