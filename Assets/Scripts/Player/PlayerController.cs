@@ -184,11 +184,9 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("fishingThrow", true);
             OceanEntryNumber = Random.Range(0, 3);
             Invoke("FishingIdle", 1);
-            print("FishingOcean");
             _kasperNumber = OceanEntryNumber;
             if (MyScript.caughtFishes.Contains(_kasperNumber))
                 _kasperNumber = 16;
-            Debug.Log("Kasper sitt nummer er " + OceanEntryNumber);
         }
         if (_isInDeepsea)
         {
@@ -198,11 +196,9 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("fishingThrow", true);
             DeepseaEntryNumber = Random.Range(4, 7);
             Invoke("FishingIdle", 1);
-            print("FishingDeepsea");
             _kasperNumber = DeepseaEntryNumber;
             if (MyScript.caughtFishes.Contains(_kasperNumber))
                 _kasperNumber = 16;
-            Debug.Log("Kasper sitt nummer er " + DeepseaEntryNumber);
         }
         if (_isInTropical)
         {
@@ -212,11 +208,9 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("fishingThrow", true);
             TropicalEntryNumber = Random.Range(8, 11);
             Invoke("FishingIdle", 1);
-            print("FishingTropical");
             _kasperNumber = TropicalEntryNumber;
             if (MyScript.caughtFishes.Contains(_kasperNumber))
                 _kasperNumber = 16;
-            Debug.Log("Kasper sitt nummer er " + TropicalEntryNumber);
         }
         if (_isInColdwater)
         {
@@ -226,11 +220,9 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("fishingThrow", true);
             ColdwaterEntryNumber = Random.Range(12, 15);
             Invoke("FishingIdle", 1);
-            print("FishingColdwater");
             _kasperNumber = ColdwaterEntryNumber;
             if (MyScript.caughtFishes.Contains(_kasperNumber))
                 _kasperNumber = 16;
-            Debug.Log("Kasper sitt nummer er " + ColdwaterEntryNumber);
         }
     }
 
