@@ -144,11 +144,11 @@ public class TypewriterTest : MonoBehaviour
     }
     
     
-    public void DecideFish()
+    public void DecideFish(int erik)
     {
-        
+        _erikNumber = erik;
         // This is where all logic is calculated before calling for RizzMode()
-        switch (_erikNumber)
+        switch (erik)
         {
             case 0:
                 currentFish = Fish.Shark;
@@ -205,7 +205,7 @@ public class TypewriterTest : MonoBehaviour
         
         Debug.Log("enum is " + currentFish);
         Debug.Log("currentdialogue is "+ _currentDialogue);
-        Debug.Log("ErikNumber is" + _erikNumber);
+        Debug.Log("ErikNumber is" + erik);
         
         RemoveListeners();
         DecideDialogue();
