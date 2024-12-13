@@ -62,9 +62,9 @@ public class PlayerController : MonoBehaviour
             // Robin fiske musikk
             _isFishing = false;
             _fishingCooldownTimer = Time.time + _fishingCooldown;
-            _playerStatic = true;
-            _animator.SetBool("playerStatic", true);
-            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            //_playerStatic = true;
+            //_animator.SetBool("playerStatic", true);
+            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
             FishingMechanic();
         }
         
@@ -179,11 +179,11 @@ public class PlayerController : MonoBehaviour
     {
         if (_isInOcean)
         {
-            //_playerStatic = true;
-            //_animator.SetBool("playerStatic", true);
-            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
-            OceanEntryNumber = Random.Range(0, 3);
+            OceanEntryNumber = Random.Range(0, 4); // 3
             Invoke("FishingIdle", 1);
             _kasperNumber = OceanEntryNumber;
             if (MyScript.caughtFishes.Contains(_kasperNumber))
@@ -191,11 +191,11 @@ public class PlayerController : MonoBehaviour
         }
         if (_isInDeepsea)
         {
-            //_playerStatic = true;
-            //_animator.SetBool("playerStatic", true);
-            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
-            DeepseaEntryNumber = Random.Range(4, 7);
+            DeepseaEntryNumber = Random.Range(4, 8); // 7
             Invoke("FishingIdle", 1);
             _kasperNumber = DeepseaEntryNumber;
             if (MyScript.caughtFishes.Contains(_kasperNumber))
@@ -203,11 +203,11 @@ public class PlayerController : MonoBehaviour
         }
         if (_isInTropical)
         {
-            //_playerStatic = true;
-            //_animator.SetBool("playerStatic", true);
-            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
-            TropicalEntryNumber = Random.Range(8, 11);
+            TropicalEntryNumber = Random.Range(8, 12); // 11
             Invoke("FishingIdle", 1);
             _kasperNumber = TropicalEntryNumber;
             if (MyScript.caughtFishes.Contains(_kasperNumber))
@@ -215,11 +215,11 @@ public class PlayerController : MonoBehaviour
         }
         if (_isInColdwater)
         {
-            //_playerStatic = true;
-            //_animator.SetBool("playerStatic", true);
-            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
-            ColdwaterEntryNumber = Random.Range(12, 15);
+            ColdwaterEntryNumber = Random.Range(12, 16); // 15
             Invoke("FishingIdle", 1);
             _kasperNumber = ColdwaterEntryNumber;
             if (MyScript.caughtFishes.Contains(_kasperNumber))
@@ -283,7 +283,7 @@ public class PlayerController : MonoBehaviour
     
     private void QuickTimeEvent()
     {
-        var randomQuickTimeEventTimer = Random.Range(0, 4);
+        var randomQuickTimeEventTimer = Random.Range(1, 4);
         // Debug.Log(randomQuickTimeEventTimer);
         Invoke("QuickTimeEvent2", randomQuickTimeEventTimer);
     }
