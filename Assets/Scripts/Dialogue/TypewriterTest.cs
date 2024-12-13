@@ -147,7 +147,7 @@ public class TypewriterTest : MonoBehaviour
         _dialogueCanvas = GameObject.Find("Canvas");
         _dialogueCanvas.SetActive(false);
         _FMOD = GameObject.Find("AudioManager").GetComponent<Schlawg>();
-        _fishName = GameObject.Find("FishName").GetComponent<TMP_Text>();
+        //_fishName = GameObject.Find("FishName").GetComponent<TMP_Text>();
     }
     
     public void DecideFish(int erik)
