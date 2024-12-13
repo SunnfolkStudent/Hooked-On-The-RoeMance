@@ -97,9 +97,6 @@ public class TypewriterTest : MonoBehaviour
 
     private float charactersPerSecond = 48;
     private float interpunctuationDelay = 0.5f;
-    #endregion
-
-    public Fish currentFish;
     
     public enum Fish
     {
@@ -135,6 +132,8 @@ public class TypewriterTest : MonoBehaviour
     private WaitForSeconds _textBoxFullEventDelay;
     private float sendDoneDelay = 0.25f;
     
+    public Fish currentFish;
+    #endregion
     
     private void Start()
     {
@@ -479,7 +478,6 @@ public class TypewriterTest : MonoBehaviour
 
     public void CorrectDialogue()
     {
-        
         _currentDialogue++;
         if (_currentDialogue >= 2)
             _currentDialogue = 1;
