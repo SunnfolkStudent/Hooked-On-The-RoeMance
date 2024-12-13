@@ -34,6 +34,6 @@ MonoBehaviour:
   - A posh british old codger
   music1: 
   music2: 
-  voice1: 
-  voice2: 
-  voice3: 
+  voice1: event:/VO/Mackerel/vo_mackerelHello
+  voice2: event:/VO/Kveite/vo_kveiteGood
+  voice3: event:/VO/Mackerel/vo_mackerelFinal

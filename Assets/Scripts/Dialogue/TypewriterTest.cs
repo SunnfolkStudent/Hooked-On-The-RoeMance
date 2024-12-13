@@ -251,6 +251,8 @@ public class TypewriterTest : MonoBehaviour
 
     public void RizzMode()
     {
+        //Play VoiceLine 1, HELLO
+        _FMOD.PlayVoiceline(allTheFish[_erikNumber].voice1);
         _erikNumber = PlayerController._kasperNumber;
         // Enabling the different stuff
          _dialogueCanvas.SetActive(true);
@@ -486,7 +488,9 @@ public class TypewriterTest : MonoBehaviour
         _currentDialogue++;
         if (_currentDialogue >= 2)
             _currentDialogue = 1;
-        print("Uhm?");
+        
+        //FMOD play VoiceLine 2
+        _FMOD.PlayVoiceline(allTheFish[_erikNumber].voice2);
         NextDialogue();
     }
 

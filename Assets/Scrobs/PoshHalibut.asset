@@ -36,6 +36,6 @@ MonoBehaviour:
   - Working class, am I right?
   music1: 
   music2: 
-  voice1: 
-  voice2: 
-  voice3: 
+  voice1: event:/VO/Kveite/vo_kveiteHello
+  voice2: event:/VO/Kveite/vo_kveiteGood
+  voice3: event:/VO/Kveite/vo_kveiteFinal

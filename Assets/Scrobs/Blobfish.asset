@@ -34,6 +34,6 @@ MonoBehaviour:
   - "I don\u2019t see anything wrong with you"
   music1: 
   music2: 
-  voice1: 
-  voice2: 
-  voice3: 
+  voice1: event:/VO/Blobfish/vo_blobHello
+  voice2: event:/VO/Blobfish/vo_blobGood
+  voice3: event:/VO/Blobfish/vo_blobFinal

@@ -37,6 +37,6 @@ MonoBehaviour:
   - Sure, but you <b>have</b> to join me for a selfie!
   music1: 
   music2: 
-  voice1: 
-  voice2: 
-  voice3: 
+  voice1: event:/VO/Anglerfish/vo_anglerHello
+  voice2: event:/VO/Anglerfish/vo_anglerGood
+  voice3: event:/VO/Anglerfish/vo_anglerFinal

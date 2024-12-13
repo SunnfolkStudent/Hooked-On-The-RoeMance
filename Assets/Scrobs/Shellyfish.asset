@@ -36,6 +36,6 @@ MonoBehaviour:
   - "I hope you\u2019re squdding. <b>You</b>, on <b>my</b> boat?"
   music1: 
   music2: 
-  voice1: 
-  voice2: 
-  voice3: 
+  voice1: event:/VO/Jellyfish/vo_jellyfishHello
+  voice2: event:/VO/Jellyfish/vo_jellyfishGood
+  voice3: event:/VO/Jellyfish/vo_jellyfishFinal

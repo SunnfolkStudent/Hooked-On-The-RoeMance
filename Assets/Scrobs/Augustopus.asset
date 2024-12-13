@@ -35,6 +35,6 @@ MonoBehaviour:
   - "Let\u2019s head to the Reelim Inn"
   music1: 
   music2: 
-  voice1: 
-  voice2: 
-  voice3: 
+  voice1: event:/VO/Octopus/vo_octopusHello
+  voice2: event:/VO/Octopus/vo_octopusGood
+  voice3: event:/VO/Octopus/vo_octopusFinal

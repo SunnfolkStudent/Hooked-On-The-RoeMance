@@ -36,6 +36,6 @@ MonoBehaviour:
   - Eh, something basic
   music1: 
   music2: 
-  voice1: 
-  voice2: 
-  voice3: 
+  voice1: event:/VO/Koi/vo_koiHello
+  voice2: event:/VO/Koi/vo_koiGood
+  voice3: event:/VO/Koi/vo_koiFinal

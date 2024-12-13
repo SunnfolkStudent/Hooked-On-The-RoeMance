@@ -34,6 +34,6 @@ MonoBehaviour:
   - Keep your head up, king crab
   music1: 
   music2: 
-  voice1: 
-  voice2: 
-  voice3: 
+  voice1: event:/VO/Clown/vo_clownHello
+  voice2: event:/VO/Clown/vo_clownGood
+  voice3: event:/VO/Clown/vo_clownFinal

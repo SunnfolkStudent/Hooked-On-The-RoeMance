@@ -34,6 +34,6 @@ MonoBehaviour:
   - Sure, bro!
   music1: 
   music2: 
-  voice1: 
-  voice2: 
-  voice3: 
+  voice1: event:/VO/Jark/vo_jarkHello
+  voice2: event:/VO/Jark/vo_jarkGood
+  voice3: event:/VO/Jark/vo_jarkFinal

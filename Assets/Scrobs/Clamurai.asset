@@ -35,6 +35,6 @@ MonoBehaviour:
   - I was aiming for someone else
   music1: 
   music2: 
-  voice1: 
-  voice2: 
-  voice3: 
+  voice1: event:/VO/Clam/vo_clamHello
+  voice2: event:/VO/Clam/vo_clamGood
+  voice3: event:/VO/Clam/vo_clamFinal
