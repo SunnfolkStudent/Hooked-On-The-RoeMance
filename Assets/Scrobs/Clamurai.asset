@@ -15,7 +15,7 @@ MonoBehaviour:
   randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: 
+  fishName: Clamurai
   habitat: 0
   Dialogue:
   - "\u201CIn battle, if you make your opponent flinch, you have already won\u201D"

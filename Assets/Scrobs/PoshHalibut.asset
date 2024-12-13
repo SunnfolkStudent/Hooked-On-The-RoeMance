@@ -15,7 +15,7 @@ MonoBehaviour:
   randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: 
+  fishName: kveite.png
   habitat: 0
   Dialogue:
   - It seems thou hadst unearthed mine fine form. What parts of the blue wide yonder

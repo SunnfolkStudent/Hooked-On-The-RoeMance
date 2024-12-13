@@ -15,7 +15,7 @@ MonoBehaviour:
   randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: 
+  fishName: Jark
   habitat: 0
   Dialogue:
   - "Yo, am I having d\xE9j\xE0 vu, bro? Didn\u2019t we just talk, dude?"
