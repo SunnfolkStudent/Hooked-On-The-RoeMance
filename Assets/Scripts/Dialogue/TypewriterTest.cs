@@ -140,14 +140,13 @@ public class TypewriterTest : MonoBehaviour
     
     private void Start()
     {
-        Debug.Log("Fuck Y'all");
         // Prototyping
         currentFish = Fish.Shark;
         // Getting the entire canvas
         _dialogueCanvas = GameObject.Find("Canvas");
+        _fishName = GameObject.Find("FishName").GetComponent<TMP_Text>();
         _dialogueCanvas.SetActive(false);
         _FMOD = GameObject.Find("AudioManager").GetComponent<FMOD_Controller>();
-        //_fishName = GameObject.Find("FishName").GetComponent<TMP_Text>();
     }
     
     public void DecideFish(int erik)
@@ -160,86 +159,103 @@ public class TypewriterTest : MonoBehaviour
                 currentFish = Fish.Shark;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(4);
+                _FMOD.AmbianceMode(1);
                 break;
             case 1:
                 currentFish = Fish.Macarel;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(8);
+                _FMOD.AmbianceMode(1);
                 break;
             case 2:
                 currentFish = Fish.Jellyfish;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(5);
+                _FMOD.AmbianceMode(1);
                 break;
             case 3:
                 currentFish = Fish.Halibut;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(7);
+                _FMOD.AmbianceMode(1);
                 break;
             case 4:
                 currentFish = Fish.Angler;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(0);
+                _FMOD.AmbianceMode(1);
                 break;
             case 5:
                 currentFish = Fish.Blobfish;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(1);
+                _FMOD.AmbianceMode(1);
                 break;
             case 6:
                 currentFish = Fish.Macarel;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(8);
+                _FMOD.AmbianceMode(1);
                 break;
             case 7:
                 currentFish = Fish.Halibut;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(7);
+                _FMOD.AmbianceMode(1);
                 break;
             case 8:
                 currentFish = Fish.Halibut;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(7);
+                _FMOD.AmbianceMode(1);
                 break;
             case 9:
                 currentFish = Fish.Koi;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(6);
+                _FMOD.AmbianceMode(1);
                 break;
             case 10:
                 currentFish = Fish.Macarel;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(8);
+                _FMOD.AmbianceMode(1);
                 break;    
             case 11:
                 currentFish = Fish.Clown;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(3);
+                _FMOD.AmbianceMode(1);
                 break;
             case 12:
                 currentFish = Fish.Octopus;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(9);
+                _FMOD.AmbianceMode(1);
                 break;
             case 13:
                 currentFish = Fish.Clam;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(2);
+                _FMOD.AmbianceMode(1);
                 break;
             case 14:
                 currentFish = Fish.Macarel;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(8);
+                _FMOD.AmbianceMode(1);
                 break;
             case 15:
                 currentFish = Fish.Halibut;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(7);
+                _FMOD.AmbianceMode(1);
                 break;
             case 16:
                 currentFish = Fish.Trash;
                 _FMOD.FishingMode(2);
                 _FMOD.CharacterTheme(10);
+                _FMOD.AmbianceMode(1);
                 break;
         }
         // Debug.Log("enum is " + currentFish);
@@ -258,7 +274,7 @@ public class TypewriterTest : MonoBehaviour
          _dialogueCanvas.SetActive(true);
          _rizzSprite.sprite = _fishSprites[_erikNumber];
          SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
-         //_fishName.text = allTheFish[_erikNumber].fishName;
+         _fishName.text = allTheFish[_erikNumber].fishName;
 
          // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
          // TODO: get dialogue and options from PlayerController script
@@ -496,7 +512,6 @@ public class TypewriterTest : MonoBehaviour
 
     public void WrongDialogue()
     {
-        Debug.Log("Wrong Dialogue");
         RemoveListeners();
         NoRizz();
         ScoreManager.CurrentScore--;
@@ -522,13 +537,15 @@ public class TypewriterTest : MonoBehaviour
     {
         _animator.SetBool("fishingSlap", false);
         // TODO: move player being able to move again down here
+        PlayerController._playerStatic = false;
+        PlayerController._rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        PlayerController._isFishing = true;
+        _animator.SetBool("playerStatic", false);
+        PlayerController.fishingCanBeInterrupted = false;
     }
 
     public void ChangeTextBoxes()
     {
-        Debug.Log("After change: " + currentFish);
-        Debug.Log("After change, erik: " + _erikNumber);
-        Debug.Log("After change, dia: " + _currentDialogue);
         _scrobDialogue = allTheFish[_erikNumber].Dialogue[_currentDialogue];
         _scrobOption1 = allTheFish[_erikNumber].Option1[_currentDialogue];
         _scrobOption2 = allTheFish[_erikNumber].Option2[_currentDialogue];
@@ -545,15 +562,21 @@ public class TypewriterTest : MonoBehaviour
     public void FinishDialogue()
     {
         Debug.Log("currentDialogue burde være 0, den er: " + _currentDialogue);
+        Debug.Log("Current fish: " + caughtFishes);
         RemoveListeners();
         NoRizz();
+        PlayerController._playerStatic = false;
+        PlayerController._rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        PlayerController._isFishing = true;
+        _animator.SetBool("playerStatic", false);
+        PlayerController.fishingCanBeInterrupted = false;
         if (_erikNumber == 16)
             return;
         
         ScoreManager.CurrentScore++;
         _slider.value += 1f;
         caughtFishes.Add(_erikNumber);
-
+        
     }
 
     public void NoRizz()
@@ -564,14 +587,16 @@ public class TypewriterTest : MonoBehaviour
         _dialogueCanvas.SetActive(false);
         // TODO: Add disabling the fish here
         
+        //FMOD, out of romance, back to fishing
         _FMOD.FishingMode(0);
+        _FMOD.AmbianceMode(0);
 
-        PlayerController._playerStatic = false;
-        PlayerController._rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
-        PlayerController._isFishing = true;
-        _animator.SetBool("playerStatic", false);
-        PlayerController.fishingCanBeInterrupted = false;
-        print("Does this run more than once once it has been called");
+        //PlayerController._playerStatic = false;
+        //PlayerController._rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        //PlayerController._isFishing = true;
+        //_animator.SetBool("playerStatic", false);
+        //PlayerController.fishingCanBeInterrupted = false;
+        //print("Does this run more than once once it has been called");
     }
 
     public void NextDialogue()

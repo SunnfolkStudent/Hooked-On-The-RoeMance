@@ -14,11 +14,18 @@ public class FMOD_Controller : MonoBehaviour
     
     FMOD.Studio.EventInstance oceanInstance;
 
+    private int sceneCheck = 1;
+
     public static FMOD_Controller instance;
     private void Start()
     {
         musicInstance = RuntimeManager.CreateInstance("event:/Music/mx_generalMusic");
         musicInstance.start();
+    }
+
+    private void Update()
+    {
+        if (sceneCheck != 1) return;
         
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
@@ -33,21 +40,29 @@ public class FMOD_Controller : MonoBehaviour
         
             oceanInstance = RuntimeManager.CreateInstance("event:/AMB/amb_ocean");
             oceanInstance.start();
+            
+            sceneCheck = 0;
         }
     }
+
 
     private void Awake()
     {
-        if (instance != null)
+        if (instance == null)
         {
-            Debug.LogError("Found more than one Audio Manager");
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        instance = this;
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void Update()
+    public void AmbianceMode(int value)
     {
-        
+        birdInstance.setParameterByName("AmbianceBetter", value);
+        oceanInstance.setParameterByName("AmbianceBetter", value);
     }
 
     public void FishingMode(int value)

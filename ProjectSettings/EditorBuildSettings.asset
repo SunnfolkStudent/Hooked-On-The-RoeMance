@@ -11,12 +11,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Erik.unity
     guid: d503d3a2e1c9a534a8504de71fbdfdb5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Erik_Test.unity
     guid: 97b8283780c6c60429b59c7a39180233
+  - enabled: 1
+    path: Assets/Scenes/Erik_Test 1.unity
+    guid: ae6fcbb7807d50f4f9e9894b2c2ca7ba
   - enabled: 0
     path: Assets/Scenes/Kasper_Test.unity
-    guid: eaa6e8952855903438748991238de6b4
+    guid: 8f274452c8166024894c7ffb6c6310bc
   - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: f80f78c4a40e4304eaeddb0184bf75be

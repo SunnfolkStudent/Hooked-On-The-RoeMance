@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public static int OceanEntryNumber, DeepseaEntryNumber, TropicalEntryNumber, ColdwaterEntryNumber;
     
     [Header("Fishing")] 
-    private float _fishingCooldown = 3f;
+    private float _fishingCooldown = 0f;
     private float _fishingCooldownTimer;
     private bool _fishingIdle;
     private bool _fishingThrow;
@@ -54,11 +54,18 @@ public class PlayerController : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _FMOD = GameObject.Find("Player").GetComponent<AudioPlayer>();
         _FMODController = GameObject.Find("AudioManager").GetComponent<FMOD_Controller>();
+        _playerStatic = false;
         
     }
     
     private void Update()
     {
+        if (_input.interact)
+        {
+            Debug.Log("E");
+            Debug.Log(_isFishing);
+        }
+        
         if (!_playerStatic)
         {
             AdjustPlayerFacingDirection();
@@ -69,19 +76,21 @@ public class PlayerController : MonoBehaviour
             //FMOD, to fishing mode
             _FMODController.FishingMode(1);
             
-            _isFishing = false;
+            
             _fishingCooldownTimer = Time.time + _fishingCooldown;
+            //_isFishing = false;
             //_playerStatic = true;
             //_animator.SetBool("playerStatic", true);
             //_rigidbody2D.bodyType = RigidbodyType2D.Static;
             FishingMechanic();
+            Debug.Log("Interact 1");
         }
         
         if (_input.interact && fishingCanBeInterrupted && isDone2 == false)
         {
             CancelInvoke("QuickTimeEvent2");
             Invoke("FishingFailed", 0);
-            print("Test");
+            print("Interact 2");
         }
         
         if (_input.interact && isDone2)
@@ -92,12 +101,6 @@ public class PlayerController : MonoBehaviour
         
         _animator.SetFloat("moveY", _input.movement.y);
         _animator.SetFloat("moveX", _input.movement.x);
-        
-        // TODO: Remove this for final build
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
     }
     
     private void FixedUpdate()
@@ -192,6 +195,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
+            _isFishing = false;
             OceanEntryNumber = Random.Range(0, 4); // 3
             Invoke("FishingIdle", 1);
             _kasperNumber = OceanEntryNumber;
@@ -204,6 +208,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
+            _isFishing = false;
             DeepseaEntryNumber = Random.Range(4, 8); // 7
             Invoke("FishingIdle", 1);
             _kasperNumber = DeepseaEntryNumber;
@@ -216,6 +221,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
+            _isFishing = false;
             TropicalEntryNumber = Random.Range(8, 12); // 11
             Invoke("FishingIdle", 1);
             _kasperNumber = TropicalEntryNumber;
@@ -228,6 +234,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("playerStatic", true);
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
+            _isFishing = false;
             ColdwaterEntryNumber = Random.Range(12, 16); // 15
             Invoke("FishingIdle", 1);
             _kasperNumber = ColdwaterEntryNumber;
@@ -267,6 +274,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("fishingOnHookLoop", false);
         _animator.SetBool("fishingReelIn", true);
         Invoke("FishingAfterReelInForTesting", 1);
+        fishingCanBeInterrupted = false;
         Debug.Log("FishingReelIn");
     }
     
