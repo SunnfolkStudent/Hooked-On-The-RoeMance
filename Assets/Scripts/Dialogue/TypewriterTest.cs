@@ -256,7 +256,7 @@ public class TypewriterTest : MonoBehaviour
          _dialogueCanvas.SetActive(true);
          _rizzSprite.sprite = _fishSprites[_erikNumber];
          SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
-         _fishName.text = allTheFish[_erikNumber].fishName;
+         //_fishName.text = allTheFish[_erikNumber].fishName;
 
          // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
          // TODO: get dialogue and options from PlayerController script
