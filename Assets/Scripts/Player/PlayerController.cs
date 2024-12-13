@@ -62,9 +62,9 @@ public class PlayerController : MonoBehaviour
             // Robin fiske musikk
             _isFishing = false;
             _fishingCooldownTimer = Time.time + _fishingCooldown;
-            _playerStatic = true;
-            _animator.SetBool("playerStatic", true);
-            _rigidbody2D.bodyType = RigidbodyType2D.Static;
+            //_playerStatic = true;
+            //_animator.SetBool("playerStatic", true);
+            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
             FishingMechanic();
         }
         
@@ -179,9 +179,9 @@ public class PlayerController : MonoBehaviour
     {
         if (_isInOcean)
         {
-            //_playerStatic = true;
-            //_animator.SetBool("playerStatic", true);
-            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             OceanEntryNumber = Random.Range(0, 3);
             Invoke("FishingIdle", 1);
@@ -191,9 +191,9 @@ public class PlayerController : MonoBehaviour
         }
         if (_isInDeepsea)
         {
-            //_playerStatic = true;
-            //_animator.SetBool("playerStatic", true);
-            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             DeepseaEntryNumber = Random.Range(4, 7);
             Invoke("FishingIdle", 1);
@@ -203,9 +203,9 @@ public class PlayerController : MonoBehaviour
         }
         if (_isInTropical)
         {
-            //_playerStatic = true;
-            //_animator.SetBool("playerStatic", true);
-            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             TropicalEntryNumber = Random.Range(8, 11);
             Invoke("FishingIdle", 1);
@@ -215,9 +215,9 @@ public class PlayerController : MonoBehaviour
         }
         if (_isInColdwater)
         {
-            //_playerStatic = true;
-            //_animator.SetBool("playerStatic", true);
-            //_rigidbody2D.bodyType = RigidbodyType2D.Static;
+            _playerStatic = true;
+            _animator.SetBool("playerStatic", true);
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetBool("fishingThrow", true);
             ColdwaterEntryNumber = Random.Range(12, 15);
             Invoke("FishingIdle", 1);
