@@ -35,5 +35,5 @@ MonoBehaviour:
   music1: 
   music2: 
   voice1: event:/VO/Mackerel/vo_mackerelHello
-  voice2: event:/VO/Kveite/vo_kveiteGood
+  voice2: event:/VO/Mackerel/vo_mackerelGood
   voice3: event:/VO/Mackerel/vo_mackerelFinal

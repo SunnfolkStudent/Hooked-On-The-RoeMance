@@ -9,6 +9,10 @@ using Debug = UnityEngine.Debug;
 public class FMOD_Controller : MonoBehaviour
 {
     FMOD.Studio.EventInstance musicInstance;
+    
+    FMOD.Studio.EventInstance birdInstance;
+    
+    FMOD.Studio.EventInstance oceanInstance;
 
     public static FMOD_Controller instance;
     private void Start()
@@ -23,6 +27,12 @@ public class FMOD_Controller : MonoBehaviour
         {
             Debug.Log("Robin_Test");
             musicInstance.setParameterByName("Main Music", 1);
+            
+            birdInstance = RuntimeManager.CreateInstance("event:/AMB/amb_birds");
+            birdInstance.start();
+        
+            oceanInstance = RuntimeManager.CreateInstance("event:/AMB/amb_ocean");
+            oceanInstance.start();
         }
     }
 

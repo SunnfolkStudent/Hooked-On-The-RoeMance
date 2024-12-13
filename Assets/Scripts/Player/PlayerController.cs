@@ -42,12 +42,19 @@ public class PlayerController : MonoBehaviour
     public TypewriterTest MyScript;
     public static int _kasperNumber;
     
+    private AudioPlayer _FMOD;
+    
+    private FMOD_Controller _FMODController;
+    
     private void Start()
     {
         _input = GetComponent<InputActions>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _FMOD = GameObject.Find("Player").GetComponent<AudioPlayer>();
+        _FMODController = GameObject.Find("AudioManager").GetComponent<FMOD_Controller>();
+        
     }
     
     private void Update()
@@ -59,7 +66,9 @@ public class PlayerController : MonoBehaviour
         
         if (_input.interact && Time.time > _fishingCooldownTimer && _isFishing)
         {
-            // Robin fiske musikk
+            //FMOD, to fishing mode
+            _FMODController.FishingMode(1);
+            
             _isFishing = false;
             _fishingCooldownTimer = Time.time + _fishingCooldown;
             //_playerStatic = true;
@@ -290,6 +299,9 @@ public class PlayerController : MonoBehaviour
 
     private void QuickTimeEvent2()
     {
+        //FMOD Bite Sound
+        _FMOD.PlayBite();
+        
         uiExclamationmarkSpriteRenderer.enabled = true;
         isDone2 = true;
         Invoke("FishingFailed", 1);
@@ -305,6 +317,9 @@ public class PlayerController : MonoBehaviour
 
     private void FishingFailed()
     {
+        //FMOD, failed to catch
+        _FMODController.FishingMode(0);
+        
         fishingCanBeInterrupted = false;
         isDone2 = false;
         uiExclamationmarkSpriteRenderer.enabled = false;
