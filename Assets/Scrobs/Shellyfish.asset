@@ -15,7 +15,7 @@ MonoBehaviour:
   randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: 
+  fishName: Jellina
   habitat: 0
   Dialogue:
   - "Oh\u2026 h-hi\u2026 I was wondering\u2026 what do you think of the ocean at

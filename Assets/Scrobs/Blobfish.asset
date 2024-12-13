@@ -15,7 +15,7 @@ MonoBehaviour:
   randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: 
+  fishName: Bob
   habitat: 0
   Dialogue:
   - "Why won\u2019t people leave me alone\u2026 What did I do wrong?"

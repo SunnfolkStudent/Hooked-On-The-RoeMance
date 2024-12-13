@@ -15,7 +15,7 @@ MonoBehaviour:
   randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: 
+  fishName: Koitlin
   habitat: 0
   Dialogue:
   - "My, aren\u2019t you a <b>fine</b> specimen? Royal yellow, verdant green, all

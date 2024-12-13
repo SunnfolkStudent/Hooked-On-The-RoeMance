@@ -15,7 +15,7 @@ MonoBehaviour:
   randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: 
+  fishName: Amalgamation
   habitat: 0
   Dialogue:
   - "From your hook, an amalgamation of a creature appeared. Tattered by it\u2019s
