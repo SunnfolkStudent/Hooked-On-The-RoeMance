@@ -714,7 +714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &145067121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,9 +768,9 @@ MonoBehaviour:
   - {fileID: 2433294883196242628, guid: 65088e9b505cdd245b9142477e3e252b, type: 3}
   caughtFishes: 
   weightSprites: []
-  currentFish: 0
   quickSkip: 0
   skipSpeedup: 5
+  currentFish: 0
 --- !u!4 &145067122
 Transform:
   m_ObjectHideFlags: 0
@@ -7360,7 +7360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1861314416020377494, guid: 184e15d17313f2a4abadb70d20e75b92, type: 3}
       propertyPath: orthographic size
-      value: 8.4375
+      value: 6.53125
       objectReference: {fileID: 0}
     - target: {fileID: 2706330354255382205, guid: 184e15d17313f2a4abadb70d20e75b92, type: 3}
       propertyPath: m_LocalPosition.x

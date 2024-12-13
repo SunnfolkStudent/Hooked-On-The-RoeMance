@@ -19,7 +19,7 @@ public class FMOD_Controller : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         
-        if (sceneName == "Robin_Test")
+        if (sceneName == "Erik_Test 1")
         {
             Debug.Log("Robin_Test");
             musicInstance.setParameterByName("Main Music", 1);
