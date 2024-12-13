@@ -15,7 +15,7 @@ MonoBehaviour:
   randomNumber: 0
   sprite: {fileID: 0}
   animation: {fileID: 0}
-  fishName: 
+  fishName: Anglerica
   habitat: 0
   Dialogue:
   - "<b>O</b>-<b>M</b>-<b>G</b>!!!! You\u2019ve ruined my #girlsnight! But\u2026
