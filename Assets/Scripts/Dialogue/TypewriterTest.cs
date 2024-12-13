@@ -49,6 +49,9 @@ public class TypewriterTest : MonoBehaviour
     private int _currentDialogue = 0;
 
     #region Lots of elements
+
+    private TMP_Text _fishName;
+    
     // All Buttons (for listeners)
     //private Button _button1;
     private Button _button1;
@@ -144,6 +147,7 @@ public class TypewriterTest : MonoBehaviour
         _dialogueCanvas = GameObject.Find("Canvas");
         _dialogueCanvas.SetActive(false);
         _FMOD = GameObject.Find("AudioManager").GetComponent<Schlawg>();
+        _fishName = GameObject.Find("FishName").GetComponent<TMP_Text>();
     }
     
     public void DecideFish(int erik)
@@ -252,9 +256,10 @@ public class TypewriterTest : MonoBehaviour
          _dialogueCanvas.SetActive(true);
          _rizzSprite.sprite = _fishSprites[_erikNumber];
          SetText(allTheFish[_erikNumber].Dialogue[_currentDialogue]);
-         
-        // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
-        // TODO: get dialogue and options from PlayerController script
+         _fishName.text = allTheFish[_erikNumber].fishName;
+
+         // TODO: add listeners to buttons based on which options of the 4 are correct based on the fish scrob "reeled in"
+         // TODO: get dialogue and options from PlayerController script
     }
 
     public void DecideDialogue()
@@ -477,7 +482,7 @@ public class TypewriterTest : MonoBehaviour
     }
 
     public void CorrectDialogue()
-    {
+    { 
         _currentDialogue++;
         if (_currentDialogue >= 2)
             _currentDialogue = 1;
