@@ -142,8 +142,14 @@ public class TypewriterTest : MonoBehaviour
         currentFish = Fish.Shark;
         // Getting the entire canvas
         _dialogueCanvas = GameObject.Find("Canvas");
+<<<<<<< Updated upstream
         _dialogueCanvas.SetActive(false);
         _FMOD = GameObject.Find("AudioManager").GetComponent<FMOD_Controller>();
+=======
+        _dialogueCanvas.SetActive(false)
+        _FMOD = GameObject.Find("AudioManager").GetComponent<FMOD_Controller>();
+        _FMOD = GameObject.Find("AudioManager").GetComponent<Schlawg>();
+>>>>>>> Stashed changes
     }
     
     public void DecideFish(int erik)
@@ -241,6 +247,97 @@ public class TypewriterTest : MonoBehaviour
         // Debug.Log("enum is " + currentFish);
         // Debug.Log("currentdialogue is "+ _currentDialogue);
         // Debug.Log("ErikNumber is" + erik);
+<<<<<<< Updated upstream
+=======
+        
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(4);
+                break;
+            case 1:
+                currentFish = Fish.Macarel;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(8);
+                break;
+            case 2:
+                currentFish = Fish.Jellyfish;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(5);
+                break;
+            case 3:
+                currentFish = Fish.Halibut;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(7);
+                break;
+            case 4:
+                currentFish = Fish.Angler;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(0);
+                break;
+            case 5:
+                currentFish = Fish.Blobfish;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(1);
+                break;
+            case 6:
+                currentFish = Fish.Macarel;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(8);
+                break;
+            case 7:
+                currentFish = Fish.Halibut;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(7);
+                break;
+            case 8:
+                currentFish = Fish.Halibut;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(7);
+                break;
+            case 9:
+                currentFish = Fish.Koi;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(6);
+                break;
+            case 10:
+                currentFish = Fish.Macarel;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(8);
+                break;    
+            case 11:
+                currentFish = Fish.Clown;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(3);
+                break;
+            case 12:
+                currentFish = Fish.Octopus;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(9);
+                break;
+            case 13:
+                currentFish = Fish.Clam;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(2);
+                break;
+            case 14:
+                currentFish = Fish.Macarel;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(8);
+                break;
+            case 15:
+                currentFish = Fish.Halibut;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(7);
+                break;
+            case 16:
+                currentFish = Fish.Trash;
+                _FMOD.FishingMode(2);
+                _FMOD.CharacterTheme(10);
+                break;
+        }
+        // Debug.Log("enum is " + currentFish);
+        // Debug.Log("currentdialogue is "+ _currentDialogue);
+        // Debug.Log("ErikNumber is" + erik);
+>>>>>>> Stashed changes
         RemoveListeners();
         RizzMode();
     }
